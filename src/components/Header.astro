@@ -1,0 +1,81 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <a href="/" class:list={["logo", { active: currentPath === '/' }]}>
+    Zakher Bouragaoui
+  </a>
+  <nav class="nav">
+    <a href="/about" class:list={["nav-link", { active: currentPath === '/about' }]}>about</a>
+    <a href="/experience" class:list={["nav-link", { active: currentPath === '/experience' }]}>experience</a>
+    <a href="/research" class:list={["nav-link", { active: currentPath === '/research' }]}>research</a>
+    <a href="/publications" class:list={["nav-link", { active: currentPath === '/publications' }]}>publications</a>
+    <a href="/blog" class:list={["nav-link", { active: currentPath === '/blog' }]}>blog</a>
+    <a href="/media" class:list={["nav-link", { active: currentPath === '/media' }]}>media</a>
+    <a href="/gallery" class:list={["nav-link", { active: currentPath === '/gallery' }]}>gallery</a>
+    <a href="/contact" class:list={["nav-link", { active: currentPath === '/contact' }]}>contact</a>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    background: var(--background);
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    letter-spacing: 0.025em;
+    user-select: none;
+    color: var(--accent);
+  }
+
+  .logo.active {
+    color: var(--accent);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    user-select: none;
+    transition: all 150ms ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: var(--accent);
+  }
+
+  .nav-link.active {
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .nav {
+      gap: 0.75rem;
+    }
+    
+    .nav-link {
+      font-size: 0.9rem;
+    }
+  }
+</style>

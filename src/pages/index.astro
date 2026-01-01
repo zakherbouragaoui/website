@@ -1,11 +1,225 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Zakher Bouragaoui - Conservation Biologist">
+  <Header />
+  <main>
+    <div class="container">
+      <section>
+        <h1>Zakher Bouragaoui</h1>
+        <p class="subtitle">Conservation Biologist & National Geographic Explorer</p>
+        <div class="intro">
+          <p>
+            Specializing in biodiversity monitoring, ecological research, and strategic program 
+            management across North Africa. Currently leading M&E initiatives at WWF North Africa.
+          </p>
+        </div>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>FEATURED</h2>
+        <div class="featured-grid">
+          <a href="/research" class="featured-card card">
+            <h3>National Geographic Explorer →</h3>
+            <p class="meta">2023 · Recognition</p>
+            <p>Tunisian Wonders project documenting biodiversity and conservation awareness</p>
+          </a>
+
+          <a href="/research" class="featured-card card">
+            <h3>Machine Learning for Birds →</h3>
+            <p class="meta">2021-2023 · Research</p>
+            <p>ML models using bioacoustics for automated species identification</p>
+          </a>
+        </div>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>CURRENT FOCUS</h2>
+        <div class="focus-list">
+          <div class="focus-item">
+            <h3>WWF North Africa</h3>
+            <p class="role">M&E and Knowledge Transfer Officer</p>
+            <p>Leading monitoring and evaluation of conservation programs, developing strategic frameworks across North Africa</p>
+          </div>
+          <div class="focus-item">
+            <h3>Research Interests</h3>
+            <p class="role">Bioacoustics & Machine Learning</p>
+            <p>Innovative approaches to biodiversity monitoring using acoustic technology and ML for species identification</p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>EDUCATION</h2>
+        <div class="edu-list">
+          <div class="edu-item card">
+            <div class="edu-header">
+              <div>
+                <h3>M.S. Wildlife Ecology</h3>
+                <p class="institution">University of Wisconsin-Madison</p>
+              </div>
+              <span class="year">2021-2023</span>
+            </div>
+            <p class="note">Fulbright Scholar</p>
+          </div>
+
+          <div class="edu-item card">
+            <div class="edu-header">
+              <div>
+                <h3>M.S. Evolutionary Ecology</h3>
+                <p class="institution">Faculty of Sciences of Tunis</p>
+              </div>
+              <span class="year">2016-2018</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
 </Layout>
+
+<style>
+  h1 {
+    font-size: 3rem;
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem !important;
+    opacity: 0.7 !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    opacity: 0.9;
+  }
+
+  /* Featured Grid */
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .featured-card {
+    display: block;
+  }
+
+  .featured-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    transition: all 150ms ease-in-out;
+  }
+
+  .featured-card:hover h3 {
+    color: var(--accent);
+  }
+
+  .meta {
+    font-size: 0.875rem !important;
+    opacity: 0.6 !important;
+    font-family: var(--font-mono);
+    margin-bottom: 0.75rem;
+  }
+
+  .featured-card p:last-child {
+    font-size: 1rem !important;
+    opacity: 0.85 !important;
+  }
+
+  /* Focus List */
+  .focus-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .focus-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .role {
+    font-size: 1rem !important;
+    color: var(--accent);
+    opacity: 1 !important;
+    margin-bottom: 0.75rem;
+  }
+
+  .focus-item p:last-child {
+    font-size: 1rem !important;
+    opacity: 0.85 !important;
+  }
+
+  /* Education */
+  .edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .edu-item {
+    padding: 1rem;
+  }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-item h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .institution {
+    font-size: 0.9375rem !important;
+    opacity: 0.7 !important;
+  }
+
+  .year {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0.7;
+  }
+
+  .note {
+    font-size: 0.875rem !important;
+    color: var(--accent);
+    opacity: 1 !important;
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .edu-header {
+      flex-direction: column;
+    }
+    
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .focus-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

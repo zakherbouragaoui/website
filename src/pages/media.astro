@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Media data
+const mediaData = {
+  featured: {
+    title: 'National Geographic Explorer',
+    subtitle: 'Tunisian Wonders Project',
+    year: '2023',
+    description: 'Featured conservation storytelling initiative documenting Tunisia\'s biodiversity through multimedia narratives and field expeditions.',
+    link: 'https://www.nationalgeographic.com'
+  },
+
+  pressReleases: [
+    {
+      title: 'WWF North Africa Announces New M&E Framework',
+      outlet: 'WWF Press Room',
+      date: '2024-11-15',
+      excerpt: 'Innovative monitoring and evaluation framework to strengthen conservation programs across the region.',
+    },
+    {
+      title: 'Fulbright Scholar Advances Wildlife Conservation Technology',
+      outlet: 'U.S. Embassy Tunisia',
+      date: '2023-05-20',
+      excerpt: 'Research on machine learning applications in bioacoustic monitoring recognized for innovation.',
+    },
+    {
+      title: 'New Research Reveals Critical Wetland Biodiversity',
+      outlet: 'Science Daily',
+      date: '2024-02-10',
+      excerpt: 'Comprehensive study maps species diversity across southern Tunisia\'s continental wetlands.',
+    }
+  ],
+
+  interviews: [
+    { title: 'The Future of Conservation Technology in North Africa', outlet: 'Conservation Voices Podcast', date: '2024-09-15', duration: '42 min', type: 'Audio' },
+    { title: 'Field Stories: Mediterranean Island Conservation', outlet: 'Ecology Today', date: '2024-07-22', duration: '28 min', type: 'Video' },
+    { title: 'Bridging Science and Policy in Wildlife Management', outlet: 'Environmental Leaders Series', date: '2024-06-10', duration: '35 min', type: 'Audio' }
+  ],
+
+  conferences: [
+    { title: 'State of Knowledge on Continental Wetlands Biodiversity', event: '24th SSIG Conference', location: 'Tozeur, Tunisia', date: '2025-01-15', role: 'Speaker' },
+    { title: 'Machine Learning Applications in Ecological Monitoring', event: 'Wildlife Society Annual Conference', location: 'Louisville, KY, USA', date: '2023-11-08', role: 'Presenter' },
+    { title: 'Island Biogeography and Conservation Priorities', event: 'Mediterranean Conservation Summit', location: 'Barcelona, Spain', date: '2022-09-20', role: 'Panelist' },
+    { title: 'Reptile Diversity in North African Arid Ecosystems', event: 'African Herpetology Symposium', location: 'Nairobi, Kenya', date: '2019-07-12', role: 'Presenter' }
+  ]
+};
+---
+
+<Layout title="Media - Zakher Bouragaoui">
+  <Header />
+  <main>
+    <div class="container">
+      <section>
+        <h1>Media</h1>
+      </section>
+
+      <hr />
+
+      <!-- Single Unified Section -->
+      <section>
+
+        <!-- Featured Highlight -->
+        <div class="featured-highlight">
+          <div class="featured-label">Featured</div>
+          <div class="featured-content">
+            <div class="featured-left">
+              <span class="year-badge">{mediaData.featured.year}</span>
+              <h2>{mediaData.featured.title}</h2>
+              <p class="subtitle">{mediaData.featured.subtitle}</p>
+            </div>
+            <div class="featured-right">
+              <p>{mediaData.featured.description}</p>
+              <a href={mediaData.featured.link} target="_blank" class="btn-explore">
+                Explore Project →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Unified List -->
+        <div class="media-list">
+          <h3 class="list-title">Press, Interviews & Presentations</h3>
+
+          <div class="items-grid">
+
+            <!-- Press Releases -->
+            {mediaData.pressReleases.map(press => (
+              <div class="media-item">
+                <div class="item-header">
+                  <span class="item-type">Press Release</span>
+                  <span class="item-date">
+                    {new Date(press.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                  </span>
+                </div>
+                <h4>{press.title}</h4>
+                <p class="item-source">{press.outlet}</p>
+                <p class="item-excerpt">{press.excerpt}</p>
+              </div>
+            ))}
+
+            <!-- Interviews -->
+            {mediaData.interviews.map(interview => (
+              <div class="media-item">
+                <div class="item-header">
+                  <span class="item-type">{interview.type} Interview</span>
+                  <span class="item-date">
+                    {new Date(interview.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                  </span>
+                </div>
+                <h4>{interview.title}</h4>
+                <p class="item-source">{interview.outlet} · {interview.duration}</p>
+              </div>
+            ))}
+
+            <!-- Conferences -->
+            {mediaData.conferences.map(conf => (
+              <div class="media-item">
+                <div class="item-header">
+                  <span class="item-type">Conference ({conf.role})</span>
+                  <span class="item-date">
+                    {new Date(conf.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                  </span>
+                </div>
+                <h4>{conf.title}</h4>
+                <p class="item-source">{conf.event} · {conf.location}</p>
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Featured Highlight */
+  .featured-highlight {
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(234, 179, 8, 0.03);
+    border: 2px solid var(--accent);
+    border-radius: 0.5rem;
+  }
+
+  .featured-label {
+    position: absolute;
+    top: -0.75rem;
+    left: 2rem;
+    background: var(--background);
+    padding: 0.25rem 1rem;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .featured-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .featured-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .year-badge {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent);
+    color: var(--background);
+    font-size: 0.875rem;
+    font-family: var(--font-mono);
+    font-weight: 700;
+  }
+
+  .featured-left h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .featured-left .subtitle {
+    font-size: 1.125rem !important;
+    color: var(--accent);
+    opacity: 0.9 !important;
+    margin: 0;
+  }
+
+  .featured-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .featured-right p {
+    font-size: 1rem !important;
+    line-height: 1.7;
+    opacity: 0.85 !important;
+    margin: 0;
+  }
+
+  .btn-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent);
+    color: var(--background);
+    font-weight: 600;
+    font-size: 1rem;
+    width: fit-content;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-explore:hover {
+    background: var(--foreground);
+    transform: translateX(4px);
+  }
+
+  /* Unified Media List */
+  .media-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .list-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+  }
+
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Media Items */
+  .media-item {
+    padding: 1.5rem;
+    background: rgba(212, 212, 216, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    transition: all var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .media-item:hover {
+    border-color: var(--accent);
+    background: rgba(234, 179, 8, 0.03);
+    transform: translateY(-2px);
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .item-type {
+    font-size: 0.8125rem;
+    color: var(--accent);
+    font-weight: 600;
+    font-family: var(--font-mono);
+  }
+
+  .item-date {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    opacity: 0.6;
+  }
+
+  .media-item h4 {
+    font-size: 1.0625rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .item-source {
+    font-size: 0.875rem !important;
+    color: var(--accent);
+    opacity: 0.9 !important;
+    margin: 0;
+  }
+
+  .item-excerpt {
+    font-size: 0.875rem !important;
+    line-height: 1.6;
+    opacity: 0.75 !important;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .featured-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .items-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .featured-highlight {
+      padding: 1.5rem;
+    }
+
+    .featured-left h2 {
+      font-size: 1.5rem;
+    }
+
+    .items-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .media-item {
+      padding: 1.25rem;
+    }
+  }
+</style>

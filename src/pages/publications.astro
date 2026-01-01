@@ -1,0 +1,767 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Publications organized by year
+const publications = [
+  {
+    id: 1,
+    slug: 'wetlands-tunisia-2025',
+    year: 2025,
+    title: 'State of Knowledge on the Biodiversity of Continental Wetlands in Southern Tunisia',
+    authors: 'Ben Aba, W., Bouragaoui, Z., et al.',
+    venue: '24th Annual Sahel & Sahara Interest Group Conference (SSIG), Tozeur, Tunisia',
+    type: 'Conference',
+    tags: ['Wetlands', 'Biodiversity', 'Tunisia'],
+    featured: true
+  },
+  {
+    id: 2,
+    slug: 'wading-birds-2025',
+    year: 2025,
+    title: 'Diversity and habitat use of wading birds at Aarif wetland, southern Tunisia',
+    authors: 'Ben Aba, W., Bouragaoui, Z., Nsikani, M.M.',
+    venue: 'Journal of Arid Environments',
+    type: 'Journal Article',
+    tags: ['Waterbirds', 'Wetlands', 'Habitat Use']
+  },
+  {
+    id: 3,
+    slug: 'un-decade-2022',
+    year: 2022,
+    title: 'Tunisian Wonders in the UN Decade on Ecosystem Restoration',
+    authors: 'Nsikani, M.M., Bouragaoui, Z., Ben Aba, W.',
+    venue: 'Biodiversity and Conservation',
+    type: 'Journal Article',
+    tags: ['Conservation', 'Ecosystem Restoration']
+  },
+  {
+    id: 4,
+    year: 2021,
+    title: 'Biogeography of the Peregrine Falcon (Falco peregrinus) in Ben Jemaa, Tunisia',
+    authors: 'Ben Jemaa, S., Bouragaoui, Z., et al.',
+    venue: 'Journal of Raptor Research',
+    type: 'Journal Article',
+    tags: ['Raptors', 'Distribution', 'Tunisia']
+  },
+  {
+    id: 5,
+    year: 2021,
+    title: 'First record of Galeodes toelgi (Solifugae: Galeodidae) in Tunisia',
+    authors: 'Guariento, L.A., Bouragaoui, Z., et al.',
+    venue: 'Revista Ibérica de Aracnología',
+    type: 'Short Note',
+    tags: ['Arachnology', 'First Record', 'Tunisia']
+  },
+  {
+    id: 6,
+    year: 2020,
+    title: 'PAD Lacertidae de l\'archipel de la Galite',
+    authors: 'Bouragaoui, Z., ATVS Team',
+    venue: 'Technical Report - ATVS',
+    type: 'Technical Report',
+    tags: ['Lacertidae', 'Island Biogeography', 'Galite']
+  },
+  {
+    id: 7,
+    year: 2019,
+    title: 'Diet composition of Acanthodactylus pardalis in southern Tunisia',
+    authors: 'Bouragaoui, Z., Znari, M., et al.',
+    venue: 'African Journal of Herpetology',
+    type: 'Journal Article',
+    tags: ['Herpetology', 'Diet Analysis', 'Ecology']
+  },
+  {
+    id: 8,
+    year: 2019,
+    title: 'Age determination and growth in Acanthodactylus pardalis',
+    authors: 'Bouragaoui, Z., Znari, M., et al.',
+    venue: 'Journal of Arid Environments',
+    type: 'Journal Article',
+    tags: ['Age Determination', 'Population Biology']
+  },
+  {
+    id: 9,
+    year: 2019,
+    title: 'Specific richness and diversity of amphibians in the Algerian septentrional Sahara',
+    authors: 'Mebarki, M., Bouragaoui, Z., et al.',
+    venue: 'Biodiversity Journal',
+    type: 'Journal Article',
+    tags: ['Amphibians', 'Algeria', 'Diversity']
+  },
+  {
+    id: 10,
+    year: 2018,
+    title: 'Mantodea biodiversity and conservation in Tunisia: current status and challenges',
+    authors: 'Bouragaoui, Z., et al.',
+    venue: 'International Workshop on Orthopteroid Insects, Rovereto, Italy',
+    type: 'Conference',
+    tags: ['Mantodea', 'Conservation', 'Tunisia']
+  }
+];
+
+// Group publications by year
+const publicationsByYear = publications.reduce((acc, pub) => {
+  if (!acc[pub.year]) acc[pub.year] = [];
+  acc[pub.year].push(pub);
+  return acc;
+}, {} as Record<number, typeof publications>);
+
+const years = Object.keys(publicationsByYear).sort((a, b) => Number(b) - Number(a));
+
+// Calculate stats
+const totalPublications = publications.length;
+const journalArticles = publications.filter(p => p.type === 'Journal Article').length;
+const conferences = publications.filter(p => p.type === 'Conference').length;
+---
+
+<Layout title="Publications - Zakher Bouragaoui">
+  <Header />
+  <main>
+    <div class="container">
+      <!-- Page Title -->
+      <section>
+        <h1>Publications</h1>
+        <p class="tagline">Peer-reviewed research and scientific contributions</p>
+      </section>
+
+      <hr />
+
+      <!-- Publication Stats -->
+      <section>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">{totalPublications}</div>
+            <div class="stat-label">Total Publications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">{journalArticles}</div>
+            <div class="stat-label">Journal Articles</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">{conferences}</div>
+            <div class="stat-label">Conference Papers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">{years.length}</div>
+            <div class="stat-label">Years Active</div>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <!-- Featured Publication -->
+      {publications.filter(p => p.featured).map(pub => (
+        <>
+          <section>
+            <h2>FEATURED</h2>
+            <div class="featured-publication card">
+              <div class="featured-badge">LATEST</div>
+              <div class="pub-type-badge">{pub.type}</div>
+              <a href={`/publications/${pub.slug}`} class="featured-link">
+                <h3>{pub.title}</h3>
+              </a>
+              <p class="featured-authors">{pub.authors}</p>
+              <p class="featured-venue">{pub.venue}</p>
+              <div class="featured-tags">
+                {pub.tags?.map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+              <div class="featured-actions">
+                <a href={`/publications/${pub.slug}`} class="button">Read Full Paper →</a>
+              </div>
+            </div>
+          </section>
+          <hr />
+        </>
+      ))}
+
+      <!-- Publications by Year -->
+      <section>
+        <h2>ALL PUBLICATIONS</h2>
+        
+        {years.map(year => (
+          <div class="year-section">
+            <div class="year-header">
+              <h3 class="year-title">{year}</h3>
+              <div class="year-line"></div>
+              <span class="year-count">{publicationsByYear[Number(year)].length} {publicationsByYear[Number(year)].length === 1 ? 'publication' : 'publications'}</span>
+            </div>
+
+            <div class="publications-list">
+              {publicationsByYear[Number(year)].map((pub, idx) => (
+                <div class="pub-item card">
+                  <div class="pub-number">{idx + 1}</div>
+                  <div class="pub-content">
+                    <div class="pub-header">
+                      <span class="pub-type">{pub.type}</span>
+                      {pub.tags && pub.tags.length > 0 && (
+                        <div class="pub-tags-inline">
+                          {pub.tags.slice(0, 2).map(tag => (
+                            <span class="tag-small">{tag}</span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    {pub.slug ? (
+                      <a href={`/publications/${pub.slug}`} class="pub-title-link">
+                        <h4>{pub.title}</h4>
+                      </a>
+                    ) : (
+                      <h4>{pub.title}</h4>
+                    )}
+                    <p class="pub-authors">{pub.authors}</p>
+                    <p class="pub-venue">{pub.venue}</p>
+                    {pub.slug && (
+                      <a href={`/publications/${pub.slug}`} class="read-more">Read full paper →</a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <hr />
+
+      <!-- Research Impact -->
+      <section>
+        <h2>RESEARCH IMPACT</h2>
+        <div class="impact-grid">
+          <div class="impact-card card">
+            <div class="impact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M2 12h20"></path>
+                <circle cx="12" cy="12" r="9"></circle>
+              </svg>
+            </div>
+            <h3>Geographic Coverage</h3>
+            <p>Research spanning Tunisia, Algeria, Morocco, and California ecosystems</p>
+          </div>
+
+          <div class="impact-card card">
+            <div class="impact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3>Taxonomic Scope</h3>
+            <p>Birds, reptiles, amphibians, invertebrates, and wetland ecosystems</p>
+          </div>
+
+          <div class="impact-card card">
+            <div class="impact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Collaborative Network</h3>
+            <p>Co-authored with researchers from 10+ institutions across 5 countries</p>
+          </div>
+
+          <div class="impact-card card">
+            <div class="impact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              </svg>
+            </div>
+            <h3>Conservation Application</h3>
+            <p>Research directly informing protected area management and policy decisions</p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <!-- External Profiles -->
+      <section class="profiles-section">
+        <h2>ACADEMIC PROFILES</h2>
+        <div class="profiles-grid">
+          <a href="#" class="profile-link card" target="_blank" rel="noopener">
+            <div class="profile-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <div class="profile-info">
+              <h3>Google Scholar</h3>
+              <p>Citations and publication metrics</p>
+            </div>
+          </a>
+
+          <a href="#" class="profile-link card" target="_blank" rel="noopener">
+            <div class="profile-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </div>
+            <div class="profile-info">
+              <h3>ResearchGate</h3>
+              <p>Research network and collaborations</p>
+            </div>
+          </a>
+
+          <a href="#" class="profile-link card" target="_blank" rel="noopener">
+            <div class="profile-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <div class="profile-info">
+              <h3>ORCID</h3>
+              <p>Verified researcher identifier</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* ===========================
+     PAGE HEADER
+     =========================== */
+  .tagline {
+    font-size: 1rem !important;
+    opacity: 0.7 !important;
+    font-style: italic;
+    margin-top: -1rem;
+  }
+
+  /* ===========================
+     STATS GRID
+     =========================== */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(212, 212, 216, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    transition: all var(--transition-fast);
+  }
+
+  .stat-card:hover {
+    border-color: var(--accent);
+    background: rgba(234, 179, 8, 0.03);
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===========================
+     FEATURED PUBLICATION
+     =========================== */
+  .featured-publication {
+    padding: 2rem;
+    position: relative;
+    border-color: var(--accent);
+    background: rgba(234, 179, 8, 0.03);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--accent);
+    color: var(--background);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .pub-type-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(234, 179, 8, 0.2);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+  }
+
+  .featured-link {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .featured-publication h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    transition: color var(--transition-fast);
+  }
+
+  .featured-link:hover h3 {
+    color: var(--accent);
+  }
+
+  .featured-authors {
+    font-size: 1rem !important;
+    opacity: 0.8 !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .featured-venue {
+    font-size: 1rem !important;
+    font-style: italic;
+    color: var(--accent);
+    opacity: 0.9 !important;
+    margin-bottom: 1rem;
+  }
+
+  .featured-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(234, 179, 8, 0.15);
+    color: var(--accent);
+    border-radius: 0.25rem;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    font-family: var(--font-mono);
+  }
+
+  .featured-actions {
+    margin-top: 1.5rem;
+  }
+
+  /* ===========================
+     YEAR SECTIONS
+     =========================== */
+  .year-section {
+    margin-bottom: 3rem;
+  }
+
+  .year-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .year-title {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    min-width: 5rem;
+  }
+
+  .year-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent), transparent);
+  }
+
+  .year-count {
+    font-size: 0.875rem;
+    font-family: var(--font-mono);
+    opacity: 0.6;
+    white-space: nowrap;
+  }
+
+  /* ===========================
+     PUBLICATIONS LIST
+     =========================== */
+  .publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pub-item {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    transition: all var(--transition-fast);
+  }
+
+  .pub-number {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.5;
+    min-width: 2.5rem;
+    text-align: center;
+  }
+
+  .pub-item:hover .pub-number {
+    opacity: 1;
+  }
+
+  .pub-content {
+    min-width: 0;
+  }
+
+  .pub-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .pub-type {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    padding: 0.2rem 0.6rem;
+    background: rgba(212, 212, 216, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    opacity: 0.8;
+  }
+
+  .pub-tags-inline {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .tag-small {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--accent);
+    border-radius: 0.25rem;
+    font-family: var(--font-mono);
+  }
+
+  .pub-item h4 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    transition: color var(--transition-fast);
+  }
+
+  .pub-title-link {
+    display: block;
+  }
+
+  .pub-title-link:hover h4 {
+    color: var(--accent);
+  }
+
+  .pub-authors {
+    font-size: 0.9375rem !important;
+    opacity: 0.75 !important;
+    margin-bottom: 0.25rem;
+  }
+
+  .pub-venue {
+    font-size: 0.9375rem !important;
+    font-style: italic;
+    color: var(--accent);
+    opacity: 0.85 !important;
+    margin-bottom: 0.75rem;
+  }
+
+  .read-more {
+    font-size: 0.875rem;
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 3px;
+    transition: all var(--transition-fast);
+  }
+
+  .read-more:hover {
+    text-underline-offset: 6px;
+  }
+
+  /* ===========================
+     RESEARCH IMPACT
+     =========================== */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .impact-card {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .impact-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--foreground);
+    opacity: 0.3;
+    transition: all var(--transition-fast);
+  }
+
+  .impact-card:hover .impact-icon {
+    color: var(--accent);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .impact-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent);
+  }
+
+  .impact-card p {
+    font-size: 0.9375rem !important;
+    line-height: 1.6;
+    opacity: 0.85 !important;
+  }
+
+  /* ===========================
+     ACADEMIC PROFILES
+     =========================== */
+  .profiles-section {
+    text-align: center;
+  }
+
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .profile-link {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .profile-link:hover {
+    border-color: var(--accent);
+    background: rgba(234, 179, 8, 0.03);
+  }
+
+  .profile-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(234, 179, 8, 0.1);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+  }
+
+  .profile-link:hover .profile-icon {
+    border-color: var(--accent);
+  }
+
+  .profile-icon svg {
+    color: var(--accent);
+  }
+
+  .profile-info {
+    text-align: left;
+    flex: 1;
+  }
+
+  .profile-info h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .profile-info p {
+    font-size: 0.875rem !important;
+    opacity: 0.7 !important;
+  }
+
+  /* ===========================
+     RESPONSIVE DESIGN
+     =========================== */
+  @media (max-width: 768px) {
+    .stats-grid,
+    .impact-grid,
+    .profiles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pub-item {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .pub-number {
+      text-align: left;
+    }
+
+    .year-header {
+      flex-wrap: wrap;
+    }
+
+    .year-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .featured-publication,
+    .pub-item,
+    .impact-card,
+    .profile-link {
+      padding: 1rem;
+    }
+
+    .featured-badge {
+      position: static;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+  }
+</style>

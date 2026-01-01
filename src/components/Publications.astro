@@ -1,0 +1,321 @@
+---
+const publications = [
+  {
+    year: 2025,
+    items: [
+      {
+        authors: "Ben Aba, W., Bouragaoui, Z., et al.",
+        year: 2025,
+        title: "State of Knowledge on the Biodiversity of Continental Wetlands in Southern Tunisia: A Synthesis of Available Data",
+        venue: "24th Annual Sahel & Sahara Interest Group Conference (SSIG), Tozeur, Tunisia"
+      },
+      {
+        authors: "Aarif, K.M., Nefla, A., Rubeena, K.A., Xu, Y., Bouragaoui, Z., et al.",
+        year: 2025,
+        title: "Assessing environmental change and population declines of large wading birds in southwestern India",
+        venue: "Environmental and Sustainability Indicators, 25, 100572"
+      }
+    ]
+  },
+  {
+    year: 2022,
+    items: [
+      {
+        authors: "Nsikani, M.M., Anderson, P., Bouragaoui, Z., et al.",
+        year: 2022,
+        title: "UN Decade on Ecosystem Restoration: key considerations for Africa",
+        venue: "Restoration Ecology"
+      },
+      {
+        authors: "Bouragaoui, Z.",
+        year: 2022,
+        title: "Notes on Reforestation in Tunisia",
+        venue: "Forum Tunisien pour les droits économiques et sociaux"
+      }
+    ]
+  },
+  {
+    year: 2021,
+    items: [
+      {
+        authors: "Ben Jemaa, H., Nefla, A., Bouragaoui, Z., & Nouira, S.",
+        year: 2021,
+        title: "Breeding biology of the Eleonora's falcon, Falco eleonorae within the Galite archipelago",
+        venue: "Biologia, 76(5), 1491-1499"
+      },
+      {
+        authors: "Ben Aba, W and Bouragaoui, Z.",
+        year: 2021,
+        title: "Confirmation of the presence of the vulnerable species Calicnemis obesa obesa erichson, 1841 (Coleoptera: Scarabaeidae: Dynastinae), in Tunisia",
+        venue: "Munis Entomology and Zoology, 381"
+      }
+    ]
+  },
+  {
+    year: 2020,
+    items: [
+      {
+        authors: "Guariento, L. A., Bolognin, L., Ben Aba, W., Bouragaoui, Z., Kilani, F. and Ouni, R.",
+        year: 2020,
+        title: "Assessing solifuge biodiversity in Tunisia: new data on Biton velox Simon, 1885 and first report of the enigmatic genus Tarabulida Roewer 1933 (Solifugae, Daesiidae)",
+        venue: "Spixiana"
+      }
+    ]
+  },
+  {
+    year: 2019,
+    items: [
+      {
+        authors: "Bouragaoui, Z. & Nouira, S.",
+        year: 2019,
+        title: "Age Determination of the Sand Lizard Psammodromus algirus (Reptilia; Lacertidae) by mean of Skeletochronology",
+        venue: "Current Herpetology, 32(2)"
+      },
+      {
+        authors: "Bouragaoui, Z., Ben Aba, W., & Nouira, S.",
+        year: 2019,
+        title: "Diet of the lacertid lizard Psammodromus algirus in North Tunisia",
+        venue: "Sonoran Herpetologist, 32(1), 5-8"
+      },
+      {
+        authors: "M. T. Mebarki, O. Guezoul, K. Souttou, S. E. Sadine, Y. Alioua, B. Zakher, A. Kemassi A. Ould el hadjKhelil",
+        year: 2019,
+        title: "Specific richness and diversity of amphibians in the oasis of the Algerian septentrional Sahara",
+        venue: "4th International Conference of the Tunisian Association of Taxonomy. Mahdia, Tunisia"
+      }
+    ]
+  },
+  {
+    year: 2018,
+    items: [
+      {
+        authors: "Wael BA., Zakher B.",
+        year: 2018,
+        title: "Confirmation of the presence of the ground beetle Chlaenius (Chlaeniellus) tristis tristis (Schaller, 1783) in Tunisia",
+        venue: "Amateur Entomologists' Society 77: 243-245"
+      },
+      {
+        authors: "L. A. Guariento, V. Sartore, Z. Bouragaoui, I. Petri, U. Devincenzo, E.Moretto and R. Ouni",
+        year: 2018,
+        title: "Mantodea biodiversity and conservation in Tunisia: current status and challenges",
+        venue: "International Workshop \"Orthopteroid insects: biodiversity and ecology evolution in a changing environment\". Rovereto, Italy"
+      }
+    ]
+  }
+];
+---
+
+<section id="publications" class="publications">
+  <div class="container">
+    <h2 class="section-title">Publications</h2>
+    <p class="publications-intro">
+      A selection of peer-reviewed publications and conference presentations spanning biodiversity conservation, 
+      ecological research, and species monitoring across North Africa and beyond.
+    </p>
+    
+    <div class="publications-list">
+      {publications.map(yearGroup => (
+        <div class="year-section">
+          <h3 class="year-header">{yearGroup.year}</h3>
+          <div class="publications-year-group">
+            {yearGroup.items.map(pub => (
+              <div class="publication-card">
+                <p class="publication-authors">{pub.authors}</p>
+                <p class="publication-title">{pub.title}</p>
+                <p class="publication-venue">{pub.venue}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="research-interests">
+      <h3 class="subsection-title">Research Interests</h3>
+      <div class="interests-grid">
+        <div class="interest-card">
+          <span class="interest-icon">🦎</span>
+          <h4>Reptile Ecology</h4>
+          <p>Population dynamics and conservation of Mediterranean lizard species</p>
+        </div>
+        <div class="interest-card">
+          <span class="interest-icon">🔊</span>
+          <h4>Bioacoustics</h4>
+          <p>Acoustic monitoring and machine learning for biodiversity assessment</p>
+        </div>
+        <div class="interest-card">
+          <span class="interest-icon">🏝️</span>
+          <h4>Island Biogeography</h4>
+          <p>Endemic species evolution and conservation on Mediterranean islands</p>
+        </div>
+        <div class="interest-card">
+          <span class="interest-icon">💧</span>
+          <h4>Wetland Conservation</h4>
+          <p>Biodiversity monitoring and ecosystem health in North African wetlands</p>
+        </div>
+        <div class="interest-card">
+          <span class="interest-icon">📊</span>
+          <h4>Statistical Modeling</h4>
+          <p>Species distribution modeling and ecological data analysis</p>
+        </div>
+        <div class="interest-card">
+          <span class="interest-icon">🌍</span>
+          <h4>Conservation Planning</h4>
+          <p>Monitoring & evaluation frameworks for conservation programs</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .publications {
+    background: var(--color-light-gray);
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--color-accent);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+  }
+
+  .publications-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: var(--color-gray);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .publications-list {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+  }
+
+  .year-section {
+    margin-bottom: 3rem;
+  }
+
+  .year-header {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-accent);
+    display: inline-block;
+  }
+
+  .publications-year-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .publication-card {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .publication-card:hover {
+    transform: translateX(8px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--color-primary);
+  }
+
+  .publication-authors {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-title {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .publication-venue {
+    color: var(--color-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .research-interests {
+    margin-top: 4rem;
+  }
+
+  .subsection-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+  }
+
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .interest-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .interest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .interest-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .interest-card h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+  }
+
+  .interest-card p {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .publication-card:hover {
+      transform: translateX(0);
+      transform: translateY(-5px);
+    }
+
+    .interests-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,456 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Gallery images data
+const galleryImages = [
+  {
+    id: 1,
+    title: 'Wetland Biodiversity Survey',
+    location: 'Southern Tunisia',
+    year: '2024',
+    description: 'Field survey documenting waterbird populations in continental wetlands.'
+  },
+  {
+    id: 2,
+    title: 'Galite Archipelago Expedition',
+    location: 'Galite Islands, Tunisia',
+    year: '2020',
+    description: 'Research expedition studying endemic Lacertidae species populations.'
+  },
+  {
+    id: 3,
+    title: 'Bioacoustic Monitoring Setup',
+    location: 'Sierra Nevada, California',
+    year: '2022',
+    description: 'Installing acoustic recording equipment for bird species identification.'
+  },
+  {
+    id: 4,
+    title: 'Desert Ecosystem Survey',
+    location: 'Anza-Borrego, California',
+    year: '2023',
+    description: 'Biodiversity assessment in California largest state park.'
+  },
+  {
+    id: 5,
+    title: 'Sea Turtle Monitoring',
+    location: 'Tunisian Coast',
+    year: '2019',
+    description: 'Loggerhead turtle nest monitoring and protection program.'
+  },
+  {
+    id: 6,
+    title: 'Mediterranean Island Research',
+    location: 'Mediterranean Basin',
+    year: '2020',
+    description: 'Field work on island biogeography and endemic species conservation.'
+  },
+  {
+    id: 7,
+    title: 'Community Engagement',
+    location: 'North Africa',
+    year: '2024',
+    description: 'Working with local communities on conservation education initiatives.'
+  },
+  {
+    id: 8,
+    title: 'Wildlife Documentation',
+    location: 'Tunisia',
+    year: '2023',
+    description: 'National Geographic Explorer project documenting biodiversity.'
+  }
+];
+---
+
+<Layout title="Gallery - Zakher Bouragaoui">
+  <Header />
+  <main>
+    <div class="container">
+      <section>
+        <h1>Gallery</h1>
+      </section>
+
+      <hr />
+
+      <!-- Gallery Slideshow -->
+      <section>
+        <div class="gallery-slideshow">
+
+          <!-- Controls Bar -->
+          <div class="controls-bar">
+            <span class="slide-counter" id="counter">1 / {galleryImages.length}</span>
+            <div class="nav-buttons">
+              <button class="btn-nav" id="prev" aria-label="Previous">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="btn-nav" id="next" aria-label="Next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Slides Container -->
+          <div class="slides-wrapper">
+            <div class="slides-track" id="track">
+              {galleryImages.map((image, idx) => (
+                <div class="slide" data-index={idx}>
+                  <div class="slide-image">
+                    <div class="image-placeholder">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="slide-info">
+                    <span class="slide-year">{image.year}</span>
+                    <h2>{image.title}</h2>
+                    <p class="slide-location">{image.location}</p>
+                    <p class="slide-description">{image.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Dots Navigation -->
+          <div class="dots-nav">
+            {galleryImages.map((_, idx) => (
+              <button
+                class:list={['dot', { active: idx === 0 }]}
+                data-index={idx}
+                aria-label={`Go to slide ${idx + 1}`}
+              ></button>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .gallery-slideshow {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Controls Bar */
+  .controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+
+  .slide-counter {
+    font-size: 1.125rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn-nav {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-nav:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--background);
+  }
+
+  .btn-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  /* Slides Wrapper */
+  .slides-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid var(--accent);
+    background: rgba(212, 212, 216, 0.02);
+  }
+
+  .slides-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide {
+    width: 100%;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    display: flex;
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+
+  /* Slide Image */
+  .slide-image {
+    width: 45%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 212, 216, 0.05);
+    border: 1px solid var(--border-color);
+    min-height: 450px;
+  }
+
+  .image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.2;
+  }
+
+  .image-placeholder svg {
+    color: var(--foreground);
+  }
+
+  /* Slide Info */
+  .slide-info {
+    width: 55%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+
+  .slide-year {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.3rem 0.75rem;
+    background: var(--accent);
+    color: var(--background);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .slide-info h2 {
+    font-size: 1.875rem;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .slide-location {
+    font-size: 1rem !important;
+    color: var(--accent);
+    opacity: 0.95 !important;
+    margin: 0;
+  }
+
+  .slide-description {
+    font-size: 0.9375rem !important;
+    line-height: 1.7;
+    opacity: 0.85 !important;
+    margin: 0;
+  }
+
+  /* Dots Navigation */
+  .dots-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(212, 212, 216, 0.3);
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: 0;
+  }
+
+  .dot:hover {
+    background: rgba(234, 179, 8, 0.5);
+    border-color: var(--accent);
+  }
+
+  .dot.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: scale(1.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .slide {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .slide-image {
+      width: 100%;
+      min-height: 350px;
+    }
+
+    .slide-info {
+      width: 100%;
+      padding-right: 0;
+    }
+
+    .slide-info h2 {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide {
+      padding: 1.5rem;
+      gap: 1.25rem;
+    }
+
+    .slide-image {
+      min-height: 280px;
+    }
+
+    .slide-info h2 {
+      font-size: 1.5rem;
+    }
+
+    .slide-location,
+    .slide-description {
+      font-size: 0.9375rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .controls-bar {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .slide {
+      padding: 1.25rem;
+      gap: 1rem;
+    }
+
+    .slide-image {
+      min-height: 220px;
+    }
+
+    .slide-info h2 {
+      font-size: 1.25rem;
+    }
+
+    .slide-year {
+      font-size: 0.8125rem;
+      padding: 0.25rem 0.6rem;
+    }
+
+    .slide-location,
+    .slide-description {
+      font-size: 0.875rem !important;
+    }
+  }
+</style>
+
+<script>
+  const track = document.getElementById('track') as HTMLElement;
+  const prev = document.getElementById('prev') as HTMLButtonElement;
+  const next = document.getElementById('next') as HTMLButtonElement;
+  const counter = document.getElementById('counter') as HTMLElement;
+  const dots = document.querySelectorAll('.dot');
+
+  let current = 0;
+  const total = 8;
+
+  function update() {
+    if (!track || !counter) return;
+
+    // Move track
+    track.style.transform = `translateX(-${current * 100}%)`;
+
+    // Update counter
+    counter.textContent = `${current + 1} / ${total}`;
+
+    // Update buttons
+    if (prev) prev.disabled = current === 0;
+    if (next) next.disabled = current === total - 1;
+
+    // Update dots
+    dots.forEach((dot, i) => {
+      if (i === current) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  // Previous
+  prev?.addEventListener('click', () => {
+    if (current > 0) {
+      current--;
+      update();
+    }
+  });
+
+  // Next
+  next?.addEventListener('click', () => {
+    if (current < total - 1) {
+      current++;
+      update();
+    }
+  });
+
+  // Dots
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      current = i;
+      update();
+    });
+  });
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' && current > 0) {
+      current--;
+      update();
+    } else if (e.key === 'ArrowRight' && current < total - 1) {
+      current++;
+      update();
+    }
+  });
+
+  // Initialize
+  update();
+</script>

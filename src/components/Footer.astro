@@ -1,0 +1,68 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="social-links">
+    <a href="https://linkedin.com/in/zakherbouragaoui" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:zbouragaoui@wwfna.org">Email</a>
+    <a href="https://www.nationalgeographic.com/pages/topic/explorers" target="_blank" rel="noopener">National Geographic</a>
+  </div>
+  <div class="footer-info">
+    <p>© {currentYear} Zakher Bouragaoui</p>
+    <p>
+      powered by <a href="https://astro.build" target="_blank" class="hover-accent">Astro</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    padding: 4rem 0.75rem 0.5rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .social-links a {
+    font-size: 1rem;
+    letter-spacing: 0.025em;
+    transition: all 150ms ease-in-out;
+  }
+
+  .social-links a:hover {
+    color: var(--accent);
+  }
+
+  .footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: rgba(212, 212, 216, 0.5);
+    user-select: none;
+  }
+
+  .hover-accent:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 640px) {
+    .footer-info {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    
+    .social-links {
+      flex-wrap: wrap;
+    }
+  }
+</style>
