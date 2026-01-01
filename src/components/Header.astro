@@ -1,81 +1,121 @@
 ---
+// Header.astro - Navigation component with GitHub Pages support
 const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { name: 'about', href: '/website/about' },
+  { name: 'experience', href: '/website/experience' },
+  { name: 'research', href: '/website/research' },
+  { name: 'publications', href: '/website/publications' },
+  { name: 'blog', href: '/website/blog' },
+  { name: 'media', href: '/website/media' },
+  { name: 'gallery', href: '/website/gallery' },
+  { name: 'contact', href: '/website/contact' },
+];
+
+function isActive(href: string) {
+  return currentPath === href || currentPath === href + '/';
+}
 ---
 
-<header class="header">
-  <a href="/" class:list={["logo", { active: currentPath === '/' }]}>
-    Zakher Bouragaoui
-  </a>
-  <nav class="nav">
-    <a href="/about" class:list={["nav-link", { active: currentPath === '/about' }]}>about</a>
-    <a href="/experience" class:list={["nav-link", { active: currentPath === '/experience' }]}>experience</a>
-    <a href="/research" class:list={["nav-link", { active: currentPath === '/research' }]}>research</a>
-    <a href="/publications" class:list={["nav-link", { active: currentPath === '/publications' }]}>publications</a>
-    <a href="/blog" class:list={["nav-link", { active: currentPath === '/blog' }]}>blog</a>
-    <a href="/media" class:list={["nav-link", { active: currentPath === '/media' }]}>media</a>
-    <a href="/gallery" class:list={["nav-link", { active: currentPath === '/gallery' }]}>gallery</a>
-    <a href="/contact" class:list={["nav-link", { active: currentPath === '/contact' }]}>contact</a>
+<header>
+  <nav>
+    <div class="nav-container">
+      <a href="/website/" class="logo">Zakher Bouragaoui</a>
+      <div class="nav-links">
+        {navItems.map(item => (
+          <a
+            href={item.href}
+            class:list={['nav-link', { active: isActive(item.href) }]}
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
+    </div>
   </nav>
 </header>
 
 <style>
-  .header {
+  header {
     position: sticky;
     top: 0;
     z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 0.75rem;
     background: var(--background);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .logo {
     font-size: 1.25rem;
-    letter-spacing: 0.025em;
-    user-select: none;
+    font-weight: 700;
     color: var(--accent);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
   }
 
-  .logo.active {
-    color: var(--accent);
+  .logo:hover {
+    opacity: 0.8;
   }
 
-  .nav {
+  .nav-links {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 2rem;
   }
 
   .nav-link {
-    font-size: 1rem;
-    letter-spacing: 0.05em;
-    user-select: none;
-    transition: all 150ms ease-in-out;
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    position: relative;
+    transition: color var(--transition-fast);
+    opacity: 0.85;
   }
 
   .nav-link:hover {
     color: var(--accent);
+    opacity: 1;
   }
 
   .nav-link.active {
     color: var(--accent);
+    opacity: 1;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
   }
 
   @media (max-width: 768px) {
-    .header {
+    .nav-container {
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1rem;
+      padding: 1rem;
     }
-    
-    .nav {
-      gap: 0.75rem;
+
+    .nav-links {
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    
+
     .nav-link {
-      font-size: 0.9rem;
+      font-size: 0.875rem;
     }
   }
 </style>
