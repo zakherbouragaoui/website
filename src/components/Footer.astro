@@ -1,68 +1,164 @@
 ---
-const currentYear = new Date().getFullYear();
+// Footer.astro - Footer component with social links
 ---
 
-<footer class="footer">
-  <div class="social-links">
-    <a href="https://linkedin.com/in/zakherbouragaoui" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="mailto:zbouragaoui@wwfna.org">Email</a>
-    <a href="https://www.nationalgeographic.com/pages/topic/explorers" target="_blank" rel="noopener">National Geographic</a>
-  </div>
-  <div class="footer-info">
-    <p>© {currentYear} Zakher Bouragaoui</p>
-    <p>
-      powered by <a href="https://astro.build" target="_blank" class="hover-accent">Astro</a>
-    </p>
+<footer>
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Zakher Bouragaoui</h3>
+        <p>Conservation Biologist & Data Scientist</p>
+        <p>WWF North Africa | Fulbright Scholar</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <nav class="footer-nav">
+          <a href="/website/about">About</a>
+          <a href="/website/research">Research</a>
+          <a href="/website/publications">Publications</a>
+          <a href="/website/contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/zakher-bouragaoui" target="_blank" rel="noopener" aria-label="LinkedIn">
+            LinkedIn
+          </a>
+          <a href="mailto:zbouragaoui@wwfna.org" aria-label="Email">
+            Email
+          </a>
+          <a href="https://www.nationalgeographic.com" target="_blank" rel="noopener" aria-label="National Geographic">
+            National Geographic
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Zakher Bouragaoui. All rights reserved.</p>
+      <p class="footer-note">powered by <a href="https://astro.build" target="_blank" rel="noopener">Astro</a></p>
+    </div>
   </div>
 </footer>
 
 <style>
-  .footer {
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
-    padding: 4rem 0.75rem 0.5rem;
+  footer {
+    background: rgba(212, 212, 216, 0.02);
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 1.5rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section h3 {
+    color: var(--accent);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-section h4 {
+    color: var(--foreground);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  .footer-section p {
+    font-size: 0.9375rem !important;
+    opacity: 0.75 !important;
+    margin: 0.25rem 0;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-nav a {
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    opacity: 0.75;
+    transition: all var(--transition-fast);
+  }
+
+  .footer-nav a:hover {
+    color: var(--accent);
+    opacity: 1;
   }
 
   .social-links {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
   .social-links a {
-    font-size: 1rem;
-    letter-spacing: 0.025em;
-    transition: all 150ms ease-in-out;
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    opacity: 0.75;
+    transition: all var(--transition-fast);
   }
 
   .social-links a:hover {
     color: var(--accent);
+    opacity: 1;
   }
 
-  .footer-info {
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    font-size: 0.875rem;
-    color: rgba(212, 212, 216, 0.5);
-    user-select: none;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  .hover-accent:hover {
+  .footer-bottom p {
+    font-size: 0.875rem !important;
+    opacity: 0.6 !important;
+    margin: 0;
+  }
+
+  .footer-note a {
     color: var(--accent);
+    text-decoration: none;
   }
 
-  @media (max-width: 640px) {
-    .footer-info {
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: center;
+  .footer-note a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      padding: 2rem 1rem 1rem;
     }
-    
-    .social-links {
-      flex-wrap: wrap;
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
     }
   }
 </style>
