@@ -8,534 +8,301 @@ import Footer from '../components/Footer.astro';
   <Header />
   <main>
     <div class="container">
-      <!-- Page Title -->
-      <section>
-        <h1>About</h1>
-        <p class="tagline">Conservation biologist bridging science, technology, and policy</p>
-      </section>
 
-      <hr />
-
-      <!-- Professional Summary -->
-      <section>
-        <h2>OVERVIEW</h2>
-        <div class="summary">
-          <p>
-            I'm a conservation biologist specializing in biodiversity monitoring, ecological research, 
-            and strategic conservation program management. My work integrates field ecology, data science, 
-            and evidence-based policy to protect wildlife across Mediterranean and North African ecosystems.
-          </p>
-          <p>
-            As a <span class="highlight">National Geographic Explorer</span> and <span class="highlight">Fulbright Scholar</span>, 
-            I combine rigorous scientific methods with innovative technologies—from machine learning and bioacoustics 
-            to GIS and statistical modeling—to advance conservation outcomes and inform decision-making.
-          </p>
-          <p>
-            Currently, I lead monitoring and evaluation initiatives at <span class="highlight">WWF North Africa</span>, 
-            developing strategic frameworks and coordinating stakeholder engagement to strengthen regional conservation programs.
-          </p>
+      <!-- Hero Section with Photo -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>About Me</h1>
+          <p class="tagline">Conservation biologist bridging science, technology, and policy</p>
+        </div>
+        <div class="hero-image">
+          <img src="/website/images/zakher-photo.png" alt="Zakher Bouragaoui" />
         </div>
       </section>
 
       <hr />
 
-      <!-- Core Expertise -->
+      <!-- Bio Section -->
       <section>
-        <h2>EXPERTISE</h2>
-        <div class="expertise-grid">
-          <div class="expertise-category">
-            <h3>Conservation Science</h3>
-            <ul>
-              <li>Biodiversity monitoring & assessment</li>
-              <li>Ecological field research</li>
-              <li>Species identification & distribution modeling</li>
-              <li>Habitat characterization & analysis</li>
-              <li>Population dynamics studies</li>
-            </ul>
-          </div>
-
-          <div class="expertise-category">
-            <h3>Technical & Analytical</h3>
-            <ul>
-              <li>Machine learning applications in ecology</li>
-              <li>Bioacoustics & acoustic monitoring</li>
-              <li>GIS & spatial analysis</li>
-              <li>Statistical modeling & data visualization</li>
-              <li>R, Python, SQL programming</li>
-            </ul>
-          </div>
-
-          <div class="expertise-category">
-            <h3>Program Management</h3>
-            <ul>
-              <li>Monitoring & evaluation frameworks</li>
-              <li>Strategic planning & implementation</li>
-              <li>Stakeholder engagement & coordination</li>
-              <li>Project design & grant writing</li>
-              <li>Knowledge management & transfer</li>
-            </ul>
-          </div>
-
-          <div class="expertise-category">
-            <h3>Communication</h3>
-            <ul>
-              <li>Scientific writing & publication</li>
-              <li>Conservation storytelling</li>
-              <li>Conference presentations</li>
-              <li>Cross-cultural collaboration</li>
-              <li>Multilingual: Arabic, French, English</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-
-      <!-- Recognition & Awards -->
-      <section>
-        <h2>RECOGNITION</h2>
-        <div class="awards-timeline">
-          <div class="award-card card">
-            <div class="award-header">
-              <div class="award-info">
-                <h3>National Geographic Explorer</h3>
-                <p class="award-org">National Geographic Society</p>
-              </div>
-              <span class="award-year">2023</span>
-            </div>
-            <p class="award-description">
-              Selected for the <em>Tunisian Wonders</em> project, documenting Tunisia's rich biodiversity 
-              and raising conservation awareness through compelling storytelling and visual media. This 
-              recognition supports field documentation, species surveys, and public engagement initiatives.
-            </p>
-          </div>
-
-          <div class="award-card card">
-            <div class="award-header">
-              <div class="award-info">
-                <h3>Fulbright Foreign Student Scholarship</h3>
-                <p class="award-org">U.S. Department of State</p>
-              </div>
-              <span class="award-year">2021</span>
-            </div>
-            <p class="award-description">
-              Awarded competitive merit-based fellowship for graduate research at the University of 
-              Wisconsin-Madison. Conducted innovative research on machine learning applications in 
-              wildlife ecology, focusing on bioacoustic monitoring and species identification.
-            </p>
-          </div>
-
-          <div class="award-card card">
-            <div class="award-header">
-              <div class="award-info">
-                <h3>Initiative PIM Research Grant</h3>
-                <p class="award-org">Initiative PIM (Petites Îles de Méditerranée)</p>
-              </div>
-              <span class="award-year">2019</span>
-            </div>
-            <p class="award-description">
-              Funding awarded for field research on Zembra Island focusing on lizard population ecology 
-              and habitat monitoring. This grant supported comprehensive ecological surveys and contributed 
-              to Mediterranean island conservation priorities.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-
-      <!-- Professional Values -->
-      <section>
-        <h2>VALUES & APPROACH</h2>
-        <div class="values-container">
-          <div class="value-card">
-            <div class="value-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="20" x2="12" y2="10"></line>
-                <line x1="18" y1="20" x2="18" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="16"></line>
-              </svg>
-            </div>
-            <h3>Evidence-Based</h3>
-            <p>
-              All conservation decisions and recommendations are grounded in rigorous scientific research,
-              quantitative analysis, and peer-reviewed methodologies. Data quality and reproducibility
-              are paramount.
-            </p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
-            </div>
-            <h3>Innovation</h3>
-            <p>
-              Embracing cutting-edge technologies and novel approaches—from AI and remote sensing to
-              participatory monitoring—to address complex conservation challenges more effectively
-              and efficiently.
-            </p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3>Collaboration</h3>
-            <p>
-              Building meaningful partnerships across disciplines, institutions, cultures, and communities.
-              Conservation succeeds when diverse stakeholders work together toward shared goals.
-            </p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </div>
-            <h3>Long-Term Impact</h3>
-            <p>
-              Focusing on sustainable solutions that endure beyond project timelines. Success is measured
-              not just in immediate outcomes, but in lasting ecological recovery and institutional capacity.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-
-      <!-- Geographic Focus -->
-      <section>
-        <h2>GEOGRAPHIC FOCUS</h2>
-        <div class="regions-grid">
-          <div class="region-item card">
-            <h3>North Africa</h3>
-            <p>Tunisia, Algeria, Morocco</p>
-            <p class="region-note">Primary focus: Wetlands, coastal ecosystems, desert biodiversity</p>
-          </div>
-
-          <div class="region-item card">
-            <h3>Mediterranean</h3>
-            <p>Islands & coastal zones</p>
-            <p class="region-note">Specialization: Island biogeography, endemic species</p>
-          </div>
-
-          <div class="region-item card">
-            <h3>North America</h3>
-            <p>California, Wisconsin</p>
-            <p class="region-note">Research experience: Desert ecology, temperate forests</p>
-          </div>
-        </div>
-      </section>
-
-      <hr />
-
-      <!-- Call to Action -->
-      <section class="cta-section">
-        <h2>LET'S COLLABORATE</h2>
-        <p class="cta-text">
-          Interested in research collaboration, conservation partnerships, or discussing opportunities?
-          I'm always open to connecting with fellow conservationists, researchers, and organizations
-          working toward biodiversity protection.
+        <h2>Background</h2>
+        <p>
+          I am a conservation biologist and data scientist working at the intersection of biodiversity monitoring,
+          machine learning, and environmental policy. Currently serving as Monitoring & Evaluation Officer at WWF
+          North Africa, I develop evidence-based frameworks to strengthen conservation programs across the region.
         </p>
-        <div class="cta-buttons">
-          <a href="/contact" class="button">Get in Touch</a>
-          <a href="/publications" class="button">View Publications</a>
+        <p>
+          As a 2022-2023 Fulbright Scholar at UC Davis, I specialized in applying machine learning to bioacoustic
+          monitoring for biodiversity assessment. My research combines field ecology with computational methods to
+          address critical conservation challenges in North Africa and the Mediterranean.
+        </p>
+        <p>
+          Recognized as a National Geographic Explorer, I have led field expeditions documenting Tunisia's biodiversity,
+          from continental wetlands to Mediterranean islands. My work spans herpetology, island biogeography, and
+          community-based conservation, always seeking innovative approaches to protect ecosystems and species.
+        </p>
+      </section>
+
+      <hr />
+
+      <!-- Expertise Grid -->
+      <section>
+        <h2>Areas of Expertise</h2>
+        <div class="expertise-grid">
+          <div class="expertise-card">
+
+            <h3>Conservation Biology</h3>
+            <p>Biodiversity monitoring, species assessment, and habitat evaluation with emphasis on Mediterranean ecosystems.</p>
+          </div>
+          <div class="expertise-card">
+
+            <h3>Machine Learning</h3>
+            <p>Bioacoustic analysis, species identification algorithms, and data-driven conservation decision-making.</p>
+          </div>
+          <div class="expertise-card">
+
+            <h3>M&E Frameworks</h3>
+            <p>Monitoring and evaluation systems design, impact assessment, and adaptive management strategies.</p>
+          </div>
+          <div class="expertise-card">
+
+            <h3>Field Research</h3>
+            <p>Expedition leadership, ecological surveys, and community engagement in remote locations across North Africa.</p>
+          </div>
         </div>
       </section>
+
+      <hr />
+
+      <!-- Current Work -->
+      <section>
+        <h2>Current Focus</h2>
+        <div class="focus-areas">
+          <div class="focus-item">
+            <h3>WWF North Africa</h3>
+            <p>
+              Leading the development and implementation of monitoring and evaluation frameworks for conservation
+              programs across North Africa. Integrating technology and data science to enhance program effectiveness
+              and evidence-based decision-making.
+            </p>
+          </div>
+          <div class="focus-item">
+            <h3>Research Interests</h3>
+            <p>
+              Advancing the application of machine learning in biodiversity monitoring, with particular focus on
+              bioacoustic analysis for species detection. Exploring innovative approaches to assess and protect
+              Mediterranean island ecosystems and continental wetland biodiversity.
+            </p>
+          </div>
+          <div class="focus-item">
+            <h3>Conservation Technology</h3>
+            <p>
+              Developing accessible tools and methodologies that bridge the gap between cutting-edge technology
+              and practical conservation applications, especially in resource-limited contexts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <!-- Education & Recognition -->
+      <section>
+        <div class="credentials-grid">
+          <div>
+            <h2>Education</h2>
+            <div class="credential-item">
+              <h3>Fulbright Scholar</h3>
+              <p>University of California, Davis</p>
+              <p class="year">2022-2023</p>
+            </div>
+            <div class="credential-item">
+              <h3>Master's in Biodiversity & Ecosystems</h3>
+              <p>University of Tunis El Manar</p>
+              <p class="year">2019</p>
+            </div>
+          </div>
+          <div>
+            <h2>Recognition</h2>
+            <div class="credential-item">
+              <h3>National Geographic Explorer</h3>
+              <p>Tunisian Wonders Project</p>
+              <p class="year">2023</p>
+            </div>
+            <div class="credential-item">
+              <h3>Conservation Leadership</h3>
+              <p>WWF North Africa</p>
+              <p class="year">2024-Present</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
   <Footer />
 </Layout>
 
 <style>
-  /* ===========================
-     PAGE HEADER
-     =========================== */
+  /* Hero Section with Photo */
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content h1 {
+    margin-bottom: 1rem;
+  }
+
   .tagline {
-    font-size: 1rem !important;
-    opacity: 0.7 !important;
-    font-style: italic;
-    margin-top: -1rem;
-  }
-
-  /* ===========================
-     SUMMARY SECTION
-     =========================== */
-  .summary {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .summary p {
-    font-size: 1.125rem;
-    line-height: 1.8;
-  }
-
-  .highlight {
+    font-size: 1.25rem !important;
     color: var(--accent);
-    font-weight: 600;
+    opacity: 0.95 !important;
+    line-height: 1.6;
+    margin: 0;
   }
 
-  /* ===========================
-     EXPERTISE GRID
-     =========================== */
+  .hero-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 3px solid var(--accent);
+    border-radius: 0.5rem;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Expertise Grid */
   .expertise-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    margin-top: 1.5rem;
   }
 
-  .expertise-category {
-    background: rgba(212, 212, 216, 0.03);
+  .expertise-card {
+    padding: 2rem;
+    background: rgba(212, 212, 216, 0.02);
     border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
+    border-radius: 0.25rem;
     transition: all var(--transition-fast);
   }
 
-  .expertise-category:hover {
+  .expertise-card:hover {
     border-color: var(--accent);
-    background: rgba(234, 179, 8, 0.02);
+    background: rgba(234, 179, 8, 0.03);
+    transform: translateY(-2px);
   }
 
-  .expertise-category h3 {
-    font-size: 1.125rem;
+  .expertise-card .icon {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--accent);
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border-color);
   }
 
-  .expertise-category ul {
-    list-style: none;
-    padding: 0;
+  .expertise-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--accent);
+  }
+
+  .expertise-card p {
+    font-size: 0.9375rem !important;
+    line-height: 1.6;
+    opacity: 0.85 !important;
     margin: 0;
   }
 
-  .expertise-category li {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    opacity: 0.85;
-    margin: 0.5rem 0;
-    padding-left: 1.25rem;
-    position: relative;
-  }
-
-  .expertise-category li::before {
-    content: "›";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: 700;
-  }
-
-  /* ===========================
-     AWARDS TIMELINE
-     =========================== */
-  .awards-timeline {
+  /* Focus Areas */
+  .focus-areas {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-top: 1.5rem;
   }
 
-  .award-card {
-    padding: 1.5rem;
-  }
-
-  .award-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .award-info h3 {
+  .focus-item h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .award-org {
-    font-size: 0.9375rem !important;
-    color: var(--accent);
-    opacity: 0.9 !important;
-    font-weight: 500;
-  }
-
-  .award-year {
-    font-family: var(--font-mono);
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--accent);
-    opacity: 0.8;
-    white-space: nowrap;
-    min-width: 4rem;
-    text-align: right;
-  }
-
-  .award-description {
-    font-size: 0.9375rem !important;
-    line-height: 1.7;
-    opacity: 0.85 !important;
-  }
-
-  .award-description em {
-    color: var(--accent);
-    font-style: normal;
-    font-weight: 500;
-  }
-
-  /* ===========================
-     VALUES CONTAINER
-     =========================== */
-  .values-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .value-card {
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  .value-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 1rem;
-    color: var(--foreground);
-    opacity: 0.3;
-    transition: all var(--transition-fast);
-  }
-
-  .value-card:hover .value-icon {
-    color: var(--accent);
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  .value-card h3 {
-    font-size: 1.125rem;
     margin-bottom: 0.75rem;
     color: var(--accent);
   }
 
-  .value-card p {
-    font-size: 0.9375rem !important;
+  .focus-item p {
+    font-size: 1rem !important;
+    line-height: 1.7;
     opacity: 0.85 !important;
-    line-height: 1.6;
+    margin: 0;
   }
 
-  /* ===========================
-     GEOGRAPHIC REGIONS
-     =========================== */
-  .regions-grid {
+  /* Credentials Grid */
+  .credentials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 1.5rem;
   }
 
-  .region-item {
-    padding: 1.25rem;
-    text-align: center;
+  .credential-item {
+    padding: 1.5rem;
+    background: rgba(212, 212, 216, 0.02);
+    border-left: 3px solid var(--accent);
+    margin-bottom: 1.5rem;
   }
 
-  .region-item h3 {
+  .credential-item h3 {
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
-    color: var(--accent);
   }
 
-  .region-item > p {
+  .credential-item p {
     font-size: 0.9375rem !important;
-    opacity: 0.8 !important;
-    margin-bottom: 0.75rem;
+    opacity: 0.85 !important;
+    margin: 0.25rem 0;
   }
 
-  .region-note {
-    font-size: 0.875rem !important;
-    opacity: 0.6 !important;
-    font-style: italic;
-    border-top: 1px solid var(--border-color);
-    padding-top: 0.75rem;
-    margin-top: 0.75rem;
+  .credential-item .year {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 0.5rem;
   }
 
-  /* ===========================
-     CALL TO ACTION
-     =========================== */
-  .cta-section {
-    text-align: center;
-    padding: 2rem 1.5rem;
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero-section {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .hero-image {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .credentials-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 
-  .cta-text {
-    font-size: 1.125rem !important;
-    line-height: 1.7;
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
-  }
-
-  .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* ===========================
-     RESPONSIVE DESIGN
-     =========================== */
   @media (max-width: 768px) {
-    .expertise-grid,
-    .values-container,
-    .regions-grid {
+    .hero-image {
+      max-width: 100%;
+    }
+
+    .expertise-grid {
       grid-template-columns: 1fr;
     }
 
-    .award-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .award-year {
-      text-align: left;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .button {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .expertise-category,
-    .award-card,
-    .value-card,
-    .region-item {
-      padding: 1rem;
-    }
-
-    .value-icon {
-      width: 40px;
-      height: 40px;
+    .tagline {
+      font-size: 1.125rem !important;
     }
   }
 </style>
