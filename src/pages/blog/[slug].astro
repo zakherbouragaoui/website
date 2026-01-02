@@ -1,0 +1,538 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Get all blog posts for related articles
+const allPosts = await getCollection('blog');
+const relatedPosts = allPosts
+  .filter(p => p.data.category === entry.data.category && p.slug !== entry.slug)
+  .slice(0, 3);
+---
+
+<Layout title={`${entry.data.title} - Zakher Bouragaoui`} description={entry.data.excerpt}>
+  <Header />
+  <main>
+    <article class="container">
+      <header class="article-header">
+        <div class="breadcrumb">
+          <a href="/website/blog">← Back to Blog</a>
+        </div>
+
+        <div class="article-meta">
+          <span class="category-badge">{entry.data.category}</span>
+          <span class="read-time">{entry.data.readTime}</span>
+        </div>
+
+        <h1>{entry.data.title}</h1>
+
+        <div class="article-info">
+          <span class="author-name">{entry.data.author}</span>
+          <span class="post-date">
+            {new Date(entry.data.date).toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric'
+            })}
+          </span>
+        </div>
+
+        {entry.data.image && (
+          <div class="featured-image">
+            <img src={entry.data.image} alt={entry.data.title} />
+          </div>
+        )}
+
+        <div class="article-tags">
+          {entry.data.tags.map((tag) => (
+            <span class="tag-pill">{tag}</span>
+          ))}
+        </div>
+      </header>
+
+      <hr />
+
+      <div class="article-content">
+        <Content />
+      </div>
+
+      <hr />
+
+      <section class="share-section">
+        <h3>Share this article</h3>
+        <div class="share-buttons">
+          <button class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank')">
+            Twitter
+          </button>
+          <button class="share-btn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href), '_blank')">
+            LinkedIn
+          </button>
+          <button class="share-btn" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')">
+            Facebook
+          </button>
+        </div>
+      </section>
+
+      {relatedPosts.length > 0 && (
+        <>
+          <hr />
+          <section class="related-section">
+            <h2>RELATED ARTICLES</h2>
+            <div class="related-grid">
+              {relatedPosts.map((related) => (
+                <a href={`/website/blog/${related.slug}`} class="related-card card">
+                  {related.data.image && (
+                    <div class="related-image">
+                      <img src={related.data.image} alt={related.data.title} />
+                    </div>
+                  )}
+                  <div class="related-content">
+                    <span class="category-badge-small">{related.data.category}</span>
+                    <h3>{related.data.title}</h3>
+                    <p>{related.data.excerpt}</p>
+                    <div class="related-meta">
+                      <span>{related.data.readTime}</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .article-header {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .breadcrumb { margin-bottom: 2rem; }
+  .breadcrumb a {
+    color: var(--foreground);
+    opacity: 0.7;
+    font-size: 0.9375rem;
+  }
+  .breadcrumb a:hover { color: var(--accent); }
+
+  .article-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(234, 179, 8, 0.15);
+    color: var(--accent);
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+  }
+
+  .read-time {
+    font-size: 0.875rem;
+    opacity: 0.6;
+    font-family: var(--font-mono);
+  }
+
+  .article-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .author-name { font-weight: 600; }
+  .post-date {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    opacity: 0.7;
+  }
+
+  .featured-image {
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .featured-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .article-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag-pill {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--accent);
+    border-radius: 0.25rem;
+    font-family: var(--font-mono);
+  }
+
+  /* ========================================
+     ARTICLE CONTENT - MULTIMEDIA SUPPORT
+     ======================================== */
+
+  .article-content {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .article-content :global(h1) {
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .article-content :global(h2) {
+    font-size: 2rem;
+    margin: 2.5rem 0 1rem;
+    text-align: left;
+    letter-spacing: normal;
+  }
+
+  .article-content :global(h3) {
+    font-size: 1.5rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .article-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .article-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  /* ========== VIDEOS ========== */
+  .article-content :global(.video-container) {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    background: rgba(212, 212, 216, 0.05);
+  }
+
+  .article-content :global(.video-container iframe) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .article-content :global(iframe) {
+    max-width: 100%;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+  }
+
+  /* ========== GRAPHS & EMBEDS ========== */
+  .article-content :global(.iframe-container) {
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: rgba(212, 212, 216, 0.02);
+  }
+
+  .article-content :global(.iframe-container iframe) {
+    width: 100%;
+    min-height: 600px;
+    border: 0;
+  }
+
+  /* ========== IMAGES ========== */
+  .article-content :global(img) {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+    border: 1px solid var(--border-color);
+  }
+
+  .article-content :global(figure) {
+    margin: 2.5rem 0;
+  }
+
+  .article-content :global(figure img) {
+    margin: 0 0 0.75rem 0;
+  }
+
+  .article-content :global(figcaption) {
+    text-align: center;
+    font-size: 0.875rem;
+    font-style: italic;
+    opacity: 0.7;
+    padding: 0 1rem;
+  }
+
+  .article-content :global(.image-gallery) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .article-content :global(.image-gallery img) {
+    margin: 0;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .article-content :global(.image-gallery img:hover) {
+    transform: scale(1.02);
+  }
+
+  /* ========== AUDIO ========== */
+  .article-content :global(audio) {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+  }
+
+  /* ========== LINKS ========== */
+  .article-content :global(a) {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: opacity 0.15s;
+  }
+
+  .article-content :global(a:hover) {
+    opacity: 0.8;
+  }
+
+  .article-content :global(a[target="_blank"])::after {
+    content: " ↗";
+    font-size: 0.85em;
+    opacity: 0.6;
+  }
+
+  /* ========== BLOCKQUOTES ========== */
+  .article-content :global(blockquote) {
+    border-left: 4px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  /* ========== CODE ========== */
+  .article-content :global(code) {
+    background: rgba(212, 212, 216, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+    font-family: var(--font-mono);
+  }
+
+  .article-content :global(pre) {
+    background: rgba(212, 212, 216, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+
+  .article-content :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+
+  /* ========== TABLES ========== */
+  .article-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.9375rem;
+  }
+
+  .article-content :global(th),
+  .article-content :global(td) {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .article-content :global(th) {
+    font-weight: 600;
+    background: rgba(234, 179, 8, 0.1);
+  }
+
+  .article-content :global(tr:hover) {
+    background: rgba(212, 212, 216, 0.05);
+  }
+
+  .article-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 3rem 0;
+  }
+
+  .share-section {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .share-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .share-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .share-btn {
+    padding: 0.75rem 1.5rem;
+    background: rgba(212, 212, 216, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--foreground);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .share-btn:hover {
+    border-color: var(--accent);
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--accent);
+  }
+
+  .related-section {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .related-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .related-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  .related-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    border: none;
+  }
+
+  .related-content {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-badge-small {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(234, 179, 8, 0.15);
+    color: var(--accent);
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    margin-bottom: 0.75rem;
+  }
+
+  .related-content h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .related-content p {
+    font-size: 0.875rem !important;
+    opacity: 0.75 !important;
+    margin-bottom: auto;
+  }
+
+  .related-meta {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    opacity: 0.6;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  @media (max-width: 768px) {
+    .article-content :global(.iframe-container iframe) {
+      min-height: 400px;
+    }
+
+    .article-content :global(.image-gallery) {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
