@@ -58,40 +58,40 @@ const mediaData = {
 
   audio: [
     {
-      title: 'The Future of Conservation Technology in North Africa',
-      platform: 'Conservation Voices Podcast',
-      date: '2024-09-15',
-      duration: '42 min',
+      title: 'Ecologia Episode 44-A different way to manage natural reserves in Tunisia | With M.Zakher Bouragouai',
+      platform: 'Ecologia Podcast',
+      date: '2024-01-10',
+      duration: '56 min',
       type: 'Podcast',
-      description: 'Deep dive into how technology is reshaping conservation efforts across the region.',
-      link: 'https://podcast.com/episode1'
+      description: 'What if we imagined different and innovative ways to manage our natural reserves?',
+      link: 'https://www.youtube.com/watch?v=z1gBJx8Z5xc&t=150s'
     },
     {
-      title: 'Field Stories: Wetland Biodiversity Research',
-      platform: 'Science Friday',
-      date: '2024-06-20',
+      title: 'Ecologia Episode 3 - Biodiversity extinction | With Mr. Zakher Bouragaoui',
+      platform: 'Ecologia Podcast',
+      date: '2021-10-19',
       duration: '25 min',
-      type: 'Radio Interview',
-      description: 'Discussing recent findings on continental wetland ecosystems in Tunisia.',
+      type: 'Podcast',
+      description: 'What are the challenges facing biodiversity?',
       link: 'https://podcast.com/episode2'
     },
     {
-      title: 'Bridging Science and Policy in Wildlife Management',
-      platform: 'Environmental Leaders Series',
+      title: 'الحرائق في الغابات: علم النار و التغيرات المناخية | EP03',
+      platform: 'Green Cast',
       date: '2024-06-10',
-      duration: '35 min',
+      duration: '61 min',
       type: 'Podcast',
-      description: 'The role of evidence-based frameworks in conservation policy.',
-      link: 'https://podcast.com/episode3'
+      description: 'Les flammes d’un incendie nous paraissent terrifiantes, mais ce n’est pas toujours le cas. Incendies de forêt, changement climatique, tout cela et plus encore dans notre nouvel épisode de Greencast.',
+      link: 'https://www.youtube.com/watch?v=bZj7KPaG7VU&list=PLIanLHoAMPFeBlnsKjkqz0AQkj9E6YArk&index=2'
     },
     {
-      title: 'Island Biogeography and Conservation',
-      platform: 'Ecology Today Radio',
-      date: '2024-03-12',
-      duration: '30 min',
-      type: 'Radio Interview',
-      description: 'Mediterranean island ecosystems and endemic species protection.',
-      link: 'https://podcast.com/episode4'
+      title: 'A New Era for Biodiversity Conservation in Tunisia',
+      platform: 'Linnean Society',
+      date: '2023-03-17',
+      duration: '58 min',
+      type: 'Presentation',
+      description: 'Tunisia is a hotspot for cultural diversity, a unique region forged by successive civilizations that once flourished in the most northern country of Africa; from Phoenicians to Carthaginians and Amazigh to Arabs.',
+      link: 'https://www.youtube.com/watch?v=n_vTCahPxhM&t=1440s'
     }
   ],
 
@@ -211,28 +211,6 @@ const mediaData = {
 
       <hr />
 
-      <!-- Articles Section -->
-      <section>
-        <h2 class="section-title">Articles & Press</h2>
-        <div class="media-grid">
-          {mediaData.articles.map(article => (
-            <div class="media-card">
-              <div class="card-header">
-                <span class="media-type">{article.type}</span>
-                <span class="media-date">
-                  {new Date(article.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                </span>
-              </div>
-              <h3>{article.title}</h3>
-              <p class="media-platform">{article.publication}</p>
-              <p class="media-description">{article.description}</p>
-              <a href={article.link} target="_blank" class="media-link">
-                Read →
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
 
     </div>
   </main>
