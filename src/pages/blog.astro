@@ -7,18 +7,18 @@ import Footer from '../components/Footer.astro';
 const blogPosts = [
   {
     id: 1,
-    slug: 'bioacoustics-future-conservation',
-    title: 'The Future of Bioacoustics in Conservation Monitoring',
-    excerpt: 'Exploring how machine learning and acoustic monitoring are revolutionizing wildlife conservation efforts across North Africa and beyond.',
+    slug: 'Reforestation in Tunisia — A False Environmental Prophecy',
+    title: 'Reforestation in Tunisia — A False Environmental Prophecy',
+    excerpt: 'Time to rethink our reforestation strategy.',
     author: 'Zakher Bouragaoui',
-    date: '2024-12-15',
+    date: '2021-11-14',
     readTime: '8 min read',
-    category: 'Technology',
+    category: 'Conservation',
     tags: ['Machine Learning', 'Bioacoustics', 'Conservation Tech'],
     featured: true,
     views: 1247,
-    // CORRECTED: Matches public/blog/bioacoustics.jpeg
-    image: '/blog/bioacoustics.jpeg'
+    // FIX: Added '/website' because of your astro.config.mjs
+    image: '/website/blog/bioacoustics.jpeg'
   },
   {
     id: 2,
@@ -32,8 +32,7 @@ const blogPosts = [
     tags: ['Island Biogeography', 'Mediterranean', 'Reptiles'],
     featured: false,
     views: 892,
-    // Matches public/blog/galite.jpeg
-    image: '/blog/galite.jpeg'
+    image: '/website/blog/galite.jpeg'
   },
   {
     id: 3,
@@ -47,8 +46,7 @@ const blogPosts = [
     tags: ['Wetlands', 'North Africa', 'Biodiversity'],
     featured: true,
     views: 1534,
-    // Matches public/blog/wetlands.jpeg
-    image: '/blog/wetlands.jpeg'
+    image: '/website/blog/wetlands.jpeg'
   },
   {
     id: 4,
@@ -62,8 +60,7 @@ const blogPosts = [
     tags: ['M&E', 'Conservation Policy', 'Impact'],
     featured: false,
     views: 678,
-    // Matches public/blog/policy.jpeg
-    image: '/blog/policy.jpeg'
+    image: '/website/blog/policy.jpeg'
   },
   {
     id: 5,
@@ -77,8 +74,7 @@ const blogPosts = [
     tags: ['Field Work', 'Desert Ecology', 'California'],
     featured: false,
     views: 543,
-    // Matches public/blog/desert.jpeg
-    image: '/blog/desert.jpeg'
+    image: '/website/blog/desert.jpeg'
   },
   {
     id: 6,
@@ -92,8 +88,7 @@ const blogPosts = [
     tags: ['Data Science', 'Visualization', 'R'],
     featured: false,
     views: 1123,
-    // Matches public/blog/dataviz.jpeg
-    image: '/blog/dataviz.jpeg'
+    image: '/website/blog/dataviz.jpeg'
   }
 ];
 
@@ -126,27 +121,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
       <section>
         <h1>Blog</h1>
         <p class="tagline">Conservation insights, field stories, and research perspectives</p>
-      </section>
 
-      <hr />
-
-      <!-- Blog Stats -->
-      <section>
-        <div class="stats-row">
-          <div class="stat-mini">
-            <span class="stat-mini-number">{totalPosts}</span>
-            <span class="stat-mini-label">Articles</span>
-          </div>
-          <div class="stat-mini">
-            <span class="stat-mini-number">{totalViews.toLocaleString()}</span>
-            <span class="stat-mini-label">Total Views</span>
-          </div>
-          <div class="stat-mini">
-            <span class="stat-mini-number">{categories.length - 1}</span>
-            <span class="stat-mini-label">Categories</span>
-          </div>
-        </div>
-      </section>
 
       <hr />
 
@@ -191,7 +166,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
               {featuredPosts.slice(0, 2).map(post => (
                 <a href={`/blog/${post.slug}`} class="featured-card card" data-category={post.category}>
                   <div class="featured-image">
-                    {/* Logic to show image if it exists */}
+                    {/* Updated image logic */}
                     {post.image ? (
                       <img src={post.image} alt={post.title} class="card-img" />
                     ) : (
@@ -273,7 +248,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
             <article class="post-card card" data-category={post.category} data-tags={post.tags.join(',').toLowerCase()} data-views={post.views} data-date={post.date}>
               <a href={`/blog/${post.slug}`} class="post-link">
                 <div class="post-image">
-                  {/* Logic to show image if it exists */}
+                  {/* Updated image logic */}
                   {post.image ? (
                      <img src={post.image} alt={post.title} class="card-img" />
                   ) : (
@@ -322,7 +297,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
           ))}
         </div>
 
-        <!-- The rest of the sections (No results, Tags, Newsletter) remain unchanged -->
         <div class="no-results" id="no-results" style="display: none;">
           <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
