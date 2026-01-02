@@ -17,7 +17,8 @@ const blogPosts = [
     tags: ['Machine Learning', 'Bioacoustics', 'Conservation Tech'],
     featured: true,
     views: 1247,
-    image: '/blog/bioacoustics.jpg' // Placeholder
+    // CORRECTED: Matches public/blog/bioacoustics.jpg
+    image: '/blog/bioacoustics.jpg'
   },
   {
     id: 2,
@@ -31,6 +32,7 @@ const blogPosts = [
     tags: ['Island Biogeography', 'Mediterranean', 'Reptiles'],
     featured: false,
     views: 892,
+    // Matches public/blog/galite.jpg
     image: '/blog/galite.jpg'
   },
   {
@@ -45,6 +47,7 @@ const blogPosts = [
     tags: ['Wetlands', 'North Africa', 'Biodiversity'],
     featured: true,
     views: 1534,
+    // Matches public/blog/wetlands.jpg
     image: '/blog/wetlands.jpg'
   },
   {
@@ -59,6 +62,7 @@ const blogPosts = [
     tags: ['M&E', 'Conservation Policy', 'Impact'],
     featured: false,
     views: 678,
+    // Matches public/blog/policy.jpg
     image: '/blog/policy.jpg'
   },
   {
@@ -73,6 +77,7 @@ const blogPosts = [
     tags: ['Field Work', 'Desert Ecology', 'California'],
     featured: false,
     views: 543,
+    // Matches public/blog/desert.jpg
     image: '/blog/desert.jpg'
   },
   {
@@ -87,6 +92,7 @@ const blogPosts = [
     tags: ['Data Science', 'Visualization', 'R'],
     featured: false,
     views: 1123,
+    // Matches public/blog/dataviz.jpg
     image: '/blog/dataviz.jpg'
   }
 ];
@@ -185,13 +191,18 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
               {featuredPosts.slice(0, 2).map(post => (
                 <a href={`/blog/${post.slug}`} class="featured-card card" data-category={post.category}>
                   <div class="featured-image">
-                    <div class="image-placeholder">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                        <polyline points="21 15 16 10 5 21"></polyline>
-                      </svg>
-                    </div>
+                    {/* Logic to show image if it exists */}
+                    {post.image ? (
+                      <img src={post.image} alt={post.title} class="card-img" />
+                    ) : (
+                      <div class="image-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                          <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                      </div>
+                    )}
                     <div class="featured-badge">FEATURED</div>
                   </div>
                   <div class="featured-content">
@@ -262,13 +273,18 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
             <article class="post-card card" data-category={post.category} data-tags={post.tags.join(',').toLowerCase()} data-views={post.views} data-date={post.date}>
               <a href={`/blog/${post.slug}`} class="post-link">
                 <div class="post-image">
-                  <div class="image-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                      <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                      <polyline points="21 15 16 10 5 21"></polyline>
-                    </svg>
-                  </div>
+                  {/* Logic to show image if it exists */}
+                  {post.image ? (
+                     <img src={post.image} alt={post.title} class="card-img" />
+                  ) : (
+                    <div class="image-placeholder">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                    </div>
+                  )}
                   <span class="category-badge-overlay">{post.category}</span>
                 </div>
                 <div class="post-body">
@@ -306,6 +322,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
           ))}
         </div>
 
+        <!-- The rest of the sections (No results, Tags, Newsletter) remain unchanged -->
         <div class="no-results" id="no-results" style="display: none;">
           <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
@@ -375,6 +392,27 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
 
 <style>
   /* ===========================
+     NEW: CARD IMAGE STYLES
+     =========================== */
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+  }
+
+  /* Add zoom effect on hover */
+  .featured-card:hover .card-img,
+  .post-card:hover .card-img {
+    transform: scale(1.05);
+  }
+
+  /* ... The rest of your styles are correct and don't need changing ... */
+
+  /* ===========================
      PAGE HEADER
      =========================== */
   .tagline {
@@ -384,9 +422,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     margin-top: -1rem;
   }
 
-  /* ===========================
-     STATS ROW
-     =========================== */
   .stats-row {
     display: flex;
     gap: 2rem;
@@ -415,9 +450,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     letter-spacing: 0.05em;
   }
 
-  /* ===========================
-     SEARCH AND FILTER
-     =========================== */
   .filter-container {
     display: flex;
     flex-direction: column;
@@ -503,9 +535,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     opacity: 0.9;
   }
 
-  /* ===========================
-     FEATURED GRID
-     =========================== */
   .featured-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -552,6 +581,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.1em;
+    z-index: 2;
   }
 
   .featured-content {
@@ -633,9 +663,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     color: var(--accent);
   }
 
-  /* ===========================
-     SECTION HEADER
-     =========================== */
   .section-header {
     display: flex;
     justify-content: space-between;
@@ -678,9 +705,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     opacity: 0.7;
   }
 
-  /* ===========================
-     POSTS GRID
-     =========================== */
   .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -720,6 +744,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     border-radius: 0.25rem;
     font-family: var(--font-mono);
     backdrop-filter: blur(4px);
+    z-index: 2;
   }
 
   .post-body {
@@ -810,9 +835,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     color: var(--accent);
   }
 
-  /* ===========================
-     NO RESULTS
-     =========================== */
   .no-results {
     text-align: center;
     padding: 4rem 2rem;
@@ -833,9 +855,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     opacity: 0.7;
   }
 
-  /* ===========================
-     TAGS CLOUD
-     =========================== */
   .tags-cloud {
     display: flex;
     gap: 0.75rem;
@@ -869,9 +888,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     opacity: 0.6;
   }
 
-  /* ===========================
-     NEWSLETTER SECTION
-     =========================== */
   .newsletter-section {
     padding: 0;
   }
@@ -963,9 +979,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     opacity: 0.6 !important;
   }
 
-  /* ===========================
-     RESPONSIVE DESIGN
-     =========================== */
   @media (max-width: 768px) {
     .featured-grid {
       grid-template-columns: 1fr;
@@ -1009,7 +1022,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
 </style>
 
 <script>
-  // Search functionality
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const postsGrid = document.getElementById('posts-grid') as HTMLElement;
   const noResults = document.getElementById('no-results') as HTMLElement;
@@ -1064,10 +1076,8 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     posts.forEach(post => postsGrid.appendChild(post));
   }
 
-  // Search input
   searchInput?.addEventListener('input', filterPosts);
 
-  // Category filters
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
@@ -1077,7 +1087,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     });
   });
 
-  // Sort buttons
   sortBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       sortBtns.forEach(b => b.classList.remove('active'));
@@ -1087,7 +1096,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     });
   });
 
-  // Tag cloud
   tagCloudBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const tag = (btn as HTMLElement).dataset.tag || '';
@@ -1097,7 +1105,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     });
   });
 
-  // Newsletter form
   const newsletterForm = document.getElementById('newsletter-form');
   newsletterForm?.addEventListener('submit', (e) => {
     e.preventDefault();

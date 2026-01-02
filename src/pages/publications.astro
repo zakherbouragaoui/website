@@ -156,35 +156,7 @@ const reports = publications.filter(p => p.type.includes('Report')).length;
       <section>
         <h1>Publications</h1>
         <p class="tagline">Peer-reviewed research and scientific contributions</p>
-      </section>
 
-      <hr />
-
-      <!-- Publication Stats -->
-      <section>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">{totalPublications}</div>
-            <div class="stat-label">Total Publications</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">{journalArticles}</div>
-            <div class="stat-label">Journal Articles</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">{conferences}</div>
-            <div class="stat-label">Conference Papers</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">{reports}</div> <!-- Added for reports -->
-            <div class="stat-label">Reports</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">{years.length}</div>
-            <div class="stat-label">Years Active</div>
-          </div>
-        </div>
-      </section>
 
       <hr />
 
@@ -320,7 +292,8 @@ const reports = publications.filter(p => p.type.includes('Report')).length;
       <section class="profiles-section">
         <h2>ACADEMIC PROFILES</h2>
         <div class="profiles-grid">
-          <a href="#" class="profile-link card" target="_blank" rel="noopener">
+          <!-- Google Scholar Button -->
+          <a href="https://scholar.google.com/citations?user=LZZoh5IAAAAJ&hl=fr" class="profile-link card" target="_blank" rel="noopener">
             <div class="profile-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
@@ -333,7 +306,8 @@ const reports = publications.filter(p => p.type.includes('Report')).length;
             </div>
           </a>
 
-          <a href="#" class="profile-link card" target="_blank" rel="noopener">
+          <!-- ResearchGate Button (Leading to LinkedIn per request) -->
+          <a href="https://www.linkedin.com/in/zakherbouragaoui/en" class="profile-link card" target="_blank" rel="noopener">
             <div class="profile-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -342,12 +316,13 @@ const reports = publications.filter(p => p.type.includes('Report')).length;
               </svg>
             </div>
             <div class="profile-info">
-              <h3>ResearchGate</h3>
-              <p>Research network and collaborations</p>
+              <h3>Linkedin</h3>
+              <p>Professional network and collaborations</p>
             </div>
           </a>
 
-          <a href="#" class="profile-link card" target="_blank" rel="noopener">
+          <!-- ORCID Button (Leading to ResearchGate per request) -->
+          <a href="https://www.researchgate.net/profile/Zakher-Bouragaoui" class="profile-link card" target="_blank" rel="noopener">
             <div class="profile-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -355,7 +330,7 @@ const reports = publications.filter(p => p.type.includes('Report')).length;
               </svg>
             </div>
             <div class="profile-info">
-              <h3>ORCID</h3>
+              <h3>Researchgate</h3>
               <p>Verified researcher identifier</p>
             </div>
           </a>
