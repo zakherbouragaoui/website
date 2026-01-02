@@ -7,7 +7,7 @@ import Footer from '../components/Footer.astro';
 const blogPosts = [
   {
     id: 1,
-    slug: 'Reforestation in Tunisia — A False Environmental Prophecy',
+    slug: 'reforestation-tunisia',
     title: 'Reforestation in Tunisia — A False Environmental Prophecy',
     excerpt: 'Time to rethink our reforestation strategy.',
     author: 'Zakher Bouragaoui',
@@ -20,7 +20,7 @@ const blogPosts = [
   },
   {
     id: 2,
-    slug: 'NAWCN',
+    slug: 'nawcn',
     title: 'The North African Wildlife Conservation Network (NAWCN)',
     excerpt: 'Despite the efforts in the North African region, we still lack fundamental understanding about many taxonomic groups and ecosystems.',
     author: 'Zakher Bouragaoui',
@@ -33,7 +33,7 @@ const blogPosts = [
   },
   {
     id: 3,
-    slug: 'The Tunisian Biodiversity Community, Small Steps for Unity.',
+    slug: 'tunisian-biodiversity-community',
     title: 'The Tunisian Biodiversity Community, Small Steps for Unity.',
     excerpt: 'Putting in value years of hard-work and research held by the scientific community.',
     author: 'Zakher Bouragaoui',
@@ -46,7 +46,7 @@ const blogPosts = [
   },
   {
     id: 4,
-    slug: 'Environmental Governance in Tunisia: Challenges, Opportunities, and Key Developments.',
+    slug: 'environmental-governance-tunisia',
     title: 'Environmental Governance in Tunisia: Challenges, Opportunities, and Key Developments.',
     excerpt: 'Environmental governance plays a crucial role in protecting the natural resources and biodiversity of Tunisia, as well as addressing the impacts of climate change and other environmental challenges.',
     author: 'Zakher Bouragaoui',
@@ -72,7 +72,7 @@ const blogPosts = [
   },
   {
     id: 6,
-    slug: 'LWT',
+    slug: 'wildlife-trade-north-africa',
     title: 'Wildlife Trade in North Africa',
     excerpt: 'An analysis of the CITES data since its creation for the North African Countries; Tunisia, Algeria, Libya, Morocco and Egypt',
     author: 'Zakher Bouragaoui',
@@ -113,7 +113,7 @@ const totalPosts = blogPosts.length;
       <section>
         <h1>Blog</h1>
         <p class="tagline">Conservation insights, field stories, and research perspectives</p>
-
+      </section>
 
       <hr />
 
@@ -156,7 +156,7 @@ const totalPosts = blogPosts.length;
             <h2>FEATURED</h2>
             <div class="featured-grid">
               {featuredPosts.slice(0, 2).map(post => (
-                <a href={`/blog/${post.slug}`} class="featured-card card" data-category={post.category}>
+                <a href={`/website/blog/${post.slug}`} class="featured-card card" data-category={post.category}>
                   <div class="featured-image">
                     {post.image ? (
                       <img src={post.image} alt={post.title} class="card-img" />
@@ -194,7 +194,6 @@ const totalPosts = blogPosts.length;
                         </svg>
                         {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                       </div>
-                      <!-- Removed Post Views -->
                     </div>
                   </div>
                 </a>
@@ -209,13 +208,12 @@ const totalPosts = blogPosts.length;
       <section>
         <div class="section-header">
           <h2>ALL ARTICLES</h2>
-          <!-- Removed Sort Controls entirely as we only sort by date now -->
         </div>
 
         <div class="posts-grid" id="posts-grid">
           {recentPosts.map(post => (
             <article class="post-card card" data-category={post.category} data-tags={post.tags.join(',').toLowerCase()} data-date={post.date}>
-              <a href={`/blog/${post.slug}`} class="post-link">
+              <a href={`/website/blog/${post.slug}`} class="post-link">
                 <div class="post-image">
                   {post.image ? (
                      <img src={post.image} alt={post.title} class="card-img" />
@@ -251,7 +249,6 @@ const totalPosts = blogPosts.length;
                     <span class="post-date-small">
                       {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                     </span>
-                    <!-- Removed Post Views -->
                   </div>
                 </div>
               </a>
