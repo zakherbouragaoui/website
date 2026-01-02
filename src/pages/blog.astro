@@ -16,50 +16,45 @@ const blogPosts = [
     category: 'Conservation',
     tags: ['Machine Learning', 'Bioacoustics', 'Conservation Tech'],
     featured: true,
-    views: 1247,
-    // FIX: Added '/website' because of your astro.config.mjs
     image: '/website/blog/bioacoustics.jpeg'
   },
   {
     id: 2,
-    slug: 'island-biogeography-galite',
-    title: 'Island Biogeography: Lessons from the Galite Archipelago',
-    excerpt: 'Insights from studying endemic Lacertidae species in Mediterranean island ecosystems and what they teach us about conservation priorities.',
+    slug: 'NAWCN',
+    title: 'The North African Wildlife Conservation Network (NAWCN)',
+    excerpt: 'Despite the efforts in the North African region, we still lack fundamental understanding about many taxonomic groups and ecosystems.',
     author: 'Zakher Bouragaoui',
-    date: '2024-11-20',
+    date: '2022-06-12',
     readTime: '6 min read',
     category: 'Research',
-    tags: ['Island Biogeography', 'Mediterranean', 'Reptiles'],
+    tags: ['Research', 'North Africa', 'Reptiles'],
     featured: false,
-    views: 892,
     image: '/website/blog/galite.jpeg'
   },
   {
     id: 3,
-    slug: 'wetland-conservation-north-africa',
-    title: 'Wetland Conservation in North Africa: Challenges and Opportunities',
-    excerpt: 'An overview of biodiversity monitoring efforts in North African wetlands and the critical role these ecosystems play in regional conservation.',
+    slug: 'The Tunisian Biodiversity Community, Small Steps for Unity.',
+    title: 'The Tunisian Biodiversity Community, Small Steps for Unity.',
+    excerpt: 'Putting in value years of hard-work and research held by the scientific community.',
     author: 'Zakher Bouragaoui',
-    date: '2024-10-10',
+    date: '2021-01-08',
     readTime: '7 min read',
     category: 'Conservation',
-    tags: ['Wetlands', 'North Africa', 'Biodiversity'],
+    tags: ['Research', 'North Africa', 'Biodiversity'],
     featured: true,
-    views: 1534,
     image: '/website/blog/wetlands.jpeg'
   },
   {
     id: 4,
-    slug: 'research-to-policy',
-    title: 'From Field to Policy: Translating Research into Conservation Action',
-    excerpt: 'How monitoring and evaluation frameworks can bridge the gap between scientific research and effective conservation program implementation.',
+    slug: 'Environmental Governance in Tunisia: Challenges, Opportunities, and Key Developments.',
+    title: 'Environmental Governance in Tunisia: Challenges, Opportunities, and Key Developments.',
+    excerpt: 'Environmental governance plays a crucial role in protecting the natural resources and biodiversity of Tunisia, as well as addressing the impacts of climate change and other environmental challenges.',
     author: 'Zakher Bouragaoui',
-    date: '2024-09-05',
+    date: '2023-03-19',
     readTime: '5 min read',
     category: 'Policy',
     tags: ['M&E', 'Conservation Policy', 'Impact'],
     featured: false,
-    views: 678,
     image: '/website/blog/policy.jpeg'
   },
   {
@@ -73,21 +68,19 @@ const blogPosts = [
     category: 'Field Notes',
     tags: ['Field Work', 'Desert Ecology', 'California'],
     featured: false,
-    views: 543,
     image: '/website/blog/desert.jpeg'
   },
   {
     id: 6,
-    slug: 'data-visualization-ecology',
-    title: 'Data Visualization Best Practices for Ecological Research',
-    excerpt: 'A guide to creating compelling and scientifically accurate visualizations that communicate research findings effectively.',
+    slug: 'LWT',
+    title: 'Wildlife Trade in North Africa',
+    excerpt: 'An analysis of the CITES data since its creation for the North African Countries; Tunisia, Algeria, Libya, Morocco and Egypt',
     author: 'Zakher Bouragaoui',
     date: '2024-07-22',
     readTime: '9 min read',
     category: 'Technology',
-    tags: ['Data Science', 'Visualization', 'R'],
+    tags: ['Data Science', 'Wildlife Trade', 'R'],
     featured: false,
-    views: 1123,
     image: '/website/blog/dataviz.jpeg'
   }
 ];
@@ -110,7 +103,6 @@ const recentPosts = [...blogPosts].sort((a, b) => new Date(b.date).getTime() - n
 
 // Total stats
 const totalPosts = blogPosts.length;
-const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
 ---
 
 <Layout title="Blog - Zakher Bouragaoui">
@@ -166,7 +158,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
               {featuredPosts.slice(0, 2).map(post => (
                 <a href={`/blog/${post.slug}`} class="featured-card card" data-category={post.category}>
                   <div class="featured-image">
-                    {/* Updated image logic */}
                     {post.image ? (
                       <img src={post.image} alt={post.title} class="card-img" />
                     ) : (
@@ -203,13 +194,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
                         </svg>
                         {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                       </div>
-                      <div class="post-views">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                          <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                        {post.views.toLocaleString()}
-                      </div>
+                      <!-- Removed Post Views -->
                     </div>
                   </div>
                 </a>
@@ -224,31 +209,14 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
       <section>
         <div class="section-header">
           <h2>ALL ARTICLES</h2>
-          <div class="sort-controls">
-            <button class="sort-btn active" data-sort="date">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-              Latest
-            </button>
-            <button class="sort-btn" data-sort="views">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
-              Popular
-            </button>
-          </div>
+          <!-- Removed Sort Controls entirely as we only sort by date now -->
         </div>
 
         <div class="posts-grid" id="posts-grid">
           {recentPosts.map(post => (
-            <article class="post-card card" data-category={post.category} data-tags={post.tags.join(',').toLowerCase()} data-views={post.views} data-date={post.date}>
+            <article class="post-card card" data-category={post.category} data-tags={post.tags.join(',').toLowerCase()} data-date={post.date}>
               <a href={`/blog/${post.slug}`} class="post-link">
                 <div class="post-image">
-                  {/* Updated image logic */}
                   {post.image ? (
                      <img src={post.image} alt={post.title} class="card-img" />
                   ) : (
@@ -283,13 +251,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
                     <span class="post-date-small">
                       {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                     </span>
-                    <span class="post-views-small">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                        <circle cx="12" cy="12" r="3"></circle>
-                      </svg>
-                      {post.views}
-                    </span>
+                    <!-- Removed Post Views -->
                   </div>
                 </div>
               </a>
@@ -378,13 +340,10 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     transition: transform 0.5s ease;
   }
 
-  /* Add zoom effect on hover */
   .featured-card:hover .card-img,
   .post-card:hover .card-img {
     transform: scale(1.05);
   }
-
-  /* ... The rest of your styles are correct and don't need changing ... */
 
   /* ===========================
      PAGE HEADER
@@ -623,8 +582,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     font-size: 0.875rem;
   }
 
-  .post-date,
-  .post-views {
+  .post-date {
     display: flex;
     align-items: center;
     gap: 0.35rem;
@@ -632,8 +590,7 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     opacity: 0.7;
   }
 
-  .post-date svg,
-  .post-views svg {
+  .post-date svg {
     color: var(--accent);
   }
 
@@ -644,39 +601,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     margin-bottom: 2rem;
     flex-wrap: wrap;
     gap: 1rem;
-  }
-
-  .sort-controls {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .sort-btn {
-    padding: 0.5rem 1rem;
-    background: rgba(212, 212, 216, 0.05);
-    border: 1px solid var(--border-color);
-    color: var(--foreground);
-    font-size: 0.875rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .sort-btn:hover {
-    border-color: var(--accent);
-  }
-
-  .sort-btn.active {
-    background: rgba(234, 179, 8, 0.1);
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .sort-btn svg {
-    opacity: 0.7;
   }
 
   .posts-grid {
@@ -796,17 +720,12 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     font-size: 0.75rem;
   }
 
-  .post-date-small,
-  .post-views-small {
+  .post-date-small {
     display: flex;
     align-items: center;
     gap: 0.35rem;
     font-family: var(--font-mono);
     opacity: 0.6;
-  }
-
-  .post-views-small svg {
-    color: var(--accent);
   }
 
   .no-results {
@@ -1000,11 +919,9 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
   const postsGrid = document.getElementById('posts-grid') as HTMLElement;
   const noResults = document.getElementById('no-results') as HTMLElement;
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const sortBtns = document.querySelectorAll('.sort-btn');
   const tagCloudBtns = document.querySelectorAll('.tag-cloud-item');
 
   let currentCategory = 'All';
-  let currentSort = 'date';
 
   function filterPosts() {
     const searchTerm = searchInput.value.toLowerCase();
@@ -1032,24 +949,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
     noResults.style.display = visibleCount === 0 ? 'block' : 'none';
   }
 
-  function sortPosts() {
-    const posts = Array.from(postsGrid.querySelectorAll('.post-card')) as HTMLElement[];
-
-    posts.sort((a, b) => {
-      if (currentSort === 'date') {
-        const dateA = new Date(a.dataset.date || '').getTime();
-        const dateB = new Date(b.dataset.date || '').getTime();
-        return dateB - dateA;
-      } else {
-        const viewsA = parseInt(a.dataset.views || '0');
-        const viewsB = parseInt(b.dataset.views || '0');
-        return viewsB - viewsA;
-      }
-    });
-
-    posts.forEach(post => postsGrid.appendChild(post));
-  }
-
   searchInput?.addEventListener('input', filterPosts);
 
   filterBtns.forEach(btn => {
@@ -1058,15 +957,6 @@ const totalViews = blogPosts.reduce((sum, post) => sum + post.views, 0);
       btn.classList.add('active');
       currentCategory = (btn as HTMLElement).dataset.category || 'All';
       filterPosts();
-    });
-  });
-
-  sortBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      sortBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentSort = (btn as HTMLElement).dataset.sort || 'date';
-      sortPosts();
     });
   });
 
