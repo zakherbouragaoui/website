@@ -1,49 +1,78 @@
 ---
 title: "The North African Wildlife Conservation Network (NAWCN)"
-excerpt: "Despite efforts in North Africa, we lack understanding about many taxonomic groups."
+excerpt: "Despite the efforts in the North African region, we still lack fundamental understanding about many taxonomic groups and ecosystems."
 author: "Zakher Bouragaoui"
 date: "2022-06-12"
 readTime: "6 min read"
 category: "Research"
-tags: ["Research", "North Africa", "Reptiles"]
+tags: ["Research", "North Africa", "Conservation Network", "Biodiversity"]
 featured: false
 image: "/website/blog/galite.jpeg"
 ---
 
 # The North African Wildlife Conservation Network (NAWCN)
 
-Despite the efforts in the North African region, we still lack fundamental understanding about many taxonomic groups and ecosystems. The North African Wildlife Conservation Network (NAWCN) was established to address this critical gap.
+Dear All,
+
+Thank you for accepting our invitation to join this group. I'm writing this post to explain the initiative and its purpose. As you may already know, our planet is witnessing an unprecedented decline in biodiversity and an increase in the speed of extinction rate. 
+
+As a response to mitigate and limit these trends, actors in conservation and research are joining efforts worldwide to produce more broad inferences to observe global trends to assess biodiversity loss and ecosystem responses to climate change and human disturbance. 
 
 ## The Challenge
 
-North Africa's biodiversity is under-researched and under-protected. Many species lack basic ecological data, and conservation efforts are hindered by:
+Despite the efforts in the North African region, we still lack fundamental understanding about many taxonomic groups and ecosystems. Collaboration between researchers and conservationists remained limited. 
 
-- Limited funding for research
-- Lack of coordination between countries
-- Political instability affecting long-term studies
-- Brain drain of local scientists
-- Insufficient baseline data
+## Our Mission
 
-## What is NAWCN?
+Our aim with NAWCN is to establish an effective network across North African countries (Libya, Tunisia, Algeria, Morocco and Mauritania) to foster scientific research in conservation, ecology, wildlife ecology and restoration. 
 
-NAWCN is a collaborative network bringing together researchers, conservationists, and institutions across North Africa to:
+Through collaborative initiatives, we aim to enhance our understanding about the fauna and flora in the North African region, reduce knowledge gaps and produce inferences to address:
 
-1. **Share Data**: Create a centralized database of wildlife observations
-2. **Coordinate Research**: Avoid duplication and identify research priorities
-3. **Build Capacity**: Train local researchers and conservation practitioners
-4. **Influence Policy**: Provide evidence-based recommendations to governments
+- Biodiversity loss
+- Habitat fragmentation
+- Human wildlife conflicts
+- Wildlife management strategies
+- And more
 
-## Focus Areas
+## Network Guidelines
 
-### Reptiles and Amphibians
-These groups are particularly understudied in North Africa. NAWCN has initiated distribution mapping projects, threat assessment studies, and taxonomic clarification work.
+Below are some points to clarify about this initiative:
 
-### Coastal and Marine Ecosystems
-With extensive Mediterranean coastlines, North African marine biodiversity needs urgent attention.
+### Scientific Standards
 
-### Desert Ecosystems
-The Sahara and its edge ecosystems harbor unique species adapted to extreme conditions.
+**NAWCN is oriented to people who have a scientific background in ecology or fields related to ecology**, or any person who is interested in wildlife conservation. While any person can join this initiative, a certain standard of communication will be maintained. Anything that will be based on assumptions or lack of evidence, misleading information and absence of scientific argumentation will not be allowed.
 
-## The Path Forward
+### Not an Advocacy Group
 
-Conservation in North Africa requires sustained effort and international cooperation. NAWCN provides a framework for collective action, but success depends on continued funding, political will, and community engagement.
+**NAWCN is not an advocacy group.** We can discuss any sensitive topic or issue related to wildlife, biodiversity, human wildlife conflicts, yet we will not be using this group to advocate to stop a certain issue or misconduct. We can propose advices, suggestions, and scientific background on what to do to mitigate issues. We can analyze the situation but we will not make petitions, or get involved as activists.
+
+### Promoting Research
+
+**NAWCN encourages promoting researchers' work.** Feel free to post your work (publications, books, communications, webinar).
+
+### Copyright and Authorship
+
+**All outcomes produced under NAWCN collaborations will respect copyrights and authorship regulations.**
+
+## Join the Network
+
+If you have any other suggestions, please let us know. This group is inclusive and will advance depending on members' preferences and engagement. Updates can follow based on your suggestions and recommendations.
+
+**Link to join the network:**  
+[NAWCN Facebook Group](https://www.facebook.com/groups/361823625990313)
+
+## Get Involved
+
+Whether you're a researcher, student, or conservation enthusiast in North Africa, NAWCN provides a platform for:
+
+- Sharing research findings
+- Collaborating on projects
+- Exchanging knowledge and expertise
+- Building capacity in wildlife conservation
+- Contributing to regional conservation efforts
+
+Join us in building a stronger conservation community across North Africa.
+
+---
+
+*Originally published on Medium: [The North African Wildlife Conservation Network](https://medium.com/the-ecocentric/the-north-african-wildlife-conservation-network-nawcn-e0aaeff2dea8)*
