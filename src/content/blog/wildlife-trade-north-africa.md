@@ -11,13 +11,4 @@ image: "/website/blog/dataviz.jpeg"
 ---
 
 # Wildlife Trade in North Africa: A CITES Data Analysis
-
-Analysis of CITES data reveals concerning increases in reptile, bird, and medicinal plant trade.
-
-## Key Findings
-
-Patterns suggest underreporting and suspicious documentation. Enforcement should focus on tortoise sites, port cities, and border crossings.
-
-## Implications
-
-Need improved monitoring for desert and marine species while strengthening regional cooperation.
+Will be live soon.
