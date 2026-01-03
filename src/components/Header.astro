@@ -24,7 +24,7 @@ function isActive(href: string) {
       <a href="/" class="logo">Zakher Bouragaoui</a>
       <div class="nav-links">
         {navItems.map(item => (
-
+          
             href={item.href}
             class:list={['nav-link', { active: isActive(item.href) }]}
           >
