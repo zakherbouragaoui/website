@@ -16,7 +16,7 @@ const blogPosts = [
     category: 'Conservation',
     tags: ['Machine Learning', 'Bioacoustics', 'Conservation Tech'],
     featured: true,
-    image: '/website/blog/bioacoustics.jpeg'
+    image: '/blog/bioacoustics.jpeg'
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const blogPosts = [
     category: 'Research',
     tags: ['Research', 'North Africa', 'Reptiles'],
     featured: false,
-    image: '/website/blog/galite.jpeg'
+    image: '/blog/galite.jpeg'
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const blogPosts = [
     category: 'Conservation',
     tags: ['Research', 'North Africa', 'Biodiversity'],
     featured: true,
-    image: '/website/blog/wetlands.jpeg'
+    image: '/blog/wetlands.jpeg'
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const blogPosts = [
     category: 'Policy',
     tags: ['M&E', 'Conservation Policy', 'Impact'],
     featured: false,
-    image: '/website/blog/policy.jpeg'
+    image: '/blog/policy.jpeg'
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ const blogPosts = [
     category: 'Field Notes',
     tags: ['Field Work', 'Desert Ecology', 'California'],
     featured: false,
-    image: '/website/blog/desert.jpeg'
+    image: '/blog/desert.jpeg'
   },
   {
     id: 6,
@@ -81,7 +81,7 @@ const blogPosts = [
     category: 'Technology',
     tags: ['Data Science', 'Wildlife Trade', 'R'],
     featured: false,
-    image: '/website/blog/dataviz.jpeg'
+    image: '/blog/dataviz.jpeg'
   }
 ];
 
@@ -156,7 +156,7 @@ const totalPosts = blogPosts.length;
             <h2>FEATURED</h2>
             <div class="featured-grid">
               {featuredPosts.slice(0, 2).map(post => (
-                <a href={`/website/blog/${post.slug}`} class="featured-card card" data-category={post.category}>
+                <a href={`/blog/${post.slug}`} class="featured-card card" data-category={post.category}>
                   <div class="featured-image">
                     {post.image ? (
                       <img src={post.image} alt={post.title} class="card-img" />
@@ -213,7 +213,7 @@ const totalPosts = blogPosts.length;
         <div class="posts-grid" id="posts-grid">
           {recentPosts.map(post => (
             <article class="post-card card" data-category={post.category} data-tags={post.tags.join(',').toLowerCase()} data-date={post.date}>
-              <a href={`/website/blog/${post.slug}`} class="post-link">
+              <a href={`/blog/${post.slug}`} class="post-link">
                 <div class="post-image">
                   {post.image ? (
                      <img src={post.image} alt={post.title} class="card-img" />
