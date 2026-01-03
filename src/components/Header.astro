@@ -1,16 +1,16 @@
 ---
-// Header.astro - Navigation component with GitHub Pages support
+// Header.astro - Navigation component
 const currentPath = Astro.url.pathname;
 
 const navItems = [
-  { name: 'about', href: '/website/about' },
-  { name: 'experience', href: '/website/experience' },
-  { name: 'research', href: '/website/research' },
-  { name: 'publications', href: '/website/publications' },
-  { name: 'blog', href: '/website/blog' },
-  { name: 'media', href: '/website/media' },
-  { name: 'gallery', href: '/website/gallery' },
-  { name: 'contact', href: '/website/contact' },
+  { name: 'about', href: '/about' },
+  { name: 'experience', href: '/experience' },
+  { name: 'research', href: '/research' },
+  { name: 'publications', href: '/publications' },
+  { name: 'blog', href: '/blog' },
+  { name: 'media', href: '/media' },
+  { name: 'gallery', href: '/gallery' },
+  { name: 'contact', href: '/contact' },
 ];
 
 function isActive(href: string) {
@@ -21,10 +21,10 @@ function isActive(href: string) {
 <header>
   <nav>
     <div class="nav-container">
-      <a href="/website/" class="logo">Zakher Bouragaoui</a>
+      <a href="/" class="logo">Zakher Bouragaoui</a>
       <div class="nav-links">
         {navItems.map(item => (
-          <a
+
             href={item.href}
             class:list={['nav-link', { active: isActive(item.href) }]}
           >

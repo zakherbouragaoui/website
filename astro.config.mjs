@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://zakherbouragaoui.github.io',
-  base: '/website',
-  output: 'static', // ← ADD THIS LINE
+  site: 'https://ecoacoustic.net',
+  base: '/',
+  output: 'static',
   build: {
-    format: 'directory', // ← ADD THIS LINE
+    format: 'directory',
   },
 });
