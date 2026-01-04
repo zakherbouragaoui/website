@@ -7,7 +7,7 @@ readTime: "13 min read"
 category: "Policy"
 tags: ["Environmental Governance", "Tunisia", "Conservation Policy", "Biodiversity", "North Africa"]
 featured: false
-image: "/website/blog/policy.jpeg"
+image: "/blog/policy.jpeg"
 ---
 
 # Environmental Governance in Tunisia: Challenges, Opportunities, and Key Developments

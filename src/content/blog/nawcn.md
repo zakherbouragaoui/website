@@ -7,7 +7,7 @@ readTime: "6 min read"
 category: "Research"
 tags: ["Research", "North Africa", "Conservation Network", "Biodiversity"]
 featured: false
-image: "/website/blog/galite.jpeg"
+image: "/blog/galite.jpeg"
 ---
 
 # The North African Wildlife Conservation Network (NAWCN)

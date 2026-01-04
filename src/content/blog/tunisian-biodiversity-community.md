@@ -7,7 +7,7 @@ readTime: "3 min read"
 category: "Conservation"
 tags: ["Research", "Tunisia", "Biodiversity", "Open Science", "Community"]
 featured: true
-image: "/website/blog/wetlands.jpeg"
+image: "/blog/wetlands.jpeg"
 ---
 
 # The Tunisian Biodiversity Community, Small Steps for Unity

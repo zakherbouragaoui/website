@@ -7,7 +7,7 @@ readTime: "9 min read"
 category: "Conservation"
 tags: ["Conservation", "Reforestation", "Tunisia", "Eucalyptus", "Invasive Species"]
 featured: true
-image: "/website/blog/bioacoustics.jpeg"
+image: "/blog/bioacoustics.jpeg"
 ---
 
 # Reforestation in Tunisia — A False Environmental Prophecy
@@ -26,7 +26,7 @@ Eucalyptus was introduced to Tunisia & the North African region by the coloniser
 In fact, among the top 6 planted species in DGF nurseries, **3 are non-native**, with high abundances (reaching 2,446,489 plants) referring to DGF (Ministry of Agriculture). While, native species like Cork trees *Quercus suber* occurs in the end of the list in 2 or 3 nurseries nationwide and abundance of 47,100 plants.
 
 <figure>
-  <img src="/website/blog/agridata.jpeg" alt="Forest nurseries data in Tunisia" />
+  <img src="/blog/agridata.jpeg" alt="Forest nurseries data in Tunisia" />
   <figcaption>List of forest nurseries in Tunisia ©agridata.tn</figcaption>
 </figure>
 
@@ -56,7 +56,7 @@ And it goes on and on producing a butterfly effect that keeps propagating to rea
 In NW Spain, a study compared birds richness and abundance between native trees and Eucalyptus plantation, showed that **birds diversity and species abundances in Eucalyptus is significantly lower** and bird nesting was much higher in native forests. Many Countries introduced Eucalyptus regretted their decision, including **Portugal who banned Eucalyptus plantation** in some regions of the countries and is sanctioning people who do so illegally. The fines could reach 44,000 euros. This came as a consequence of many reforestation campaigns using Eucalyptus who turns out to be unsuitable for forests reorganization.
 
 <figure>
-  <img src="/website/blog/eucalyptus.jpeg" alt="Eucalyptus forest without understory" />
+  <img src="/blog/eucalyptus.jpeg" alt="Eucalyptus forest without understory" />
   <figcaption>An Eucalyptus forest without understory ©Zakher Bouragaoui</figcaption>
 </figure>
 
@@ -79,7 +79,7 @@ There are many examples where introductions went wrong. Maybe one of the most fa
 Another example from Tunisia, is when our country decided to bring palms tree to be used for ornamentation in cities' streets. The red weevil used the palms as Trojan horses and in no time they invaded most palm trees in major cities of Tunis and surroundings.
 
 <figure>
-  <img src="/website/blog/frogs.jpeg" alt="Cane toads invasion in Australia" />
+  <img src="/blog/frogs.jpeg" alt="Cane toads invasion in Australia" />
   <figcaption>Cane toads' invasion in Australia ©WWF Australia</figcaption>
 </figure>
 
@@ -106,7 +106,7 @@ There is a constant envy in many people to plant trees in desert or arid areas, 
 It's important to follow the natural distribution of species when planning for reforestation. And in case of afforestation, it needs to be done in damaged lands and not in habitats that are not naturally forests like Garrigue and Maquis shrubland which are unique in the Mediterranean region.
 
 <figure>
-  <img src="/website/blog/bouhedma.jpeg" alt="Eucalyptus trees in Bouhedma National Park" />
+  <img src="/blog/bouhedma.jpeg" alt="Eucalyptus trees in Bouhedma National Park" />
   <figcaption>Eucalyptus trees in Bouhedma National Park, the last patch of the African Savannah (Acacia raddiana) in the North African region ©Zakher Bouragaoui</figcaption>
 </figure>
 
