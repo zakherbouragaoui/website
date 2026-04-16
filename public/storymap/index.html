@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Desert Speaks — Southern Tunisia Acoustic Journey</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/chapters.css">
+  <link rel="stylesheet" href="css/map.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Leaflet Extra Markers CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-extra-markers@1.2.1/dist/css/leaflet.extra-markers.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       MAP BASE LAYER (Fixed Background)
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <div id="map-base">
+    <div id="map" role="application" aria-label="Interactive journey map of southern Tunisia"></div>
+
+    <!-- Map UI Overlays -->
+    <div class="map-info-overlay" aria-live="polite">
+      <h3 id="current-location" class="location-name">Qsar Ghilen</h3>
+      <p id="current-coords" class="location-coords">32.99°N, 9.64°E</p>
+    </div>
+
+    <div class="journey-progress" aria-hidden="true">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-label">Journey Progress</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       SCROLLING CONTENT WRAPPER
+       ═══════════════════════════════════════════════════════════════════════════ -->
+  <div id="content-scroll-wrapper">
+
+    <!-- ─────────────────────────────────────────────────────────────────────────
+         PROLOGUE: The Expedition Begins
+         ───────────────────────────────────────────────────────────────────────── -->
+    <section class="chapter" id="prologue"
+             data-map-zoom="7"
+             data-map-center="34.5,9.8"
+             data-location="Overview">
+      <div class="chapter-inner glassmorphic">
+        <h1 class="story-title">The Desert Speaks</h1>
+        <p class="story-subtitle">An Acoustic Journey Through Southern Tunisia</p>
+
+        <div class="chapter-text">
+          <p class="lead">For two days in April 2026, a thousand kilometers of Tunisian landscape unfolded from Mediterranean transition zones to the deep Sahara. This is not a story of silence—it is a story of 29 species, 1,210 detections, and a desert that refuses to be called empty.</p>
+
+          <p>From the last acacias at Bel Khir (34°17'N) to the oasis hotspot of Qsar Ghilen (32°99'N) and back, we traced a biogeographic gradient where sound reveals what the eye might miss.</p>
+
+          <p class="scroll-prompt">↓ Scroll to begin the journey south</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────────────────────
+         CHAPTER 1: The Last Acacia — Biogeographic Transition
+         ───────────────────────────────────────────────────────────────────────── -->
+    <section class="chapter" id="ch1-belkhir"
+             data-map-zoom="12"
+             data-map-center="34.2895,9.3903"
+             data-location="Bel Khir / Ardh El Talah">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Chapter 1</span>
+        <h2 class="chapter-title">The Last Acacia</h2>
+        <p class="chapter-location">Bel Khir / Ardh El Talah · 34°17'22"N 9°23'25"E</p>
+
+        <div class="chapter-media">
+          <img src="Pictures/2B22DC46-C38E-47EF-BD4D-10EFA1F6C09A.JPG"
+               alt="Mature Acacia raddiana trees at Bel Khir"
+               loading="lazy">
+          <p class="caption">Roadside landscape at Bel Khir showing mature <em>Acacia raddiana</em> trees—the iconic umbrella thorn acacia of savannah ecosystems. This location represents one of the last remaining populations of this species in Tunisia.</p>
+        </div>
+
+        <div class="chapter-text">
+          <p>The journey begins where two worlds meet. At Bel Khir, the Mediterranean gradually surrenders to the Sahara, marked by stands of <em>Acacia raddiana</em>—the umbrella thorn acacia that defines this ecological threshold.</p>
+
+          <p>These trees are not merely landscape features. They are indicators of a transition zone, a gradient of increasing aridity where each kilometer south brings measurable changes in temperature, rainfall, and the biological communities that can persist.</p>
+
+          <p>Sparse vegetation and compacted soil reflect grazing pressure and climate stress. What remains here represents resilience—acacia populations clinging to a landscape in flux, their preservation critical to understanding how ecosystems adapt to environmental change.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────────────────────
+         CHAPTER 2: Underground Architecture — Old Matmata
+         ───────────────────────────────────────────────────────────────────────── -->
+    <section class="chapter" id="ch2-matmata"
+             data-map-zoom="14"
+             data-map-center="33.5417,9.9731"
+             data-location="Old Matmata">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Chapter 2</span>
+        <h2 class="chapter-title">Underground Architecture</h2>
+        <p class="chapter-location">Old Matmata · 33°32'30"N 9°58'23"E</p>
+
+        <div class="chapter-media">
+          <img src="Pictures/6B93325B-39A7-4B3C-9ECC-1DAD858FED0D.JPG"
+               alt="Interior of traditional troglodyte dwelling at Old Matmata"
+               loading="lazy">
+          <p class="caption">Interior of traditional troglodyte dwelling carved into soft sedimentary rock. Whitewashed walls and arched doorways demonstrate vernacular subterranean architecture adapted to extreme temperature fluctuations.</p>
+        </div>
+
+        <div class="media-gallery">
+          <div class="gallery-item">
+            <img src="Pictures/CAC284D2-83A8-42C2-BCC2-E61DFBCFEDAC.JPG"
+                 alt="View through troglodyte window"
+                 loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/14C4FE42-313B-4E2E-9358-A7BF64BD9A53.JPG"
+                 alt="Star Wars filming location signage"
+                 loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/AEE4D6F9-7F10-4D76-81CC-0B01C66EA6F9.JPG"
+                 alt="Traditional architecture detail"
+                 loading="lazy">
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/D2FE22D2-8CE6-4FE0-847F-9C7DB13BC2C3.JPG"
+                 alt="Courtyard architecture"
+                 loading="lazy">
+          </div>
+        </div>
+
+        <div class="chapter-text">
+          <p>At Old Matmata, human adaptation to desert extremes takes architectural form. The Berber community here carved homes directly into hillsides—not as novelty, but as necessity.</p>
+
+          <p>Underground dwellings maintain stable temperatures year-round, a passive thermal regulation system where ambient conditions can exceed 45°C in summer. The architecture is sustainable by design, requiring no external energy inputs for climate control.</p>
+
+          <p>Yet these spaces now inhabit a dual identity. The circular Galaxy Tours sticker marks where Luke Skywalker's homestead stood in the 1977 <em>Star Wars</em> film. Film tourism infrastructure overlays cultural heritage, creating economic opportunities while raising questions about authenticity and commodification.</p>
+
+          <p>As we descended into courtyards ringed with hand-carved niches and colorful textiles, the question persisted: can vernacular knowledge systems survive their transformation into spectacle?</p>
+        </div>
+
+        <div class="chapter-media">
+          <video controls preload="none" poster="data/video_frames/521A298C-frame.jpg">
+            <source src="Pictures/521A298C-35D8-47AF-8AF5-4CB4B33FBCA8.MP4" type="video/mp4">
+            Your browser does not support video.
+          </video>
+          <p class="caption">Walking tour through the Star Wars museum at Old Matmata, showing the integration of film history with traditional Berber architecture.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────────────────────
+         CHAPTER 3: The Transit Zone — Observations Along the Route
+         ───────────────────────────────────────────────────────────────────────── -->
+    <section class="chapter chapter-transit" id="ch3-transit"
+             data-map-zoom="10"
+             data-map-center="33.3,9.9"
+             data-location="Transit Zone">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Chapter 3</span>
+        <h2 class="chapter-title">The Transit Zone</h2>
+        <p class="chapter-subtitle">Observations Along the Route</p>
+
+        <div class="chapter-text">
+          <p>Between cultural landmarks lie the ordinary kilometers—the transit zones that most narratives skip. But landscapes in motion reveal patterns invisible from static observation points.</p>
+        </div>
+
+        <!-- Sub-stop 3a: Kef el Boum (Owl Cliff) -->
+        <div class="sub-chapter" id="ch3a-kef-el-boum"
+             data-map-zoom="13"
+             data-map-center="33.3859,10.0297">
+          <h3 class="sub-chapter-title">Kef el Boum (Owl Cliff)</h3>
+          <p class="sub-chapter-location">33°23'09"N 10°01'47"E</p>
+
+          <div class="chapter-media">
+            <video controls preload="none">
+              <source src="Pictures/8B7106ED-5BD4-4859-BA95-F41AD9A4E0AC.MP4" type="video/mp4">
+            </video>
+            <p class="caption">Roadside raptor perched on utility pole near Kef el Boum, demonstrating how human infrastructure creates novel hunting perches in open desert terrain.</p>
+          </div>
+
+          <div class="chapter-text">
+            <p>Place names encode ecological knowledge. "Kef el Boum"—Owl Cliff—announces a relationship between topography and avifauna that predates roads and power lines.</p>
+
+            <p>When we spotted a raptor perched on a roadside utility pole, it confirmed what toponymy already suggested: this corridor serves as hunting ground. Infrastructure creates novel vantage points, but the prey base—rodents, lizards, insects—existed long before asphalt.</p>
+          </div>
+        </div>
+
+        <!-- Sub-stop 3b: Techine Settlement -->
+        <div class="sub-chapter" id="ch3b-techine"
+             data-map-zoom="13"
+             data-map-center="33.4768,10.0020">
+          <h3 class="sub-chapter-title">Techine Settlement</h3>
+          <p class="sub-chapter-location">33°28'37"N 10°00'07"E</p>
+
+          <div class="chapter-media">
+            <video controls preload="none">
+              <source src="Pictures/99368EC0-0FA8-4264-87D1-B9C2F83C6E69.MP4" type="video/mp4">
+            </video>
+            <p class="caption">Village landscape at Techine, showing human settlement patterns in the arid transition zone.</p>
+          </div>
+
+          <div class="chapter-text">
+            <p>Small settlements like Techine punctuate the route south. Each represents a calculation: where can humans persist given available water, arable land, and connection to larger networks?</p>
+
+            <p>These are not oases in the classical sense, but nodes in a human geography shaped by constraint. As aridity increases, settlement density decreases—a gradient as predictable as the vegetation zones we crossed.</p>
+          </div>
+        </div>
+
+        <!-- Sub-stop 3c: Road to Douz -->
+        <div class="sub-chapter" id="ch3c-road-douz"
+             data-map-zoom="12"
+             data-map-center="33.0146,9.7140">
+          <h3 class="sub-chapter-title">Road to Douz</h3>
+          <p class="sub-chapter-location">33°00'53"N 9°42'52"E</p>
+
+          <div class="chapter-media">
+            <video controls preload="none">
+              <source src="Pictures/3C8679C1-7B10-49FA-9B24-A63A59EF5DD1.MP4" type="video/mp4">
+            </video>
+            <p class="caption">Motorcycles on the road to Douz, highlighting recreation pressures in landscapes marketed as Rally Dakar heritage routes.</p>
+          </div>
+
+          <div class="chapter-text">
+            <p>The road to Douz carries multiple narratives. For decades, it served as a Rally Dakar route—a landscape consumed as motorsport infrastructure, branded as "adventure" and "wilderness conquest."</p>
+
+            <p>Today, recreational ATVs and motorcycles continue the pattern. Each pass compacts soil, fragments habitat, and adds noise to an acoustic environment we were attempting to document.</p>
+
+            <p>The irony was not lost: we traveled this same road to study biodiversity in a system increasingly shaped by the very access that enables such study.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────────────────────
+         CHAPTER 4: The Acoustic Hotspot — Qsar Ghilen Oasis Complex
+         ───────────────────────────────────────────────────────────────────────── -->
+
+    <!-- Sub-chapter 4a: The Oasis Hotspot -->
+    <section class="chapter" id="ch4-qsar-hotspot"
+             data-map-zoom="13"
+             data-map-center="32.99,9.64"
+             data-location="Qsar Ghilen Hotspot">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Chapter 4</span>
+        <h2 class="chapter-title">The Acoustic Hotspot</h2>
+        <p class="chapter-subtitle">Part 1: The Oasis</p>
+        <p class="chapter-location">Qsar Ghilen · ~32°59'N 9°38'E</p>
+
+        <div class="chapter-media">
+          <img src="Pictures/6FF093B9-26D2-4173-B80E-4E4958491D7C.JPG"
+               alt="Qsar Ghilen oasis with permanent water and date palms"
+               loading="lazy">
+          <p class="caption">The Qsar Ghilen oasis showing permanent water body surrounded by <em>Phoenix dactylifera</em> (date palms). This water source creates a critical biodiversity refuge, concentrating avian activity.</p>
+        </div>
+
+        <div class="chapter-text">
+          <p>At Qsar Ghilen, the desert speaks loudest. Not because the landscape amplifies sound, but because water concentrates life.</p>
+
+          <p>The oasis functions as a biodiversity hotspot—a concept ecologists use to describe areas with disproportionately high species richness relative to surrounding terrain. Here, permanent water creates a sharp ecotone between irrigated vegetation and bare sand, an edge habitat exploited by diverse taxa.</p>
+
+          <p>Over 17 hours of acoustic monitoring, we recorded <strong>1,210 detections across 29 species</strong>. Spanish Sparrows dominated (384 detections), but the assemblage included migrants, residents, and opportunistic visitors—each using the oasis differently.</p>
+        </div>
+
+        <div class="chapter-media">
+          <video controls preload="none" poster="data/video_frames/72CF0C8F-frame.jpg">
+            <source src="Pictures/72CF0C8F-E2F5-4EEC-BB5C-A370C2E72E3D.MP4" type="video/mp4">
+          </video>
+          <p class="caption">Egrets at water's edge, demonstrating how the oasis attracts wading birds to an otherwise arid landscape.</p>
+        </div>
+
+        <div class="chapter-media">
+          <video controls preload="none">
+            <source src="Pictures/1A9C054A-3A0C-4CB4-83A6-1A4A659A4D93.MP4" type="video/mp4">
+          </video>
+          <p class="caption">Ambient soundscape of the oasis—rustling palms, distant bird calls, and the subtle acoustics of water.</p>
+        </div>
+
+        <div class="chapter-media">
+          <video controls preload="none">
+            <source src="Pictures/1A1E7291-7E6A-410F-8B11-79BA95BA57C2.MP4" type="video/mp4">
+          </video>
+          <p class="caption">Breeding doves at the oasis, part of the resident avian community sustained by reliable water and food resources.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-chapter 4b: The Acoustic Grid -->
+    <section class="chapter" id="ch4-qsar-grid"
+             data-map-zoom="14"
+             data-map-center="32.99,9.64"
+             data-location="Qsar Ghilen Acoustic Grid">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Chapter 4</span>
+        <h2 class="chapter-title">The Acoustic Hotspot</h2>
+        <p class="chapter-subtitle">Part 2: The Acoustic Grid</p>
+
+        <div class="chapter-text">
+          <p>Passive acoustic monitoring inverts traditional field ornithology. Instead of observer presence biasing what gets recorded, autonomous units document soundscapes continuously, capturing nocturnal species, cryptic calls, and temporal patterns invisible to point counts.</p>
+
+          <p>We deployed AudioMoth recorders across the Qsar Ghilen landscape, secured to acacia trees at approximately 2.5 meters height—a compromise between detection range and wind interference.</p>
+        </div>
+
+        <div class="media-gallery">
+          <div class="gallery-item">
+            <img src="Pictures/2E3996FD-DE6B-4896-A7DF-3808BF6C963F.JPG"
+                 alt="AudioMoth on Acacia tree"
+                 loading="lazy">
+            <p class="gallery-caption">AudioMoth installation on <em>Acacia raddiana</em></p>
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/8B869404-FA1C-4E39-9B56-7A91A23FA8E9.JPG"
+                 alt="Field deployment setup"
+                 loading="lazy">
+            <p class="gallery-caption">Field deployment configuration</p>
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/CBC9E301-6B68-47FB-96DB-0EB6E4FC7940.JPG"
+                 alt="Recorder close-up"
+                 loading="lazy">
+            <p class="gallery-caption">Weatherproof housing detail</p>
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/FBC77BB4-2EA9-4854-80B4-63F4A28DD479.JPG"
+                 alt="Grid station marker"
+                 loading="lazy">
+            <p class="gallery-caption">Monitoring station in landscape context</p>
+          </div>
+        </div>
+
+        <div class="chapter-text">
+          <p>Audio files were analyzed using BirdNET, a deep-learning model trained on millions of bird vocalizations. The system outputs species identifications with confidence scores—a probabilistic approach that acknowledges uncertainty while enabling large-scale pattern detection.</p>
+        </div>
+
+        <!-- Data Visualizations -->
+        <div class="data-viz-section">
+          <img src="data/visualizations/01_species_frequency.png"
+               alt="Top 20 species by detection frequency"
+               class="viz-image"
+               loading="lazy">
+          <p class="viz-caption"><strong>Top 20 species by detection frequency.</strong> Spanish Sparrow dominated with 384 detections, followed by House Sparrow (173) and Common Bulbul (91). Long-tailed species indicate diverse niche partitioning within the oasis ecosystem.</p>
+
+          <img src="data/visualizations/02_diel_activity.png"
+               alt="Diel activity patterns by hour"
+               class="viz-image"
+               loading="lazy">
+          <p class="viz-caption"><strong>Diel activity patterns.</strong> Peak detection hours occurred at dawn (05:00-07:00) and dusk (17:00-19:00), classic patterns for desert bird communities avoiding midday heat stress.</p>
+
+          <img src="data/visualizations/03_diel_breakdown.png"
+               alt="Diel activity breakdown by species"
+               class="viz-image"
+               loading="lazy">
+          <p class="viz-caption"><strong>Diel activity breakdown.</strong> Individual species show distinct temporal niches, with some concentrated in dawn/dusk hours while others maintain activity throughout the day.</p>
+
+          <img src="data/visualizations/04_species_accumulation.png"
+               alt="Species accumulation curve"
+               class="viz-image"
+               loading="lazy">
+          <p class="viz-caption"><strong>Species accumulation curve.</strong> The curve approaches asymptote, suggesting our 17-hour survey captured most of the readily detectable species using this oasis ecosystem.</p>
+
+          <img src="data/visualizations/05_geographic_status.png"
+               alt="Geographic status of detected species"
+               class="viz-image"
+               loading="lazy">
+          <p class="viz-caption"><strong>Geographic status breakdown.</strong> The assemblage includes both CONFIRMED (19 species with ≥3 detections) and POSSIBLE (10 species with 1-2 detections) records, reflecting a mix of residents, migrants, and vagrants using the oasis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-chapter 4c: The Sand Dunes -->
+    <section class="chapter" id="ch4-qsar-dunes"
+             data-map-zoom="14"
+             data-map-center="32.99,9.64"
+             data-location="Qsar Ghilen Dunes">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Chapter 4</span>
+        <h2 class="chapter-title">The Acoustic Hotspot</h2>
+        <p class="chapter-subtitle">Part 3: The Sand Dunes</p>
+
+        <div class="chapter-media">
+          <img src="Pictures/3B7CDF5B-2EBB-4899-85E6-7CA4761D9E61.JPG"
+               alt="Wind-sculpted sand dunes with ripple patterns"
+               loading="lazy">
+          <p class="caption">Wind-sculpted sand dunes displaying well-developed ripple patterns characteristic of aeolian geomorphology in the Grand Erg Oriental. Golden ochre sand shows fine-grain texture typical of quartz-dominated desert sediments.</p>
+        </div>
+
+        <div class="chapter-text">
+          <p>Beyond the oasis, dune fields stretch toward the Grand Erg Oriental—vast sand seas where wind, not water, shapes the terrain. Yet even here, life persists.</p>
+
+          <p>Nocturnal arthropod surveys using UV light traps revealed unexpected diversity: weevils, hawk moths, mantids, and longhorn beetles. These are not incidental species—they form the trophic foundation that sustains insectivorous birds, bats, and reptiles detected in our acoustic and visual surveys.</p>
+        </div>
+
+        <div class="media-gallery">
+          <div class="gallery-item">
+            <img src="Pictures/4F263E3E-8F55-4C0F-B7A8-CE6E06CF1822.JPG"
+                 alt="Weevil on sampling sheet"
+                 loading="lazy">
+            <p class="gallery-caption">Curculionidae (weevil) attracted to UV light trap</p>
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/7D47D289-A73D-4873-B99B-EFE83D279813.JPG"
+                 alt="Hawk moths on sampling sheet"
+                 loading="lazy">
+            <p class="gallery-caption">Sphingidae (hawk moths)—nocturnal pollinators</p>
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/CBCC08F1-A6FF-4CE4-883A-A3D56A5E9A9F.JPG"
+                 alt="Mantis specimen"
+                 loading="lazy">
+            <p class="gallery-caption">Mantodea predator</p>
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/E6FF5BF9-F1A5-4ADA-B28E-D94A90F24BCA.JPG"
+                 alt="Light trap setup"
+                 loading="lazy">
+            <p class="gallery-caption">UV light trap configuration</p>
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/6FE6FEC9-12C6-48EC-B5D6-FC3BBFC8972E.JPG"
+                 alt="Desert flowering plant"
+                 loading="lazy">
+            <p class="gallery-caption">Ephemeral flowering shrub</p>
+          </div>
+          <div class="gallery-item">
+            <img src="Pictures/F23E1E64-B2FA-4EC0-BE8F-BC3D64D8D59A.JPG"
+                 alt="Nocturnal insect diversity"
+                 loading="lazy">
+            <p class="gallery-caption">Diverse arthropod assemblage</p>
+          </div>
+        </div>
+
+        <div class="chapter-media">
+          <video controls preload="none">
+            <source src="Pictures/873B588D-96F6-456C-A742-05F8EF2D2FB3.MP4" type="video/mp4">
+          </video>
+          <p class="caption">Longhorn beetle (Cerambycidae) locomotion—high-resolution documentation of desert arthropod behavior.</p>
+        </div>
+
+        <div class="chapter-media">
+          <video controls preload="none">
+            <source src="Pictures/32325210-2267-499B-AD5E-D7F02838E2E6.MP4" type="video/mp4">
+          </video>
+          <p class="caption">Slow-motion moth flight mechanics, revealing aerodynamic adaptations for desert wind conditions.</p>
+        </div>
+
+        <div class="chapter-text">
+          <p>The dunes are not sterile. They are dynamic systems where flowering plants respond to ephemeral rainfall, insects emerge on predictable phenological schedules, and higher trophic levels track these pulses of productivity.</p>
+
+          <p>Understanding these connections—from sand ripples to hawk moths to nightjar calls—requires looking beyond single taxa and seeing ecosystems as integrated webs of energy flow and evolutionary adaptation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-chapter 4d: The Community -->
+    <section class="chapter" id="ch4-qsar-community"
+             data-map-zoom="13"
+             data-map-center="32.99,9.64"
+             data-location="Qsar Ghilen Community">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Chapter 4</span>
+        <h2 class="chapter-title">The Acoustic Hotspot</h2>
+        <p class="chapter-subtitle">Part 4: The Community</p>
+
+        <div class="chapter-media">
+          <img src="Pictures/63AF720D-3BFF-4F13-8E03-A699D89EE0A6.JPG"
+               alt="Zakher with Am Ali"
+               loading="lazy">
+          <p class="caption">Researcher with Am Ali, local guide whose traditional ecological knowledge shaped site selection and interpretation throughout the survey.</p>
+        </div>
+
+        <div class="chapter-text">
+          <p>No research happens in isolation. At Qsar Ghilen, Am Ali—a local guide with decades of desert experience—became collaborator, translator, and interpreter of landscape patterns we might otherwise have missed.</p>
+
+          <p>Traditional ecological knowledge operates on different timescales than acoustic surveys. Where our recorders captured 17 hours, Am Ali carried knowledge of seasonal rhythms, historical abundances, and behavioral patterns accumulated over a lifetime of observation.</p>
+
+          <p>He identified bird calls we couldn't name, pointed out caracal tracks near archaeological ruins, and explained why date palm irrigation systems created the edge habitat that concentrated species. His knowledge didn't compete with our scientific methods—it enriched them.</p>
+        </div>
+
+        <div class="chapter-media">
+          <img src="Pictures/IMG_8529.JPG"
+               alt="Am Ali portrait"
+               loading="lazy">
+          <p class="caption">Am Ali, whose guidance was essential to navigating both physical terrain and cultural context of the Qsar Ghilen landscape.</p>
+        </div>
+
+        <div class="chapter-media">
+          <video controls preload="none">
+            <source src="Pictures/5B5B44B2-E6C7-4F7E-B6BD-7CEC69BC7E8C.MP4" type="video/mp4">
+          </video>
+          <p class="caption">Preparation of <em>mella</em>, traditional desert bread cooked in sand—a demonstration of culinary practices adapted to resource-limited environments.</p>
+        </div>
+
+        <div class="chapter-text">
+          <p>Community engagement isn't just ethical practice—it's methodological necessity. Research conducted without local knowledge risks misinterpreting patterns, overlooking context, and producing conclusions disconnected from lived reality.</p>
+
+          <p>At Qsar Ghilen, every data point existed within networks of human use, cultural meaning, and economic pressure that shaped what biodiversity could persist and where.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-chapter 4e: The Archaeology -->
+    <section class="chapter" id="ch4-qsar-archaeology"
+             data-map-zoom="14"
+             data-map-center="32.99,9.64"
+             data-location="Qsar Ghilen Archaeological Site">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Chapter 4</span>
+        <h2 class="chapter-title">The Acoustic Hotspot</h2>
+        <p class="chapter-subtitle">Part 5: The Archaeology</p>
+
+        <div class="chapter-media">
+          <img src="Pictures/71476132-31DD-4309-9BA6-9D3FC7B37CF9.JPG"
+               alt="Latin inscription on Roman-era stone"
+               loading="lazy">
+          <p class="caption">Latin inscription at Qsar Ghilen archaeological site, evidence of Roman-period settlement sustained by the same oasis water sources that support contemporary biodiversity.</p>
+        </div>
+
+        <div class="chapter-text">
+          <p>The Roman ruins at Qsar Ghilen tell a story of continuity. For millennia, this oasis has functioned as a node where water enables persistence—first for date cultivation and trade routes, now for biodiversity refugia.</p>
+
+          <p>Archaeological stone walls now serve as perches for Desert Sparrows, microhabitat in a landscape where vertical structure is limiting. Ancient architecture becomes contemporary ecology, repurposed by species that care nothing for historical designation.</p>
+        </div>
+
+        <div class="chapter-media">
+          <img src="Pictures/008DA802-ADDD-469E-9045-8A9522FDC5EE.JPG"
+               alt="Desert Sparrow on Roman wall"
+               loading="lazy">
+          <p class="caption"><em>Passer simplex</em> (Desert Sparrow) perched atop Roman-period stone wall, demonstrating how cultural heritage structures provide critical microhabitat in sparsely vegetated desert landscapes.</p>
+        </div>
+
+        <div class="chapter-media">
+          <img src="Pictures/4A99F67B-DE86-494D-ABE2-FBE6FC150B82.JPG"
+               alt="Caracal conservation signage"
+               loading="lazy">
+          <p class="caption">Interpretive signage featuring caracal illustration, integrating biodiversity awareness into cultural heritage interpretation.</p>
+        </div>
+
+        <div class="chapter-text">
+          <p>The caracal signage points toward future possibilities. This medium-sized felid—absent from our acoustic surveys but present in regional folklore and track observations—represents a conservation target for expanded monitoring.</p>
+
+          <p>Camera traps could document caracal presence. Acoustic arrays could detect their vocalizations. The infrastructure for biodiversity documentation already exists; what remains is commitment to long-term data collection that transcends single expeditions.</p>
+
+          <p>If Roman settlements persisted here for centuries, surely we can sustain monitoring programs for decades.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────────────────────
+         CHAPTER 5: The Return Journey — Landscape Connectivity
+         ───────────────────────────────────────────────────────────────────────── -->
+    <section class="chapter" id="ch5-return"
+             data-map-zoom="9"
+             data-map-center="34.0,9.5"
+             data-location="Return Journey">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Chapter 5</span>
+        <h2 class="chapter-title">The Return Journey</h2>
+        <p class="chapter-subtitle">Landscape Connectivity</p>
+
+        <div class="chapter-text">
+          <p>The journey north reversed our southward trajectory, but the landscape revealed different patterns in opposite light. What we saw at midday going south, we encountered at dusk returning—temporal variation that reminded us how incomplete any single observation must be.</p>
+        </div>
+
+        <!-- Sub-stop 5a: Chott El Fejej -->
+        <div class="sub-chapter" id="ch5a-chott"
+             data-map-zoom="11"
+             data-map-center="33.9963,9.1320">
+          <h3 class="sub-chapter-title">Chott El Fejej (Salt Lake)</h3>
+          <p class="sub-chapter-location">33°59'46"N 9°07'55"E</p>
+
+          <div class="chapter-media">
+            <video controls preload="none">
+              <source src="Pictures/5602C463-C45D-412A-A2EB-4D9DE4F3B1C4.MP4" type="video/mp4">
+            </video>
+            <p class="caption">Ephemeral wetland at Chott El Fejej, demonstrating seasonal water availability that supports migratory bird stopovers.</p>
+          </div>
+
+          <div class="chapter-text">
+            <p>Chott El Fejej—a seasonal salt lake—appeared as we drove north. In wet years, this endorheic basin fills with water, creating temporary wetland habitat critical for migratory waterfowl.</p>
+
+            <p>But seasonality introduces uncertainty. Species compositions shift with water availability. Acoustic surveys conducted in April might miss entire guilds present in November. What appears as "biodiversity" is actually a snapshot of dynamic processes unfolding across scales our methods can barely capture.</p>
+          </div>
+        </div>
+
+        <!-- Sub-stop 5b: Conservation Challenges -->
+        <div class="sub-chapter" id="ch5b-conservation">
+          <h3 class="sub-chapter-title">Conservation Challenges</h3>
+
+          <div class="chapter-media">
+            <video controls preload="none">
+              <source src="Pictures/F1964D8E-A5D6-467E-AB8E-D64ECE3F64D6.MP4" type="video/mp4">
+            </video>
+            <p class="caption">Quad/ATV tracks across fragile desert habitat, illustrating recreation pressures that fragment ecosystems and introduce noise pollution to areas targeted for acoustic monitoring.</p>
+          </div>
+
+          <div class="chapter-text">
+            <p>The tire tracks were unmistakable. ATVs and motorcycles had carved routes across dune systems, compacting sand and crushing vegetation that takes years to regenerate in this water-limited environment.</p>
+
+            <p>Recreation impacts present a conservation paradox. Ecotourism can generate economic value that justifies habitat protection—but unregulated access degrades the very landscapes marketed as "pristine wilderness."</p>
+
+            <p>Acoustic monitoring itself isn't immune to these tensions. Our presence required vehicle access, gear transport, and human disturbance. We documented soundscapes while contributing to the noise.</p>
+
+            <p>Sustainable approaches require managing these trade-offs explicitly: designated routes to minimize fragmentation, seasonal closures during breeding periods, and monitoring protocols that acknowledge their own ecological footprint.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────────────────────
+         EPILOGUE: What the Desert Says
+         ───────────────────────────────────────────────────────────────────────── -->
+    <section class="chapter" id="epilogue"
+             data-map-zoom="7"
+             data-map-center="34.5,9.8"
+             data-location="Overview">
+      <div class="chapter-inner glassmorphic">
+        <span class="chapter-label">Epilogue</span>
+        <h2 class="chapter-title">What the Desert Says</h2>
+
+        <div class="chapter-text">
+          <p>The desert speaks—if we bother to listen.</p>
+
+          <p>Over two days and 1,000 kilometers, we moved through landscapes often dismissed as barren. Yet our recorders documented <strong>29 species</strong> across <strong>1,210 detections</strong>. Spanish Sparrows, House Sparrows, Common Bulbuls, Woodchat Shrikes, Desert Larks—each using the oasis in distinct ways, each contributing to an acoustic signature that refutes the "empty desert" narrative.</p>
+
+          <p>The data visualizations tell part of the story: diel activity peaks at dawn and dusk, confidence scores averaging 0.777, a mix of CONFIRMED residents and POSSIBLE vagrants. But numbers alone can't capture the complexity of what we encountered.</p>
+        </div>
+
+        <div class="data-viz-section">
+          <img src="data/visualizations/05_geographic_status.png"
+               alt="Final geographic status summary"
+               class="viz-image"
+               loading="lazy">
+          <p class="viz-caption"><strong>Final assemblage composition:</strong> 19 CONFIRMED species (≥3 detections) and 10 POSSIBLE species (1-2 detections), reflecting diverse habitat use patterns across the oasis ecosystem.</p>
+        </div>
+
+        <div class="chapter-text">
+          <p>What matters more than the species count is the recognition that biodiversity persists in systems actively shaped by human pressure—agriculture, recreation, infrastructure, climate change. Oases like Qsar Ghilen exist at the intersection of ecological and social systems.</p>
+
+          <p>The archaeological ruins remind us that people have sustained livelihoods here for millennia. Am Ali's traditional knowledge demonstrates continuity of ecological engagement. The caracal signage points toward conservation futures that integrate cultural heritage and biodiversity goals.</p>
+
+          <p>But the ATV tracks and Rally Dakar history remind us that landscapes are contested. Every use—research, tourism, agriculture, recreation—imposes costs. Sustainability requires acknowledging these trade-offs and managing them transparently.</p>
+
+          <p>Acoustic monitoring can't solve these tensions. But it can reveal patterns invisible to casual observation, document baselines against which future change can be measured, and provide evidence for conservation arguments grounded in empirical data rather than assumptions.</p>
+
+          <p>The desert speaks. What we do with what it says remains an open question.</p>
+
+          <hr class="section-divider">
+
+          <p class="epilogue-meta"><strong>Survey Details:</strong><br>
+          Dates: April 10-11, 2026<br>
+          Location: Qsar Ghilen, Southern Tunisia (~32°59'N 9°38'E)<br>
+          Recording Hours: 17<br>
+          Species Detected: 29<br>
+          Total Detections: 1,210<br>
+          Mean Confidence: 0.777<br>
+          Equipment: AudioMoth autonomous recorders + BirdNET analysis<br>
+          Route Distance: ~1,000 km (Tunis → Qsar Ghilen → return)</p>
+
+          <p class="epilogue-meta"><strong>Acknowledgments:</strong><br>
+          Field assistance and local guidance: Am Ali<br>
+          Cultural context and site access: Qsar Ghilen community<br>
+          Analysis support: BirdNET deep learning model (Cornell Lab of Ornithology)<br>
+          Mapping data: OpenStreetMap contributors, Stamen Design</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- End marker for scroll calculations -->
+    <div id="content-end" style="height: 100vh;"></div>
+
+  </div><!-- End #content-scroll-wrapper -->
+
+  <!-- ═══════════════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- Leaflet.js -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Leaflet Polyline Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.min.js"></script>
+
+  <!-- Leaflet Extra Markers -->
+  <script src="https://unpkg.com/leaflet-extra-markers@1.2.1/dist/js/leaflet.extra-markers.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Scrollama -->
+  <script src="https://unpkg.com/scrollama@3.2.0/build/scrollama.min.js"></script>
+
+  <!-- Custom modules -->
+  <script type="module" src="js/main-natgeo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+{
+  "project": {
+    "title": "Desert Speaks: An Acoustic Survey of Qsar Ghilen",
+    "location": "Southern Tunisia",
+    "dates": "April 10-11, 2026",
+    "survey_stats": {
+      "species_detected": 29,
+      "total_detections": 1210,
+      "recording_hours": 17,
+      "mean_confidence": 0.777
+    }
+  },
+  "photos": [
+    {
+      "filename": "0E6699ED-040C-464A-9085-15A167F66066.JPG",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "infrastructure",
+      "enhanced_description": "Interior of the Oasis Camp restaurant featuring traditional Tunisian design elements: green tiled floor, woven wicker pendant lamps, and built-in seating with red-and-white striped cushions. The space combines vernacular architecture with modern hospitality infrastructure to serve researchers and visitors at the Qsar Ghilen hotspot."
+    },
+    {
+      "filename": "2B22DC46-C38E-47EF-BD4D-10EFA1F6C09A.JPG",
+      "location": "Bel Khir / Ardh El Talah",
+      "coordinates": "34°17'22.2\"N 9°23'25.1\"E",
+      "type": "habitat",
+      "enhanced_description": "Roadside landscape at Bel Khir/Ardh El Talah showing mature Acacia raddiana trees—the iconic umbrella thorn acacia of savannah ecosystems. This location represents one of the last remaining populations of this species in Tunisia, a critical indicator of the transition zone between Mediterranean and Saharan biogeographic regions. Sparse vegetation and compacted soil reflect increasing aridity and grazing pressure."
+    },
+    {
+      "filename": "2E3996FD-DE6B-4896-A7DF-3808BF6C963F.JPG",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "equipment",
+      "featured": true,
+      "enhanced_description": "AudioMoth autonomous recording unit secured to the trunk of an Acacia raddiana tree at approximately 2.5 meters height. The green weatherproof housing is visible against the characteristic bipinnate foliage and thorny branches. This deployment configuration minimizes wind interference while maximizing detection range for the target avian community. Installation represents one of multiple recording stations established across the Qsar Ghilen acoustic monitoring grid."
+    },
+    {
+      "filename": "3B7CDF5B-2EBB-4899-85E6-7CA4761D9E61.JPG",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "landscape",
+      "featured": true,
+      "enhanced_description": "Wind-sculpted sand dunes displaying well-developed ripple patterns characteristic of aeolian geomorphology in the Grand Erg Oriental. Golden ochre sand shows fine-grain texture typical of quartz-dominated desert sediments. Scattered Acacia raddiana trees anchor the transition zone between fixed dune vegetation and mobile sand sheets. Clear azure sky indicates stable atmospheric conditions during the survey period."
+    },
+    {
+      "filename": "4A99F67B-DE86-494D-ABE2-FBE6FC150B82.JPG",
+      "location": "Qsar Ghilen Archaeological Site",
+      "coordinates": null,
+      "type": "signage",
+      "enhanced_description": "Interpretive signage at Qsar Ghilen archaeological site featuring caracal (Caracal caracal) illustration with text 'KSAR CARACAL.' The caracal represents a key conservation target for future camera-trap and acoustic monitoring expansion, as this medium-sized felid serves as an indicator of ecosystem integrity in North African desert-oasis ecotones. The sign integrates biodiversity awareness into cultural heritage interpretation."
+    },
+    {
+      "filename": "4F263E3E-8F55-4C0F-B7A8-CE6E06CF1822.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Curculionidae (weevil) specimen on white fabric sampling sheet, attracted to UV light trap during nocturnal entomological survey. The specimen's robust body and elongated rostrum are diagnostic of this diverse beetle family. Light trapping methodology complements acoustic monitoring by documenting nocturnal arthropod diversity—essential prey base for insectivorous birds detected via BirdNET analysis."
+    },
+    {
+      "filename": "6B93325B-39A7-4B3C-9ECC-1DAD858FED0D.JPG",
+      "location": "Old Matmata",
+      "coordinates": "33°32'30.1\"N 9°58'23.2\"E",
+      "type": "cultural",
+      "enhanced_description": "Interior of traditional troglodyte dwelling at Old Matmata, carved into soft sedimentary rock. Whitewashed walls, arched doorways, and hand-carved niches demonstrate vernacular subterranean architecture adapted to extreme temperature fluctuations. Colorful textiles and traditional furnishings visible. This underground construction provides passive thermal regulation in a landscape where ambient temperatures can exceed 45°C in summer."
+    },
+    {
+      "filename": "6FE6FEC9-12C6-48EC-B5D6-FC3BBFC8972E.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Hand-scale reference showing flowering desert shrub with fine green foliage and small white/pink blossoms. The delicate flowers and succulent-like leaves indicate xerophytic adaptations for water conservation in hyperarid conditions. Flowering phenology in April suggests ephemeral response to winter precipitation, providing critical nectar resources for insect pollinators detected in light trap surveys."
+    },
+    {
+      "filename": "6FF093B9-26D2-4173-B80E-4E4958491D7C.JPG",
+      "location": "Qsar Ghilen Hotspot",
+      "coordinates": null,
+      "type": "habitat",
+      "featured": true,
+      "enhanced_description": "The Qsar Ghilen oasis hotspot showing permanent water body surrounded by Phoenix dactylifera (date palms) and other oasis vegetation. This water source creates a critical biodiversity refuge in the arid landscape, concentrating avian activity and explaining the high detection rates (1,210 detections of 29 species) recorded by acoustic monitoring. The sharp ecotone between irrigated oasis and surrounding desert creates edge habitat utilized by diverse taxa."
+    },
+    {
+      "filename": "7D47D289-A73D-4873-B99B-EFE83D279813.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Two Sphingidae (hawk moth) specimens on white sampling sheet: one small individual (top) and one larger moth (bottom center) showing characteristic streamlined body and narrow wings. Hawk moths are important nocturnal pollinators and represent mid-level consumers in desert food webs. Their presence indicates functional connectivity between flowering plant communities and higher trophic levels including bat and nightjar predators."
+    },
+    {
+      "filename": "008DA802-ADDD-469E-9045-8A9522FDC5EE.JPG",
+      "location": "Qsar Ghilen Archaeological Site",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Passerine bird (likely Passer simplex, Desert Sparrow, locally 'Moineau blanc') perched atop Roman-period stone wall at Qsar Ghilen archaeological site. The bird's use of ancient architecture as vantage point demonstrates how cultural heritage structures provide critical microhabitat in sparsely vegetated desert landscapes. Desert sparrows are sedentary specialists of arid regions and serve as bioindicators of Saharan avifaunal communities."
+    },
+    {
+      "filename": "14C4FE42-313B-4E2E-9358-A7BF64BD9A53.JPG",
+      "location": "Old Matmata",
+      "coordinates": "33°32'33.4\"N 9°58'01.2\"E",
+      "type": "cultural",
+      "enhanced_description": "Star Wars filming location at Old Matmata showing the circular Galaxy Tours sticker on whitewashed exterior wall. The integration of film tourism infrastructure with traditional Berber architecture reflects the dual identity of this region as both cultural heritage landscape and global pop culture icon. The troglodyte structures served as exterior shots for Luke Skywalker's homestead in the original 1977 film."
+    },
+    {
+      "filename": "8B869404-A8D7-4654-B235-67AA16D16020.JPG",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "field_work",
+      "enhanced_description": "Field researcher installing AudioMoth recorder on Acacia raddiana trunk at Qsar Ghilen. The installation process requires careful consideration of microphone orientation, height above ground, and protection from direct sun exposure. Note the researcher's plaid field shirt and the characteristic umbrella-form canopy of the Acacia host tree. This hands-on deployment methodology ensures quality control of acoustic monitoring infrastructure."
+    },
+    {
+      "filename": "60B6BA7C-FED4-4488-9965-DEDADA25E867.JPG",
+      "location": "Old Matmata",
+      "coordinates": "33°32'30.1\"N 9°58'23.2\"E",
+      "type": "cultural",
+      "enhanced_description": "Sleeping quarters inside Old Matmata troglodyte dwelling, photographed from cave entrance. Built-in sleeping platforms line the whitewashed interior, covered with traditional striped textiles in red, green, and white. Decorative ceramics and carved wooden elements visible on walls. The subterranean bedroom maintains stable temperatures year-round, a passive cooling/heating system perfected over centuries of Berber habitation in this harsh climate."
+    },
+    {
+      "filename": "49E997E7-31AF-42EC-86E9-EDB0CE209FB0.JPG",
+      "location": "Old Matmata",
+      "coordinates": "33°32'30.1\"N 9°58'23.2\"E",
+      "type": "cultural",
+      "enhanced_description": "Exterior courtyard of Old Matmata troglodyte complex showing the characteristic beige earthen architecture with green-painted wooden door and traditional pottery. The courtyard design creates a central open-air space surrounded by excavated rooms, providing ventilation while maintaining thermal mass. Arched alcoves and traditional craftsmanship visible. This vernacular architecture represents centuries of adaptation to the pre-Saharan climate."
+    },
+    {
+      "filename": "46AEF764-337D-4B83-B73C-5D15FA209D2A.JPG",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "infrastructure",
+      "enhanced_description": "Field accommodation tent at Qsar Ghilen positioned against traditional earthen structure with palm-frond roof. The canvas tent provides portable shelter for researchers while the background shows vernacular construction using date palm leaves (traditional arish roofing). Mixed date palms and Acacia trees visible, indicating the oasis ecotone. This camp infrastructure enables multi-day acoustic monitoring deployments in remote locations."
+    },
+    {
+      "filename": "63AF720D-9140-4396-ABC9-5E784EDF7EE7.JPG",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "community",
+      "featured": true,
+      "enhanced_description": "Collaborative exchange between researcher (left, wearing National Geographic cap and scarf) and Am Ali, local knowledge holder (right, in traditional green jellaba) at Qsar Ghilen Oasis Camp. Seated at red table under date palms, this interaction represents essential community engagement and traditional ecological knowledge (TEK) integration. Local guides provide critical context about seasonal bird movements, water availability, and land-use history that inform scientific interpretation of acoustic monitoring results."
+    },
+    {
+      "filename": "68A7D07F-01F2-4413-9633-C9380FF9BB47.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Small Coleoptera specimen photographed on white fabric sheet, captured by UV light trap. The beetle's dark coloration and compact form suggest possible tenebrionid (darkling beetle) affinity—a family highly diverse in desert ecosystems. These nocturnal beetles represent important decomposers and prey items, linking primary production to vertebrate consumers including the insectivorous birds documented via acoustic monitoring."
+    },
+    {
+      "filename": "77EB4A28-A6BA-4AF0-9387-F10AEDDB6D0D.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "equipment",
+      "enhanced_description": "UV light trap setup at night in Qsar Ghilen sand dunes, showing white collection sheet suspended vertically with bright UV lamp attracting nocturnal insects. The complete darkness of the background emphasizes the isolated nature of the field site. This standardized entomological methodology complements acoustic bird surveys by documenting the arthropod prey base essential for insectivorous species detected via BirdNET analysis."
+    },
+    {
+      "filename": "5052E3AD-A70C-4DEC-B910-75B7F423FDA0.JPG",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Mantodea (praying mantis) specimen perfectly camouflaged against sandy substrate. The mantis's tan coloration and body form provide crypsis in the desert environment. As an ambush predator, this mantis occupies a key position in desert food webs, preying on smaller arthropods while potentially serving as prey for lizards and birds. The individual's sand-mimicking phenotype demonstrates evolutionary adaptation to the erg environment."
+    },
+    {
+      "filename": "020944D8-EB13-421F-8BBC-F324FA706BE7.JPG",
+      "location": "Qsar Ghilen Archaeological Site",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Passerine bird perched on white limestone rocks amid desert vegetation at Qsar Ghilen archaeological site. The bird appears dark-bodied, possibly a wheatear (Oenanthe sp.) or other ground-dwelling desert passerine. Rocky microhabitat provides thermal refuge and invertebrate foraging opportunities. This opportunistic use of archaeological ruins by contemporary wildlife demonstrates landscape-scale habitat complementarity across millennia of human occupation."
+    },
+    {
+      "filename": "8801804A-0A9E-4CA2-955B-225BB21ACEFD.JPG",
+      "location": "Old Matmata",
+      "coordinates": "33°32'30.1\"N 9°58'23.2\"E",
+      "type": "field_work",
+      "enhanced_description": "Researcher Zakher in arched whitewashed interior passage of Old Matmata troglodyte dwelling, wearing National Geographic expedition cap. The photograph captures the scale and spatial geometry of subterranean architecture, with natural light filtering through curved doorways. This self-documentation provides important field expedition context and demonstrates researcher presence in culturally significant landscape."
+    },
+    {
+      "filename": "71476132-E362-4927-8067-202DE53B943E.JPG",
+      "location": "Qsar Ghilen Archaeological Site",
+      "coordinates": null,
+      "type": "cultural",
+      "enhanced_description": "Roman-era Latin inscription carved into limestone architectural element at Qsar Ghilen archaeological site. The weathered text, including partially legible characters, represents material evidence of North Africa's integration into the Roman Empire during the 2nd-4th centuries CE. This historical context underscores the long continuity of human habitation at oasis nodes where groundwater creates productive refugia in otherwise inhospitable desert."
+    },
+    {
+      "filename": "ABA1610B-DB82-464A-A92A-D7D91F54014B.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "field_work",
+      "enhanced_description": "Researcher Zakher seated on sand dunes at night, positioned in front of active UV light trap during entomological survey. The nighttime field setting demonstrates the temporal complementarity of survey methods: acoustic recorders operate autonomously on dawn/dusk schedules while light trapping requires manual attendance during nocturnal hours. This multi-method approach provides comprehensive biodiversity assessment across diel activity periods."
+    },
+    {
+      "filename": "AEA53600-4EF0-407F-BD39-C544B9E85313.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Large Sphingidae (hawk moth) specimen on white sampling fabric, displaying characteristic streamlined morphology with elongate wings and robust thorax. The moth's tan coloration provides cryptic resemblance to sand substrate. Hawk moths are highly specialized hovering pollinators with rapid flight, capable of covering large distances between scattered desert flowering plants. Their detection indicates functional landscape connectivity at the scale of kilometers."
+    },
+    {
+      "filename": "BD1B2E79-285C-4C84-B234-0CE7BE91B4F5.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Lepidopteran specimen (moth) on collection surface, showing wing pattern and body structure. The individual's attraction to UV light demonstrates phototactic behavior common in nocturnal insects. Documentation of moth diversity contributes to understanding Saharan lepidopteran communities, which remain understudied compared to temperate regions despite their ecological importance as pollinators, herbivores, and prey."
+    },
+    {
+      "filename": "CAC284D2-B58E-4697-97FA-7B0FEBC755D9.JPG",
+      "location": "Old Matmata",
+      "coordinates": "33°32'30.1\"N 9°58'23.2\"E",
+      "type": "cultural",
+      "enhanced_description": "View through arched window opening of Old Matmata troglodyte dwelling, looking out onto sun-lit courtyard. The thick earthen walls visible in window frame provide thermal mass that buffers interior temperature fluctuations. This passive environmental control system—excavated rooms surrounding open courtyard—creates habitable microclimates without mechanical intervention, a solution developed through centuries of trial and refinement."
+    },
+    {
+      "filename": "C56B2D19-3C11-473E-BED9-0DB8A6BF078C.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "field_work",
+      "enhanced_description": "Researcher Zakher self-portrait on Qsar Ghilen sand dunes wearing National Geographic cap and plaid shirt. The golden sand ripples and clear sky provide context for field conditions during the April 10-11, 2026 survey. This documentation captures the embodied experience of conducting bioacoustic research in remote desert environments, where logistical challenges (heat, sand, limited water) must be managed alongside scientific protocol."
+    },
+    {
+      "filename": "CBC9E301-E92B-428C-9560-607A6702910F.JPG",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "equipment",
+      "enhanced_description": "Close-up view looking upward into Acacia raddiana canopy showing green AudioMoth housing secured to trunk among bipinnate foliage. The deployment angle captures the researcher's perspective during installation. Visible mounting strap and weatherproof case design protect electronics from sand infiltration and temperature extremes. This image provides technical documentation of field deployment methodology for passive acoustic monitoring infrastructure."
+    },
+    {
+      "filename": "CF11D2FB-5BAE-488F-A83A-3F45D6E19519.JPG",
+      "location": "Old Matmata",
+      "coordinates": "33°32'33.4\"N 9°58'01.2\"E",
+      "type": "cultural",
+      "enhanced_description": "Star Wars filming location museum at Old Matmata showing the Hotel Sidi Driss exterior with characteristic earthen architecture. The beige adobe-style construction and arched entrances represent the iconic visual aesthetic of the original 1977 film. Tourism infrastructure built around this film heritage provides economic support for maintaining traditional Berber architectural forms while creating complex dynamics around authenticity and commodification."
+    },
+    {
+      "filename": "D13F3973-0F20-4E9F-BB4B-23C628ECD9E1.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "field_work",
+      "enhanced_description": "Field team member Wael traversing Qsar Ghilen sand dunes, silhouetted against rippled sand surface. The lone figure emphasizes the scale and remoteness of the survey landscape. Wael's entomological expertise complements acoustic ornithology by providing arthropod community data essential for interpreting insectivore foraging ecology and trophic relationships documented through BirdNET species detections."
+    },
+    {
+      "filename": "D036FC7A-6CFF-4D65-BFA6-DCBD69CC58C3.JPG",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "equipment",
+      "enhanced_description": "UV light trap setup on sand dunes at night, with vertical white sheet positioned to maximize insect interception. The bright UV lamp creates a phototactic attractant visible across hundreds of meters in the dark desert landscape. This standardized sampling technique enables quantitative comparison of nocturnal arthropod diversity across different habitat types and supports interpretation of insectivorous bird community structure detected via acoustic monitoring."
+    },
+    {
+      "filename": "IMG_8529.JPG",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "community",
+      "featured": true,
+      "enhanced_description": "Am Ali, local knowledge holder and guide at Qsar Ghilen, seated outdoors in traditional green jellaba with researcher Zakher. Am Ali's deep familiarity with seasonal patterns, water sources, and wildlife behavior provides essential context that cannot be captured through short-term scientific surveys alone. This collaboration represents best practice in community-engaged research, ensuring that traditional ecological knowledge informs and enriches quantitative biodiversity assessment."
+    }
+  ],
+  "videos": [
+    {
+      "filename": "1A1E7291-D6B6-4013-95DB-4F7FE4504F3E.MP4",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Video documentation of reproductive behavior in Columbidae (doves/pigeons) at Qsar Ghilen oasis. Courtship and mating behaviors represent key phenological data for understanding breeding ecology in desert bird communities. The presence of actively breeding doves indicates sufficient food resources (seeds, invertebrates) and nesting substrate availability. This behavioral observation complements acoustic detection data by providing visual confirmation of reproductive activity during the April survey period."
+    },
+    {
+      "filename": "1A9C054A-4DAC-42AA-BE50-CCDD040F889F.MP4",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "habitat",
+      "enhanced_description": "Ambient video capturing the Qsar Ghilen oasis hotspot during calm conditions, likely showing the water body, vegetation structure, and surrounding landscape. This visual documentation provides essential habitat context for interpreting the acoustic monitoring results (1,210 detections, 29 species). The calm atmospheric conditions are ideal for acoustic survey work, as wind noise can obscure bird vocalizations and reduce detection probability in bioacoustic datasets."
+    },
+    {
+      "filename": "3C8679C1-A273-452B-92B5-405D7B944193.MP4",
+      "location": "Road to Douz",
+      "coordinates": "33°00'52.6\"N 9°42'51.5\"E",
+      "type": "cultural",
+      "enhanced_description": "Video showing motorcycles passing on the road to Douz, evoking the region's history as a Rally Dakar route before the event relocated to South America in 2009 for security reasons. This footage contextualizes the contemporary landscape within broader narratives of recreation, tourism, and infrastructure development in southern Tunisia. The road network facilitates field research logistics while simultaneously representing anthropogenic landscape modification that affects wildlife movement corridors and acoustic environments."
+    },
+    {
+      "filename": "3EDC1F93-70B5-4BA9-99E7-4FC40FAFCD9F.MP4",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "field_work",
+      "enhanced_description": "Off-road vehicle navigation across Qsar Ghilen sand dunes, demonstrating field logistics required to access remote acoustic monitoring sites. This footage illustrates the trade-off between research accessibility and anthropogenic disturbance: vehicle passage creates temporary noise pollution and substrate disruption while enabling deployment of recording equipment in otherwise inaccessible locations. The sandy terrain requires specialized driving techniques and highlights the remote nature of desert biodiversity research."
+    },
+    {
+      "filename": "5B5B44B2-606C-4A83-8A9A-E2B7BD678E48.MP4",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "community",
+      "featured": true,
+      "enhanced_description": "Traditional ecological knowledge documentation: Am Ali demonstrating the preparation of Mella (takoulla/taguella), traditional Tunisian flatbread cooked in sand beneath hot coals. This culinary practice represents adaptive food preparation techniques for nomadic/semi-nomadic communities in resource-limited desert environments. The integration of TEK documentation with ecological surveys enriches understanding of human-environment relationships and highlights the cultural context within which biodiversity conservation must operate."
+    },
+    {
+      "filename": "5D8BEC6D-34D4-492F-B890-72BCDDEBD4AA.MP4",
+      "location": "Road",
+      "coordinates": "33°21'21.6\"N 9°43'19.2\"E",
+      "type": "wildlife",
+      "enhanced_description": "Dromedary camels (Camelus dromedarius) on roadway at 33°21'21.6\"N 9°43'19.2\"E. Camels remain important for pastoralist livelihoods in southern Tunisia despite motorization, and their grazing patterns significantly influence vegetation structure and composition across the pre-Saharan zone. Road-following behavior by livestock reflects infrastructure's role in shaping animal movement patterns and creates wildlife-vehicle conflict zones. This footage documents the persistence of traditional pastoralism in contemporary landscapes."
+    },
+    {
+      "filename": "8B7106ED-745A-423C-9724-758A6894A95E.MP4",
+      "location": "Kef el Boum",
+      "coordinates": "33°23'09.2\"N 10°01'46.9\"E",
+      "type": "biodiversity",
+      "featured": true,
+      "enhanced_description": "Opportunistic wildlife observation: owl (likely Athene noctua, Little Owl, based on habitat and behavior) perched on roadside pole at Kef el Boum (Cliff of the Owl), 33°23'09.2\"N 10°01'46.9\"E. The location's toponymy ('Cliff of the Owl') suggests long-standing local awareness of owl presence. Roadside infrastructure provides artificial perching sites for raptors hunting small mammals in open terrain. This visual documentation complements acoustic monitoring, which may not reliably detect owls due to their low vocalization rates during daytime surveys."
+    },
+    {
+      "filename": "55CAB540-0ED7-4D1E-A216-BA7C9DC28DBC.MP4",
+      "location": "Road",
+      "coordinates": "33°33'46.4\"N 9°59'30.8\"E",
+      "type": "landscape",
+      "enhanced_description": "Scenic roadway footage at 33°33'46.4\"N 9°59'30.8\"E, documenting landscape character and visual aesthetics of the survey region. Road morphology, vegetation patterns, and topographic features visible in transit provide geographic context for understanding habitat connectivity and species distribution patterns. Such \"windshield survey\" footage serves as supplementary landscape-scale documentation supporting interpretation of point-based acoustic monitoring data collected at Qsar Ghilen."
+    },
+    {
+      "filename": "72CF0C8F-4B05-44F9-AD51-04A94AA357CF.MP4",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Video of egrets (likely Bubulcus ibis, Cattle Egret, or Egretta garzetta, Little Egret) utilizing water source at Qsar Ghilen. The presence of waterbirds in this arid environment underscores the critical importance of oasis habitats as concentrated resource nodes. Egrets' use of desert water bodies reflects their ecological flexibility and opportunistic foraging strategies. This observation provides visual validation of wetland-associated species that may be detected acoustically but whose habitat use is better understood through direct observation."
+    },
+    {
+      "filename": "251C3A5B-A860-47C4-AAD8-6DF3245022AB.MP4",
+      "location": "Qsar Ghilen",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Video documentation of raptor (bird of prey: Falconiformes or Accipitriformes) at Qsar Ghilen. Raptors serve as apex predators in desert food webs and their presence indicates ecosystem health and prey base availability. Species identification from video footage supports acoustic monitoring, as many raptors vocalize infrequently and may be underrepresented in bioacoustic datasets. Behavioral observations (perching, hunting, territorial displays) provide ecological context beyond species presence/absence data."
+    },
+    {
+      "filename": "521A298C-D730-4A4A-90A3-F73748C50357.MP4",
+      "location": "Old Matmata",
+      "coordinates": "33°32'33.4\"N 9°58'01.2\"E",
+      "type": "cultural",
+      "enhanced_description": "Interior walkthrough of Star Wars museum at Hotel Sidi Driss, Old Matmata (33°32'33.4\"N 9°58'01.2\"E), the filming location for Luke Skywalker's homestead. This documentation captures the intersection of film tourism, cultural heritage preservation, and economic development in rural Tunisia. The global recognition generated by Star Wars (1977) has fundamentally shaped local identity and livelihood strategies, creating complex dynamics between authenticity, commodification, and community agency in managing cultural landscapes."
+    },
+    {
+      "filename": "797F037E-5A86-4827-BA9F-F3EDA427451B.MP4",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "field_work",
+      "enhanced_description": "Field research challenge documentation: vehicle stuck in Qsar Ghilen sand dunes. This footage honestly portrays the logistical difficulties inherent in remote desert fieldwork, where unstable sandy substrates, extreme temperatures, and isolation create genuine safety risks. Such challenges affect survey design, sampling intensity, and researcher well-being. The incident underscores why many desert regions remain under-surveyed for biodiversity despite their ecological importance, and highlights the dedication required for comprehensive environmental monitoring in harsh landscapes."
+    },
+    {
+      "filename": "873B588D-9A9E-489F-B8DE-166799E4141E.MP4",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Video of Cerambycidae (longhorn beetle) specimen observed in Qsar Ghilen dunes. Longhorn beetles are named for their characteristically elongate antennae and include wood-boring species whose larvae develop in dead wood. Their presence indicates the availability of woody plant material (likely Acacia raddiana) supporting specialized decomposer communities. Documentation of such arthropod diversity complements light trap data and supports interpretation of insectivorous bird foraging ecology in the acoustic monitoring dataset."
+    },
+    {
+      "filename": "5602C463-F584-4005-9744-78AF5F80D1C3.MP4",
+      "location": "Chott El Fejej",
+      "coordinates": "33.996270, 9.132034",
+      "type": "landscape",
+      "enhanced_description": "Transit footage along Chott El Fejej (33.996270, 9.132034), a seasonal salt lake (sabkha/chott) characteristic of North African arid endorheic basins. Chotts are ephemeral wetlands that fill during winter rains and evaporate during summer, leaving salt-encrusted surfaces. These features support specialized halophytic plant communities and serve as critical stopover sites for migratory waterbirds on the East Atlantic Flyway. The landscape provides important biogeographic context for understanding regional avifaunal patterns."
+    },
+    {
+      "filename": "99368EC0-7107-4070-9714-CA39A4D752DF.MP4",
+      "location": "Techine",
+      "coordinates": "33.476851, 10.001957",
+      "type": "cultural",
+      "enhanced_description": "Video documentation of Techine village/small city (33.476851, 10.001957), representing human settlement patterns in the pre-Saharan transition zone. Settlement geography, agricultural land use, and architectural style visible in the footage provide socioecological context for understanding human-wildlife interactions. Urban and peri-urban areas often support different bird communities than natural habitats, with synanthropic species (sparrows, swallows, hoopoes) exploiting human-modified environments for nesting and foraging."
+    },
+    {
+      "filename": "32325210-1506-4658-A734-5B561CD107C5.MP4",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "biodiversity",
+      "enhanced_description": "Slow-motion videography of moth (Lepidoptera) wing movement, likely captured during nocturnal light trap surveys at Qsar Ghilen dunes. High-speed/slow-motion footage reveals wing kinematics invisible to normal observation, including wing beat frequency, amplitude, and aerodynamic mechanisms. This documentation has scientific value for understanding insect flight biomechanics and provides visually compelling content for science communication. Moths represent important nocturnal pollinators and prey for insectivorous birds detected acoustically."
+    },
+    {
+      "filename": "F1964D8E-6E5E-443A-8DF3-D9F89F433EB3.MP4",
+      "location": "Qsar Ghilen Dunes",
+      "coordinates": null,
+      "type": "conservation",
+      "enhanced_description": "Critical documentation of recreational quad/ATV (all-terrain vehicle) use in Qsar Ghilen dunes, explicitly framing human recreation as biodiversity pressure. Motorized recreation causes direct disturbance (noise, substrate compaction, vegetation damage, wildlife displacement) and represents a growing conservation challenge in desert regions increasingly accessible via tourism infrastructure. This footage prompts important questions about sustainable recreation, carrying capacity, and land management priorities in biodiverse desert landscapes that also support local livelihoods through tourism."
+    }
+  ]
+}
