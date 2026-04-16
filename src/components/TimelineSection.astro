@@ -1,0 +1,165 @@
+---
+interface TimelineLocation {
+  name: string;
+  coords?: string;
+  description: string;
+  media?: string;
+  type?: string;
+}
+
+interface Props {
+  locations: TimelineLocation[];
+}
+
+const { locations } = Astro.props;
+---
+
+<div class="timeline-section">
+  {locations.map((location, index) => (
+    <div class="timeline-item" data-type={location.type || 'default'}>
+      <div class="timeline-marker">
+        <span class="timeline-number">{index + 1}</span>
+      </div>
+      <div class="timeline-content">
+        <h3 class="location-name">{location.name}</h3>
+        {location.coords && (
+          <p class="location-coords">{location.coords}</p>
+        )}
+        <p class="location-description">{location.description}</p>
+        {location.media && (
+          <div class="location-media">
+            {location.media.endsWith('.MP4') || location.media.endsWith('.mp4') ? (
+              <video controls preload="none" style="max-width: 100%; border-radius: 6px;">
+                <source src={location.media} type="video/mp4" />
+              </video>
+            ) : (
+              <img src={location.media} alt={location.name} loading="lazy" style="max-width: 100%; border-radius: 6px;" />
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .timeline-section {
+    position: relative;
+    margin: 3rem 0;
+    padding-left: 2rem;
+  }
+
+  .timeline-section::before {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #D4874A 0%, #4CAF6A 100%);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 3rem;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #D4874A 0%, #C9924A 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #0C1520;
+    box-shadow: 0 4px 16px rgba(212, 135, 74, 0.4);
+    z-index: 2;
+  }
+
+  .timeline-item[data-type="transit"] .timeline-marker {
+    background: linear-gradient(135deg, #6B9BD1 0%, #4A7BA7 100%);
+    box-shadow: 0 4px 16px rgba(107, 155, 209, 0.4);
+  }
+
+  .timeline-number {
+    font-weight: 700;
+    color: #FFF;
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+  }
+
+  .timeline-content {
+    background: rgba(26, 43, 66, 0.4);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(245, 241, 232, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .timeline-content:hover {
+    background: rgba(26, 43, 66, 0.6);
+    border-color: #D4874A;
+    transform: translateX(4px);
+  }
+
+  .location-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #D4874A;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .location-coords {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #6B9BD1;
+    margin: 0 0 1rem 0;
+  }
+
+  .location-description {
+    line-height: 1.7;
+    color: #F5F1E8;
+    margin: 0;
+  }
+
+  .location-media {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .timeline-section {
+      padding-left: 1rem;
+    }
+
+    .timeline-section::before {
+      left: 1rem;
+    }
+
+    .timeline-item {
+      padding-left: 2.5rem;
+    }
+
+    .timeline-marker {
+      width: 2.5rem;
+      height: 2.5rem;
+      left: -0.25rem;
+    }
+
+    .timeline-number {
+      font-size: 1rem;
+    }
+
+    .timeline-content {
+      padding: 1rem;
+    }
+
+    .location-name {
+      font-size: 1.2rem;
+    }
+  }
+</style>

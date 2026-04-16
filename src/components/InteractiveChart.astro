@@ -1,0 +1,85 @@
+---
+interface Props {
+  type: 'bar' | 'line' | 'pie' | 'doughnut';
+  data: any;
+  title?: string;
+  height?: string;
+}
+
+const { type, data, title, height = '400px' } = Astro.props;
+const chartId = `chart-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="interactive-chart">
+  {title && <h4 class="chart-title">{title}</h4>}
+  <div class="chart-container" style={`height: ${height}`}>
+    <canvas id={chartId}></canvas>
+  </div>
+</div>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+
+<script define:vars={{ chartId, type, data }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const ctx = document.getElementById(chartId);
+
+    new Chart(ctx, {
+      type: type,
+      data: data,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: {
+              color: '#F5F1E8',
+              font: { size: 12 }
+            }
+          }
+        },
+        scales: type === 'pie' || type === 'doughnut' ? undefined : {
+          x: {
+            ticks: { color: '#C7BEAA' },
+            grid: { color: 'rgba(245, 241, 232, 0.1)' }
+          },
+          y: {
+            ticks: { color: '#C7BEAA' },
+            grid: { color: 'rgba(245, 241, 232, 0.1)' }
+          }
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .interactive-chart {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(26, 43, 66, 0.4);
+    border: 1px solid rgba(245, 241, 232, 0.1);
+    border-radius: 8px;
+  }
+
+  .chart-title {
+    font-size: 1.2rem;
+    color: #D4874A;
+    margin: 0 0 1rem 0;
+    text-align: center;
+  }
+
+  .chart-container {
+    position: relative;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .interactive-chart {
+      padding: 1rem;
+    }
+
+    .chart-container {
+      height: 300px !important;
+    }
+  }
+</style>

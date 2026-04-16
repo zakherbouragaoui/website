@@ -1,0 +1,219 @@
+---
+interface Props {
+  dataSource: string;
+  charts: ('topSpecies' | 'dielActivity' | 'geographicStatus')[];
+}
+
+const { dataSource, charts } = Astro.props;
+const sectionId = `dataviz-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="data-viz-section" id={sectionId}>
+  <h3>Data Visualizations</h3>
+
+  {charts.includes('topSpecies') && (
+    <div class="chart-wrapper">
+      <h4>Top 10 Species by Detection Frequency</h4>
+      <canvas id={`${sectionId}-top-species`}></canvas>
+    </div>
+  )}
+
+  {charts.includes('dielActivity') && (
+    <div class="chart-wrapper">
+      <h4>Diel Activity Pattern</h4>
+      <canvas id={`${sectionId}-diel-activity`}></canvas>
+    </div>
+  )}
+
+  {charts.includes('geographicStatus') && (
+    <div class="chart-wrapper">
+      <h4>Species by Geographic Status</h4>
+      <canvas id={`${sectionId}-geographic`}></canvas>
+    </div>
+  )}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+
+<script define:vars={{ sectionId, dataSource, charts }}>
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Load species data
+    let data;
+    try {
+      const response = await fetch(dataSource);
+      data = await response.json();
+    } catch (error) {
+      console.error('Error loading species data:', error);
+      return;
+    }
+
+    const chartDefaults = {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          labels: {
+            color: '#F5F1E8',
+            font: { size: 12 }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: '#C7BEAA' },
+          grid: { color: 'rgba(245, 241, 232, 0.1)' }
+        },
+        y: {
+          ticks: { color: '#C7BEAA' },
+          grid: { color: 'rgba(245, 241, 232, 0.1)' }
+        }
+      }
+    };
+
+    // Top Species Chart
+    if (charts.includes('topSpecies')) {
+      const topSpecies = data.top_species.slice(0, 10);
+      const ctx = document.getElementById(`${sectionId}-top-species`);
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: topSpecies.map(s => s.common_name || s.scientific_name),
+          datasets: [{
+            label: 'Detections',
+            data: topSpecies.map(s => s.detections),
+            backgroundColor: 'rgba(212, 135, 74, 0.7)',
+            borderColor: '#D4874A',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          ...chartDefaults,
+          indexAxis: 'y',
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+    }
+
+    // Diel Activity Chart
+    if (charts.includes('dielActivity') && data.diel_breakdown) {
+      const ctx = document.getElementById(`${sectionId}-diel-activity`);
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Dawn', 'Morning', 'Afternoon', 'Evening', 'Night'],
+          datasets: [
+            {
+              label: 'Detections',
+              data: [
+                data.diel_breakdown.Dawn?.detections || 0,
+                data.diel_breakdown.Morning?.detections || 0,
+                data.diel_breakdown.Afternoon?.detections || 0,
+                data.diel_breakdown.Evening?.detections || 0,
+                data.diel_breakdown.Night?.detections || 0
+              ],
+              borderColor: '#D4874A',
+              backgroundColor: 'rgba(212, 135, 74, 0.2)',
+              fill: true,
+              tension: 0.4
+            },
+            {
+              label: 'Species Richness',
+              data: [
+                data.diel_breakdown.Dawn?.species || 0,
+                data.diel_breakdown.Morning?.species || 0,
+                data.diel_breakdown.Afternoon?.species || 0,
+                data.diel_breakdown.Evening?.species || 0,
+                data.diel_breakdown.Night?.species || 0
+              ],
+              borderColor: '#4CAF6A',
+              backgroundColor: 'rgba(76, 175, 106, 0.2)',
+              fill: true,
+              tension: 0.4
+            }
+          ]
+        },
+        options: chartDefaults
+      });
+    }
+
+    // Geographic Status Chart
+    if (charts.includes('geographicStatus')) {
+      const ctx = document.getElementById(`${sectionId}-geographic`);
+
+      const confirmed = data.top_species.filter(s => s.geographic_status === 'CONFIRMED').length;
+      const possible = data.top_species.filter(s => s.geographic_status === 'POSSIBLE').length;
+
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Confirmed', 'Possible'],
+          datasets: [{
+            data: [confirmed, possible],
+            backgroundColor: ['#4CAF6A', '#6B9BD1'],
+            borderColor: '#0C1520',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          ...chartDefaults,
+          scales: undefined
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  .data-viz-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(26, 43, 66, 0.6) 0%, rgba(12, 21, 32, 0.8) 100%);
+    border: 2px solid #D4874A;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .data-viz-section h3 {
+    font-size: 1.8rem;
+    color: #D4874A;
+    margin: 0 0 2rem 0;
+    text-align: center;
+  }
+
+  .chart-wrapper {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(12, 21, 32, 0.5);
+    border-radius: 8px;
+    border: 1px solid rgba(245, 241, 232, 0.1);
+  }
+
+  .chart-wrapper h4 {
+    font-size: 1.2rem;
+    color: #F5F1E8;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+  }
+
+  canvas {
+    max-height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    .data-viz-section {
+      padding: 1.5rem 1rem;
+    }
+
+    .chart-wrapper {
+      padding: 1rem;
+    }
+
+    canvas {
+      max-height: 300px;
+    }
+  }
+</style>
