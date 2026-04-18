@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Desert Is Dead — And Other Things We Say About Places We Have Never Listened To</title>
+<meta name="description" content="Seventeen hours of acoustic monitoring in southern Tunisia reveal 29 species in a landscape presumed empty — a challenge to a century of conservation assumption." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="css/article-style.css" />
+</head>
+<body data-hero="photo">
+
+<!-- Scroll progress -->
+<div class="scroll-progress"><i></i></div>
+
+<!-- Fixed map base -->
+<div id="map-base">
+  <div id="map"></div>
+</div>
+
+<!-- Top bar -->
+<header class="topbar">
+  <div class="mark"><span class="dot"></span>The Desert Speaks</div>
+  <div class="top-meta">
+    <span><em class="key">32.9°N · 9.6°E</em></span>
+    <span>Apr 10–11, 2026</span>
+    <span>BirdNET v2.4</span>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Field Report · Qsar Ghilane Oasis</div>
+      <h1>The desert is <em>dead</em><br/>(And Other Things We Say<br/>About Places We Have<br/>Never Listened To)</h1>
+      <p class="lede">
+        Seventeen hours of autonomous acoustic recording. Twenty-nine bird species. One thousand two hundred and ten detections. A refutation of the narrative that has shaped conservation policy for a century.
+      </p>
+      <div class="byline">
+        By <strong>Zakher Bouragaoui</strong> &nbsp;·&nbsp; Conservation Biologist · National Geographic Explorer · WWF North Africa
+      </div>
+    </div>
+
+    <aside class="hero-side">
+      <!-- Variant A: photo -->
+      <figure class="hero-photo">
+        <img src="/storymap/Pictures/3B7CDF5B-2EBB-4899-85E6-7CA4761D9E61.JPG" alt="Wind-sculpted sand dunes at Grand Erg Oriental" />
+        <figcaption class="cap">Grand Erg Oriental · 32.99°N</figcaption>
+      </figure>
+
+      <!-- Variant B: audio spectrogram -->
+      <div class="hero-spectro">
+        <div class="spectro-head">
+          <span class="rec">REC · 05:10:00</span>
+          <span>17h / 523 files</span>
+        </div>
+        <div class="wave-info">
+          Dawn chorus — <em>Phoenicurus phoenicurus</em>,<br/>
+          <em>Otus scops</em>, <em>Streptopelia turtur</em>
+        </div>
+        <div class="wave" id="hero-wave"></div>
+        <div class="play-row">
+          <button class="play-btn" id="play-btn" aria-label="Play ambient recording">▶</button>
+          <div class="play-meta">
+            <strong>Ambient · Qsar Ghilane</strong><br/>
+            dawn of 11 April 2026
+          </div>
+        </div>
+      </div>
+
+      <!-- Variant C: route type -->
+      <div class="hero-type">
+        <div class="route-head">
+          <span>Transect</span>
+          <span class="on">1,000 km · Mediterranean to Sahara</span>
+        </div>
+        <div id="hero-route"></div>
+        <div class="route-meta">
+          <div><span class="n">29</span><span class="l">species</span></div>
+          <div><span class="n">17<small style="font-size:.7em">h</small></span><span class="l">recording</span></div>
+          <div><span class="n">1.2<small style="font-size:.6em">k</small></span><span class="l">detections</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="scroll-cue"><span class="tick"></span>Scroll to listen</div>
+</section>
+
+<!-- Epigraphs -->
+<article class="story">
+  <section class="chapter card reveal" style="border-left: 3px solid var(--clay);">
+    <blockquote style="font-style: italic; color: var(--ink-2); margin: 0; padding: 0;">
+      <p style="margin-bottom: 1rem;">A thing is right when it tends to preserve the integrity, stability, and beauty of the biotic community. It is wrong when it tends otherwise.</p>
+      <footer style="font-size: .9rem; color: var(--ink-3);">— Aldo Leopold, <em>A Sand County Almanac</em></footer>
+    </blockquote>
+    <blockquote style="font-style: italic; color: var(--ink-2); margin: 1.5rem 0 0 0; padding: 0;">
+      <p style="margin-bottom: 1rem;">The loss of biodiversity is the folly our descendants are least likely to forgive us.</p>
+      <footer style="font-size: .9rem; color: var(--ink-3);">— E.O. Wilson</footer>
+    </blockquote>
+    <blockquote style="font-style: italic; color: var(--ink-2); margin: 1.5rem 0 0 0; padding: 0;">
+      <p style="margin-bottom: 1rem;">Not everything that is faced can be changed, but nothing can be changed until it is faced.</p>
+      <footer style="font-size: .9rem; color: var(--ink-3);">— James Baldwin</footer>
+    </blockquote>
+  </section>
+</article>
+
+<!-- Story -->
+<article class="story">
+
+  <section class="chapter card reveal with-dropcap" data-screen-label="Chapter I">
+    <div class="chap-num">I — The Official Version</div>
+    <h2 class="chap-title">Let me begin with the version of this story you <em>already know</em>.</h2>
+    <p>The Sahara Desert is dying. Or, more precisely, the Sahara Desert is already dead, and the land around it is dying — crumbling under the combined pressure of overgrazing, climate change, and the creeping advance of sand that is swallowing farms and villages and entire ways of life along its southern edge. The solution is obvious, urgent, and now backed by the African Union, the United Nations, the World Bank, and the passionate endorsement of celebrities, heads of state, and TED speakers across four continents. We will build a Great Green Wall — a literal belt of trees, eight thousand kilometres long, stretching from Dakar to Djibouti — and we will plant life back into the dead places. We will fix the desert. We will make the wasteland bloom.</p>
+    <p>This is the official version. It is coherent, it is well-funded, and it has been told so many times, through so many channels, that it has acquired the texture of fact. And like many things that acquire the texture of fact, it begins to crumble the moment you actually go there. Not to study it from above. Not to model it. Not to write policy about it. <strong>To go there, in a car, with a microphone, and spend seventeen hours in the dark listening to the thing you have been told is silent.</strong></p>
+    <p>I am a conservation biologist. I grew up in Tunisia. I have applied acoustic ecology methods to forests in the Sierra Nevada and ecosystems from Wisconsin to the Maghreb. In April of 2026, I drove south into the Sahara with an autonomous recording unit, a deep-learning algorithm trained on six thousand bird species, and a question so simple that the fact nobody had thought to ask it before is itself a kind of indictment: <em>what does this place actually sound like?</em></p>
+    <p>No one had asked it before. In eight million square kilometres of Saharan and pre-Saharan landscape — one of the oldest, most species-rich arid ecosystems on Earth — not a single systematic passive acoustic monitoring survey had ever been deployed. The African continent is, in the words of the scientific literature, 'strikingly underrepresented' in bioacoustics research. We have been telling a story about a landscape we have never listened to.</p>
+    <p class="pull">This is a habit, it turns out, with a very long history.</p>
+  </section>
+
+  <div class="section-label reveal"><span>34° N &nbsp;·&nbsp; The Mediterranean Transition</span></div>
+
+  <section class="chapter card reveal" data-screen-label="Chapter II">
+    <div class="chap-num">II — The Ones Who Came Looking for Other Things</div>
+    <h2 class="chap-title">Before I went south, <em>others went before me</em>.</h2>
+    <p>In 1885, a French military veterinarian named Philippe Thomas was walking the scorched hinterlands near Métlaoui, conducting a geological survey on behalf of the French colonial administration, when he discovered something nobody had gone looking for: phosphate deposits of extraordinary scale, traceable across eighty kilometres of brown-greenish limestone. He announced the discovery to the Académie des Sciences in December of that year. A mining company was formed. A 250-kilometre railway was built. By 1909, the company was clearing eight million francs in annual profit. Thomas received a one-time gift of fifteen thousand francs. He died in 1910, the year the real money started flowing. He also discovered and named a fossil crocodilian in the phosphate beds — <em>Dyrosaurus phosphaticus</em> — because even when you are being robbed of your discovery, the landscape keeps offering you new ones.</p>
+    <p>The Exploration Scientifique de la Tunisie — a twenty-five-year multi-disciplinary campaign that the French government launched after colonizing Tunisia in 1881 — dispatched botanists, zoologists, and geologists into the south with the confidence of people who know, before they arrive, what they will find. Zoologist Fernand Lataste catalogued mammals and discovered the fat-tailed gerbil. The eccentric ornithologist Joseph Whitaker — son of the Ingham-Whitaker Marsala wine dynasty, a man whose Palermo villa once received Edward VII, the Kaiser, and Richard Wagner as houseguests — spent ten years making collecting expeditions across Tunisia, sleeping in camps at the edge of the Saharan south, and published <em>The Birds of Tunisia</em> in London in 1905: two volumes, fifteen hand-coloured plates, two hundred and fifty copies, and three hundred and sixty-five species recorded in the dead desert.</p>
+    <p><em>Nature</em> called it 'a fitting crown to years of work in the field.' And then there was Théodore Monod, the French naturalist who explored the Sahara for seventy-five years, published seven hundred scientific works, once walked six hundred miles across it to prove he needed no meat to survive, and loved this landscape not as a void to be filled but as a living text that most people lacked the patience to read.</p>
+    <p><strong>Three hundred and sixty-five species. Seven hundred scientific papers.</strong> And the dominant cultural conclusion about this landscape remained: dead, empty, in need of fixing.</p>
+    <p>What every single one of these explorers shared — besides their extraordinary dedication — was their geography of origin. Paris. London. Tring. The Tunisian scientist, the North African perspective, the voice from inside the landscape: absent. The Institut des Régions Arides in Médenine, founded in 1976, and organizations like the Association Les Amis des Oiseaux are beginning to change that. The survey described in these pages is part of that slow, overdue correction.</p>
+    <p class="pull">The desert is beginning to be described by the people who grew up inside it.</p>
+  </section>
+</article>
+
+<!-- Field photo -->
+<figure class="field-photo reveal">
+  <figure>
+    <img src="/storymap/Pictures/2B22DC46-C38E-47EF-BD4D-10EFA1F6C09A.JPG" alt="Acacia raddiana at the biogeographic transition zone" />
+  </figure>
+  <figcaption>
+    <span class="n">PLATE I</span>
+    <p>Acacia raddiana at the Mediterranean-Saharan transition. The last trees give way to sand — but transitions are not endings. They are thresholds.</p>
+  </figcaption>
+</figure>
+
+<article class="story">
+  <section class="chapter card reveal" data-screen-label="Chapter III">
+    <div class="chap-num">III — The Road South</div>
+    <h2 class="chap-title">I left Tunis on a morning in April and <em>drove south</em>.</h2>
+    <p>Not metaphorically. Literally south, on the motorway past Hammamet, past Sfax, down through the spine of Tunisia toward a landscape that half the world had watched on television without understanding and the other half had been designing solutions for without visiting. The further south you drive, the more the land clarifies itself. The Mediterranean green of the northern coast gives way to the pale steppe. The olive groves thin. The horizon flattens and lengthens. The air changes quality — drier, cleaner, more honest. The land stops pretending to be something it is not.</p>
+    <p>Matmata arrives first, and it stops you in your tracks whether you expect it to or not. The town is built <em>downward</em> — into the earth, not upward above it. The troglodyte houses are dug as circular pits five to ten metres deep into soft sandstone, with rooms carved laterally into the walls. When the outside temperature climbs above forty-five degrees Celsius, the rooms hold at twenty-two. No electricity for cooling. No technology. Just the accumulated intelligence of a people who looked at an apparently inhospitable environment and thought: not a problem to be solved — a logic to be learned.</p>
+    <p>They called the place <em>Athwab</em> — in the Amazigh language, the language still spoken in the nearby village of Techine: <strong>the place of happiness and well-being</strong>. George Lucas called it Tatooine, changing a single letter from the nearby town of Tataouine, and filmed Luke Skywalker's home planet here. Tunisia holds more official Star Wars filming locations than any other country on Earth. The galaxy's most famous fictional wasteland is a fully inhabited, architecturally sophisticated Berber community whose geology holds Cretaceous fossils of <em>Spinosaurus</em> and is being prepared for UNESCO Global Geopark nomination.</p>
+    <p>Beyond Matmata, the Dahar Plateau rises and the road winds through the Matmata Hills — the same rocky escarpments that Field Marshal Rommel's engineers assessed in 1942 and declared impassable for motorized forces. In March of 1943, 160,000 Allied soldiers fought 76,000 Axis troops across this landscape in one of the decisive battles of the North African campaign. The hills that broke armies are the same hills where the Barbary Partridge, whose lineage diverged from all other partridges six million years ago, moves through the morning scrub, indifferent to the tanks that rusted here and the bones that bleached and the strategic calculations that all dissolved, eventually, into the same silence.</p>
+    <p class="pull">Empires rise and fall. Partridges persist.</p>
+  </section>
+</article>
+
+<figure class="field-photo reveal">
+  <figure>
+    <img src="/storymap/Pictures/6B93325B-39A7-4B3C-9ECC-1DAD858FED0D.JPG" alt="Troglodyte dwelling interior at Old Matmata" />
+  </figure>
+  <figcaption>
+    <span class="n">PLATE II</span>
+    <p>Old Matmata — troglodyte architecture carved into sandstone. Thermal mass regulation: 22°C interior when surface temperatures exceed 45°C. Vernacular sustainability that predates the term by centuries.</p>
+  </figcaption>
+</figure>
+
+<article class="story">
+  <section class="chapter card reveal" data-screen-label="Chapter IV">
+    <div class="chap-num">IV — Ksar Ghilane: Where a Spring Changes Everything</div>
+    <h2 class="chap-title">The oasis exists because of <em>a hot spring</em>.</h2>
+    <p>That is the whole story, reduced to its elements. Somewhere beneath the sand, ancient groundwater that has been moving slowly through limestone aquifers for thousands of years rises to the surface — warm, mineral-rich, continuous. It has been rising since before the Roman Empire. It creates a pool. The pool feeds a stand of date palms. The palms create shade. The shade drops the surface temperature by fifteen degrees. The microclimate this creates — moister, cooler, sheltered — produces conditions that should not exist within two hundred kilometres in any direction.</p>
+    <p>And life, being life, moves in.</p>
+    <p>Approximately fifty families live here now, their livelihoods built on dates and herding and, since the Dakar Rally made Ksar Ghilane famous, on the particular economy of people who drive from cities to stand in the desert and remember what silence sounds like. Before them, the Emperor Commodus stationed a garrison here in the late second century CE: the <em>Castellum Tisavar</em>, a border post on the western edge of the Limes Tripolitanus, the Roman Empire's southernmost frontier. Three structures remain on a small hill above the oasis, half-consumed by sand drift. Tunisia submitted the UNESCO World Heritage Tentative List application on February 17, 2012, under the designation 'Frontiers of the Roman Empire.'</p>
+    <p>In 2010, a Martian meteorite — catalogued as Ksar Ghilaine 002 — fell near the oasis. A piece of Mars, recovered in the dead desert.</p>
+    <p>The spring has been attracting visitors for two thousand years. Some of them come from further away than others.</p>
+  </section>
+</article>
+
+<figure class="field-photo reveal">
+  <figure>
+    <img src="/storymap/Pictures/6FF093B9-26D2-4173-B80E-4E4958491D7C.JPG" alt="Ksar Ghilane oasis with water and date palms" />
+  </figure>
+  <figcaption>
+    <span class="n">PLATE III</span>
+    <p>Qsar Ghilane oasis — where ancient groundwater rises continuously from limestone aquifers. The hot spring has sustained life here for millennia before Rome, and millennia after.</p>
+  </figcaption>
+</figure>
+
+<article class="story">
+  <section class="chapter card reveal" data-screen-label="Deployment">
+    <div class="chap-num">The Deployment</div>
+    <h2 class="chap-title">At 15:27 local time on April 10th, 2026, <em>I pressed record</em>.</h2>
+
+    <div class="stat-row">
+      <div class="stat"><span class="v">29</span><span class="l">Species<br/>Detected</span></div>
+      <div class="stat"><span class="v">1,210</span><span class="l">Vocalizations<br/>Conf. ≥ 0.50</span></div>
+      <div class="stat"><span class="v">17<small style="font-size:.5em">h</small></span><span class="l">Continuous<br/>Recording</span></div>
+    </div>
+
+    <p>I arrived in the late afternoon, set up my camp at the edge of the palms, and looked at the recording unit in my hands — a small device, barely larger than a paperback book, loaded with a deep-learning algorithm that Cornell University had trained on the voices of more than six thousand bird species. What I was about to do had never been done here, or anywhere in North Africa, or anywhere on the African continent south of Egypt: deploy a systematic acoustic monitoring station in the Saharan ecosystem.</p>
+    <p>Not because it was technically difficult. Because no one had thought to.</p>
+    <p>We had been too busy arguing about what this landscape lacked to listen to what it contained.</p>
+    <p class="pull">The desert was not waiting for us to save it. It was waiting for us to notice it.</p>
+  </section>
+</article>
+
+<figure class="field-photo reveal">
+  <figure>
+    <img src="/storymap/Pictures/2E3996FD-DE6B-4896-A7DF-3808BF6C963F.JPG" alt="AudioMoth autonomous recorder mounted on Acacia raddiana" />
+  </figure>
+  <figcaption>
+    <span class="n">PLATE IV</span>
+    <p>AudioMoth autonomous acoustic recorder on <em>Acacia raddiana</em>. Weatherproof, battery-powered, listening continuously for seventeen hours where human observers cannot stay.</p>
+  </figcaption>
+</figure>
+
+<article class="story">
+  <section class="chapter card reveal" data-screen-label="Chapter V">
+    <div class="chap-num">V — What the Afternoon Knew</div>
+    <h2 class="chap-title">The first voice is the <em>Eurasian Collared Dove</em>.</h2>
+    <p>That rolling, three-note call that fills every North African oasis from dawn to dusk like a pulse, like a heartbeat, like the oasis breathing. It produced 511 of my eventual 1,210 detections. 42% of everything I recorded. To someone unfamiliar with this landscape, that might sound like monotony. It is not. It is abundance. It is what a resident species sounds like when it has spent sufficient evolutionary time finding exactly the right place — and stayed.</p>
+    <p>Then the Eastern Olivaceous Warbler — subspecies <em>reiseri</em>, found in oases along this exact desert edge and essentially nowhere else — pouring out its rambling, mimetic song from somewhere in the palm understorey. This is a bird that carries the oasis's identity in its taxonomy: it was first described from Biskra in Algeria, its scientific name encoding the geography of its existence. It is not passing through. It was born here. It will die here. It is this place, translated into feathers and song.</p>
+    <p>And then came the sound that stopped me where I stood, though I had heard it a hundred times before: the rolling, liquid cascade of the European Bee-eater calling from high above the oasis, a group of them working the thermals above the palms. These birds consume up to 250 bees a day and disarm each one individually — a precise, sub-second choreography of strike, squeeze, and venom expulsion that has been perfected over millions of years of trial and death.</p>
+    <p>The afternoon recordings accumulated — 369 detections across 17 species — and the sun began its slow fall toward the dunes.</p>
+  </section>
+
+  <div class="section-label reveal"><span>19:20 &nbsp;·&nbsp; Dusk Transition</span></div>
+
+  <section class="chapter card reveal" data-screen-label="Chapter VI">
+    <div class="chap-num">VI — Dusk, and a Visitor From the Wetlands</div>
+    <h2 class="chap-title">At exactly 19:20, with the light failing, <em>six detections arrived</em>.</h2>
+    <p>The Black-crowned Night Heron (<em>Nycticorax nycticorax</em>) — unmistakable, that flat, sharp <em>quok</em> call — almost certainly a small group in flight, crossing above the oasis from the direction of the Chott el-Jerid. This is one of only fifteen bird species on Earth confirmed to use bait fishing: dropping bread crusts, insects, or twigs into water and waiting for fish to investigate. Its genus name comes from the Greek for <em>night raven</em>. Aristotle mentioned it. A 2023 study documented its first confirmed breeding in the Sahara Desert.</p>
+    <p>It was using the Chott, fifteen kilometres away, as a foraging wetland — and the oasis as a corridor. The boundary between wetland and desert, from where a night heron stands at 7 PM above the sand, is a matter of administrative convenience, not biological reality.</p>
+    <p>The six detections faded. The desert went quiet in the way that places go quiet when they are not actually quiet at all — when what is happening simply operates outside the frequencies you were expecting.</p>
+    <p class="pull">I set up the light trap.</p>
+  </section>
+
+  <section class="chapter card reveal" data-screen-label="Chapter VII">
+    <div class="chap-num">VII — What Comes to the Light</div>
+    <h2 class="chap-title">An entomologist's light trap is <em>the oldest trick in the book</em>.</h2>
+    <p>A ultraviolet lamp suspended above a white sheet in the dark. It works on the same principle that has worked since the first organism developed photoreceptors — light, in a dark environment, is information, and information in an ecosystem is never ignored for long.</p>
+    <p>Within an hour of nightfall, the dead desert had arrived. Scarab beetles with carapaces the colour of old jade. Ground beetles moving with the purposeful authority of creatures that have been doing this for three hundred million years. Moths with wingspans wider than my hand, patterned in sand-ochre and pale gold — colours that make them invisible against the dunes and suddenly, magnificently visible against my white sheet. Lacewings. Crickets. And creatures none of us could immediately name, which is always the most exciting category.</p>
+    <p>E.O. Wilson argued for his entire career — in <em>The Diversity of Life</em>, in <em>Half-Earth</em>, in every lecture and paper and interview until his death in 2021 — that the invertebrate world is not a footnote to biodiversity. <strong>It is the foundation.</strong> The recyclers. The pollinators. The soil-builders. The nutrient cyclers that make possible every plant that makes possible every vertebrate that makes possible every ecosystem service that makes possible every human life on Earth.</p>
+    <p>Remove the insects and the rest of the web collapses within decades. The insects are the desert's metabolism — its breathing, its digestion, its immune system.</p>
+    <p>We stood around the sheet for two hours, cataloguing what the darkness delivered. The list grew longer than the night.</p>
+  </section>
+</article>
+
+<!-- CHARTS SECTION -->
+<section class="charts-section" data-screen-label="The Data">
+  <div class="charts-head reveal">
+    <div class="chap-num">The Numbers</div>
+    <h2 class="chap-title">Numbers, in ecology, are <em>argumentative</em>.</h2>
+    <p style="color: var(--ink-2); font-size: 1.08rem; line-height: 1.75;">
+      The question is not just <em>how many species</em>, but what that number means in a landscape presumed to be degraded or empty.
+    </p>
+  </div>
+
+  <!-- Chart 1: Species frequency -->
+  <div class="chart-block reveal">
+    <div class="chart-head">
+      <div>
+        <div class="ft">Figure 01</div>
+        <h3>Top twenty species by detection frequency</h3>
+      </div>
+      <div class="ft">N = 1,210</div>
+    </div>
+    <div id="chart-species"></div>
+    <p class="chart-note">
+      Eurasian Collared Dove (511 detections), Eastern Olivaceous Warbler (232), and Eurasian Scops-Owl (159) together accounted for 74.6% of all detections. The long right-skew is the statistical signature of a real ecological community.
+    </p>
+  </div>
+
+  <!-- 2-up: Diel + Geographic -->
+  <div class="chart-grid-2">
+    <div class="chart-block reveal">
+      <div class="chart-head">
+        <div>
+          <div class="ft">Figure 02</div>
+          <h3>Diel acoustic activity</h3>
+        </div>
+      </div>
+      <div id="chart-diel"></div>
+      <div class="legend">
+        <span><i style="background:#D4A574"></i>Dawn</span>
+        <span><i style="background:#B8804A"></i>Morning</span>
+        <span><i style="background:#8C5A2E"></i>Afternoon</span>
+        <span><i style="background:#5A4030"></i>Dusk</span>
+        <span><i style="background:#2B3A3F"></i>Night</span>
+      </div>
+      <p class="chart-note">
+        Dawn chorus peaks 05:00–07:00. Seven species detected exclusively at night — invisible to every diurnal survey ever conducted here.
+      </p>
+    </div>
+
+    <div class="chart-block reveal">
+      <div class="chart-head">
+        <div>
+          <div class="ft">Figure 03</div>
+          <h3>Geographic plausibility</h3>
+        </div>
+      </div>
+      <div id="chart-geo" style="display:grid; place-items:center; min-height:280px;"></div>
+      <div class="legend">
+        <span><i style="background:var(--clay-deep)"></i>Confirmed · 15 sp.</span>
+        <span><i style="background:var(--sand)"></i>Possible · 14 sp.</span>
+      </div>
+      <p class="chart-note">
+        Confirmed residents generated 95.1% of all detections (1,151 / 1,210) — the majority of the acoustic evidence comes from established regional fauna.
+      </p>
+    </div>
+  </div>
+
+  <!-- Chart 4: Accumulation -->
+  <div class="chart-block reveal">
+    <div class="chart-head">
+      <div>
+        <div class="ft">Figure 04</div>
+        <h3>Species accumulation over 17 hours</h3>
+      </div>
+      <div class="ft">Chao2 estimate: 31.6 [25.9–37.2]</div>
+    </div>
+    <div id="chart-accum"></div>
+    <p class="chart-note">
+      The curve had not fully asymptoted — meaning there was more here than seventeen hours could find. The dead desert had more to say than I had given it time to hear.
+    </p>
+  </div>
+</section>
+
+<article class="story">
+  <section class="chapter card reveal" data-screen-label="Chapter VIII">
+    <div class="chap-num">VIII — The Night the Desert Told the Truth</div>
+    <h2 class="chap-title">The recording unit <em>did not go to sleep</em>.</h2>
+    <p>It processed 523 consecutive one-minute files through seventeen unbroken hours, and the picture it assembled of the nocturnal desert was unlike anything the existing literature had described, because the existing literature had never tried to describe it.</p>
+    <p>The first voice of the night belonged to the Eurasian Scops Owl — that single, monotonously repeated <em>pyuu</em>, arriving from somewhere in the palms shortly after darkness fell and continuing, with the disciplined persistence of a creature whose entire reproductive future depends on being heard, for most of the night. One hundred and fifty-nine detections. Almost entirely nocturnal.</p>
+    <p>Consider what this bird is. It weighs between sixty and one hundred and thirty-five grams — less than a tennis ball. It is the only European owl that makes a full trans-Saharan migration, crossing two thousand kilometres of desert twice a year, navigating by stars and magnetic field and whatever private map evolution has written into the architecture of its brain. It winters in Senegal, Guinea, Sierra Leone, Mauritania — the Sahelian belt — and returns north in spring, arriving in Tunisia in April, arriving at Ksar Ghilane on the night of April 10th, arriving in my recording.</p>
+    <p>A 2024 study documented something extraordinary about this species: Scops Owls bring live worm snakes into their nests — not to eat, but as pest control. The snakes feed on the ants, fly larvae, and ectoparasites that threaten the chicks. Fledging success in snake-occupied nests was more than double that of nests without. In the dead desert, at midnight, a 130-gram owl is running an integrated pest management operation.</p>
+    <p>And then, between 22:00 and 03:00, on seven separate one-minute files, the recording caught something that stopped my analysis the following morning when I first saw it: the unmistakable call of the <strong>Common Crane</strong> — a flock, almost certainly, crossing overhead in total darkness, calling as they flew, their voices carrying downward from an altitude I can only estimate.</p>
+    <p>Cranes have been recorded flying at altitudes of ten thousand metres — higher than the summit of Annapurna, in the airspace of commercial jets. Their trachea is coiled through the sternum like a French horn, creating a resonance chamber that carries their calls for kilometres across flat terrain. They navigate by stars, by magnetic field, by memory transmitted between generations. Aristotle described their migrations. Ancient Greeks wrote myths about cranes as moral witnesses.</p>
+    <p>These birds have been crossing this oasis, or the desert around it, every spring, for longer than the Roman garrison at Castellum Tisavar existed, longer than the caravan routes, longer than written language. They passed overhead at midnight and left seven acoustic traces in my recording and continued north and I doubt they noticed me at all.</p>
+    <p class="pull">Seven species detected exclusively at night — invisible to every survey ever conducted here.</p>
+  </section>
+
+  <div class="section-label reveal"><span>05:10 &nbsp;·&nbsp; Forty-four Minutes Before Sunrise</span></div>
+
+  <section class="chapter card reveal" data-screen-label="Chapter IX">
+    <div class="chap-num">IX — Dawn, and What Arrives With It</div>
+    <h2 class="chap-title">At 05:10 on April 11th, <em>the dawn chorus began</em>.</h2>
+    <p>In a temperate forest, the dawn chorus is a luxury: birds singing because they can, because the light is good and the competitors are audible and the females are listening. In the desert, the dawn chorus is something else. It is a race against thermodynamics. The window between cool enough to sing and too hot to function is narrow — sometimes as little as ninety minutes — and every creature with something to communicate compresses its entire vocal agenda into that window. What you hear is not leisure. It is urgency.</p>
+    <p>The Common Redstart (<em>Phoenicurus phoenicurus</em>) opened proceedings. Thirty-four detections, multiple diel periods, a voice that carries a biography of extraordinary improbability: this bird weighs between eleven and twenty-three grams. It has just crossed the Sahara. Studies of Redstarts grounded at desert oases found that sixty percent of individuals lacked sufficient fat reserves to complete the remaining crossing. For every one of those birds, Ksar Ghilane is not picturesque. It is the difference between this generation passing on its genes and the lineage ending here, in the sand, in April.</p>
+    <p>The European Turtle Dove (<em>Streptopelia turtur</em>) arrived with six detections — that soft, rolling purr that the Song of Solomon described three thousand years ago: <em>the voice of the turtle is heard in our land</em>. 'Turtle' meaning this dove. Three thousand years old in our literature. Since 1980, its European population has declined by 78 percent. In the United Kingdom, 93 percent since 1994. Between two and four million are shot legally every year across the Mediterranean corridor it uses for migration.</p>
+    <p>At 06:26 — nineteen minutes after sunrise — the algorithm caught something it had heard only briefly the evening before, and this time with high confidence. Two detections. The <strong>Black-winged Kite</strong> (<em>Elanus caeruleus</em>). Hovering above the oasis edge in the first light, hunting. This bird is one of evolution's most extraordinary experiments: a hawk that has independently developed forward-facing eyes, noise-dampening velvety feathers, and a reversible outer toe — features previously believed unique to owls. It did not borrow these features. It invented them, separately, under the same selective pressures that produced owls.</p>
+    <p>It was first scientifically described in 1789, with the type locality listed as Algiers, Algeria — making North Africa the birthplace of its scientific identity. This was only the third confirmed record in Tunisia. Its range is expanding northward.</p>
+    <p class="pull">The dead desert is sending its own ambassadors into Europe.</p>
+  </section>
+
+  <section class="chapter card reveal" data-screen-label="Chapter X">
+    <div class="chap-num">X — Bouhedma, and the Animals We Took</div>
+    <h2 class="chap-title">Before I drove back north, <em>I made a detour</em>.</h2>
+    <p>Sixty kilometres northwest of Ksar Ghilane, Bouhedma National Park holds something that should not, by any reasonable ecological accounting, still exist: the last remnant of pre-Saharan savanna in North Africa. An Acacia woodland — ecologists describe it as 'a living fossil from the Tertiary period' — that is ecologically identical to the sub-Saharan Sahel but survives four degrees of latitude north of where the models say it should be possible. It was designated a UNESCO Biosphere Reserve in 1977. It is on the World Heritage Tentative List. It is extraordinary.</p>
+    <p>And it is a shadow of what it was.</p>
+    <p>The park keeps a formal record of its absent megafauna — the species that inhabited this ecosystem within historical memory and are no longer here. It reads like a bill of indictment: elephant, aurochs, Barbary lion, leopard, Northwest African cheetah, hartebeest, Scimitar-horned Oryx, Addax, North African ostrich.</p>
+    <p>These animals did not disappear. They were removed — by hunting, by habitat conversion, by the progressive narrowing of the space that the living world is permitted to occupy. The Scimitar-horned Oryx was reintroduced in December 1985, when the Zoological Society of London shipped ten animals to a park that the species had not inhabited for eighty years. As of 2022, approximately 210 survive across four Tunisian protected areas. In December 2023, the IUCN reclassified the species from 'Extinct in the Wild' to 'Endangered.'</p>
+    <p>Decades of effort and millions of dollars, walking a species back from an abyss that required no effort at all to dig.</p>
+    <p>I stood at the edge of the acacia woodland in the late afternoon and thought about what Aldo Leopold called the first rule of intelligent tinkering: <em>keep all the parts</em>. We did not keep all the parts. We are now spending enormous resources trying to reconstruct what we had.</p>
+  </section>
+
+  <section class="chapter card reveal" data-screen-label="Chapter XI">
+    <div class="chap-num">XI — The Wall, or: The Solution That Is Also the Problem</div>
+    <h2 class="chap-title">The Great Green Wall is not a <em>cynical project</em>.</h2>
+    <p>I want to be absolutely clear about that. The people working on it are responding, with genuine urgency, to a genuine crisis. The degradation of dryland ecosystems along the Saharan edge is real. The vulnerability of the communities that depend on those ecosystems is real. The desire to act is not only understandable — it is admirable.</p>
+    <p>But good intentions, deployed against a misdiagnosis, produce interventions that can deepen the problem they are trying to solve. And the Great Green Wall is based on a misdiagnosis so old and so thoroughly embedded in our institutional memory that challenging it feels, to many people, like arguing against the obvious.</p>
+    <p>The diagnosis is this: the desert is expanding because we removed the trees, and it will contract when we plant them back. It feels self-evident. It is also, largely, wrong.</p>
+    <p>The historian Diana K. Davis, in her landmark work <em>The Arid Lands</em> (MIT Press, 2016), traced this diagnosis to its source with painful precision: French colonial scientists in the nineteenth century fabricated accounts of ancient North African forests destroyed by indigenous mismanagement, to justify land seizure and settlement. The land was not degraded. The forests did not exist at the scale claimed. The narrative was manufactured, refined through repetition, adopted by subsequent generations of policymakers, and has been shaping desert interventions ever since.</p>
+    <p>As of 2023, the Great Green Wall has achieved approximately four percent of its 2030 goal. Tree survival rates fall below thirty percent in many implementation zones. A satellite study of Senegal found only one of thirty-six planted areas showing greening beyond what rainfall alone would produce. Professor William Bond of the University of Cape Town has said it plainly: <strong>'Planting trees in deserts is as bad as cutting trees in a rainforest, since it changes the basic nature of the ecosystem.'</strong></p>
+    <p>Biological soil crusts — the communities of cyanobacteria, lichens, mosses, and microalgae that cover most desert surfaces and are invisible to the naked eye — fix nitrogen, sequester carbon at rates of 3.9 petagrams per year globally, stabilize soil, and regulate water. They are the desert's actual carbon infrastructure. They are destroyed by tree-planting machinery. We are proposing to replace the thing that works with something that has a thirty percent survival rate.</p>
+    <p>The answer was already here. The traditional oasis system — date palms above, fruit trees beneath, herbaceous plants below — sustained by <em>foggara</em> irrigation channels, a technology invented by the Garamantians before the Common Era that moves water by gravity through underground channels without pumps, without power, without depleting the aquifer at unsustainable rates — already does what the Great Green Wall is trying to do.</p>
+    <p class="pull">The knowledge to sustain this landscape exists. It has existed, in this landscape, for thousands of years. We simply haven't been paying attention to the people who hold it.</p>
+  </section>
+
+  <section class="chapter card reveal" data-screen-label="Chapter XII">
+    <div class="chap-num">XII — What We Owe the Desert</div>
+    <h2 class="chap-title">I drove back north through the same landscapes I had driven south through, <em>and they looked different to me now</em>.</h2>
+    <p>Not because they had changed, but because I had.</p>
+    <p>The Barbary Partridge in the Matmata Hills — six million years of unbroken desert residence, calling from a hillside that stopped a World War. The well at Bir Soltan — ancient water drawing ancient life into a circle of improbable abundance. The hot spring at Ksar Ghilane — thirty centimetres of rising water sustaining, for two thousand years of continuous human presence and uncountable millennia before that, an entire world. The Scops Owl navigating the darkness above it. The Cranes crossing the midnight sky at altitude, their horn-voices echoing down to the sand below. The insects arriving at the light. The Black-winged Kite, hovering at dawn with its owl eyes, over a Roman ruin, in a dead desert, on a planet that named one of its Saharan features after a moon of Saturn.</p>
+    <p>Aldo Leopold wrote that 'a thing is right when it tends to preserve the integrity, stability, and beauty of the biotic community.' E.O. Wilson argued, in <em>Half-Earth</em>, that the only path to avoiding the sixth mass extinction is to protect entire ecosystems — not manage fragments, not restore approximations, but protect what remains with the seriousness that the situation requires.</p>
+    <p><strong>The Sahara is one of the largest intact ecosystems remaining on Earth.</strong> It is not a fragment. It does not need to be managed. It needs to be recognised for what it is: a living system of extraordinary complexity, refined by evolution over millions of years, already doing everything we are spending billions of dollars trying to replicate.</p>
+    <p>The correct intervention is not to plant it. It is to listen to it. To protect the oases that serve as lifelines for millions of migrating birds. To defend the traditional water systems that have sustained life here without exhausting the aquifers. To give back, wherever possible, the space to the animals we removed. To stop defining this landscape through the lens of what it lacks rather than through the overwhelming evidence of what it contains. And — most urgently — to begin hearing the people who have lived inside it, whose knowledge of it is older and more precise than any satellite image or policy document, and who did not require a deep-learning algorithm to know that the desert was alive.</p>
+    <p>Twenty-nine species in seventeen hours. The first acoustic survey ever conducted in North Africa. The species accumulation curve still rising when the recording ended, still finding new voices in the last minutes of the last file — because the dead desert, given a single night and a single microphone, could not finish speaking before the time ran out.</p>
+    <p class="pull" style="font-size: 1.4rem; margin: 2rem 0;">The desert is dead.<br/>You can hear it breathing from kilometres away.</p>
+  </section>
+</article>
+
+<!-- Notable Species -->
+<div class="section-label reveal"><span>Notable Species</span></div>
+
+<section class="notable-species reveal">
+  <div class="species-grid">
+    <div class="species-card">
+      <span class="tag">Trans-Saharan</span>
+      <div class="illus"><img src="/illustrations/Eurasian Scops-Owl Otus scops.png" alt="Eurasian Scops-Owl" /></div>
+      <div class="com">Eurasian Scops-Owl</div>
+      <div class="sci">Otus scops</div>
+      <div class="meta"><span>159 detections &nbsp;·&nbsp; nocturnal</span><span>Pest management with worm snakes</span></div>
+    </div>
+    <div class="species-card">
+      <span class="tag" style="background: #8C5A2E">Vulnerable</span>
+      <div class="illus"><img src="/illustrations/European beeeater.png" alt="European Bee-eater" /></div>
+      <div class="com">European Turtle Dove</div>
+      <div class="sci">Streptopelia turtur</div>
+      <div class="meta"><span>migration stopover</span><span>78% decline since 1980</span></div>
+    </div>
+    <div class="species-card">
+      <span class="tag">Rare</span>
+      <div class="illus"><img src="/illustrations/brown raven.png" alt="Brown-necked Raven" /></div>
+      <div class="com">Black-winged Kite</div>
+      <div class="sci">Elanus caeruleus</div>
+      <div class="meta"><span>06:26 &nbsp;·&nbsp; dawn hunt</span><span>3rd Tunisia record</span></div>
+    </div>
+    <div class="species-card">
+      <span class="tag" style="background: var(--oasis)">Ancient Resident</span>
+      <div class="illus"><img src="/illustrations/Little owl (Chevêche d'Athéna).png" alt="Little Owl" /></div>
+      <div class="com">Little Owl</div>
+      <div class="sci">Athene noctua</div>
+      <div class="meta"><span>Roman ruins &nbsp;·&nbsp; nocturnal</span><span>Athena's companion</span></div>
+    </div>
+    <div class="species-card">
+      <span class="tag">Desert Specialist</span>
+      <div class="illus"><img src="/illustrations/Desert Sparrow.png" alt="Desert Sparrow" /></div>
+      <div class="com">Desert Sparrow</div>
+      <div class="sci">Passer simplex</div>
+      <div class="meta"><span>Resident breeder</span><span>Saharan endemic</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content reveal">
+    <div class="author-bio">
+      <h3>About the Author</h3>
+      <p><strong>Zakher Bouragaoui</strong> is a Conservation Biologist, National Geographic Explorer, and Fulbright Scholar. He serves as M&E and Knowledge Transfer Officer at WWF North Africa. MSc Wildlife Ecology, University of Wisconsin-Madison (2021–2023); MSc Evolutionary Ecology, University of Tunis El Manar. Co-founder, Tunisian Association for Wildlife (ATVS). TEDx talk: 'The Soundtrack of the Wild' (2025). The April 2026 survey at Ksar Ghilane is the first deployment of passive acoustic monitoring in North Africa.</p>
+      <p class="contact">
+        <a href="https://ecoacoustic.net">ecoacoustic.net</a> ·
+        <a href="mailto:bouragaoui@wisc.edu">bouragaoui@wisc.edu</a> ·
+        <a href="https://linkedin.com/in/zakher-bouragaoui">LinkedIn</a>
+      </p>
+    </div>
+    <div class="methodology">
+      <h3>A Note on the Methodology</h3>
+      <p>Acoustic survey: Ksar Ghilane oasis (32.9°N, 9.6°E), April 10–11, 2026. Raw BirdNET GLOBAL 6K V2.4 output: 2,575 detections, 82 species, 523 one-minute WAV files. Three-stage automated filtering (geographic plausibility, temporal recurrence, confidence ≥ 0.50) produced a clean dataset of 1,210 detections, 29 species (mean confidence 0.777 ± 0.157 SD). Ten taxonomically ambiguous species groups resolved by acoustic cross-correlation in R (warbleR). Rarefaction via iNEXT: asymptotic richness 31.6 [95% CI: 25.9–37.2], sampling coverage 97.3%. Methods follow Wood & Kahl (2024) and Pérez-Granados (2023). First empirical application of BirdNET on the African continent.</p>
+    </div>
+  </div>
+  <div class="footer-mark">
+    <p>&copy; 2026 Zakher Bouragaoui. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/article-charts.js"></script>
+
+</body>
+</html>
