@@ -83,13 +83,13 @@
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:24px;">
       <sc-if value="{{ card0Visible }}" hint-placeholder-val="{{ true }}">
-        <a href="Article-Desert-Speaks.dc.html" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
-          <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/desert/erg-oriental-dunes.jpg" alt="" style="width:100%; height:100%; object-fit:cover;"></div>
+        <a href="Article-Desert-Is-Dead.html" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
+          <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="storymap/Pictures/3B7CDF5B-2EBB-4899-85E6-7CA4761D9E61.JPG" alt="" style="width:100%; height:100%; object-fit:cover;"></div>
           <div style="padding:22px 22px 28px;">
             <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:11px;">Bioacoustics · 2026</p>
-            <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">The Desert Speaks</h3>
-            <p style="font-family:'Archivo',sans-serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">1,000 kilometres of southern Tunisia — 29 species and 1,210 detections in landscapes often dismissed as silent.</p>
-            <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">14 min read</span>
+            <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">The Desert Is Dead</h3>
+            <p style="font-family:'Archivo',sans-serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">Seventeen hours of autonomous recording, 29 species, 1,210 detections — a refutation of the narrative that has shaped conservation policy for a century.</p>
+            <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">12 min read</span>
           </div>
         </a>
       </sc-if>
@@ -201,7 +201,7 @@
 class Component extends DCLogic {
   state = { filter: 'All' };
   ARTICLES = [
-    { tag: 'Bioacoustics', year: '2026', href: 'Article-Desert-Speaks.dc.html', img: 'assets/desert/erg-oriental-dunes.jpg', title: 'The Desert Speaks', desc: '1,000 kilometres of southern Tunisia \u2014 29 species and 1,210 detections in landscapes often dismissed as silent.', read: '14 min read', comingSoon: false },
+    { tag: 'Bioacoustics', year: '2026', href: 'Article-Desert-Is-Dead.html', img: 'storymap/Pictures/3B7CDF5B-2EBB-4899-85E6-7CA4761D9E61.JPG', title: 'The Desert Is Dead', desc: 'Seventeen hours of autonomous recording, 29 species, 1,210 detections \u2014 a refutation of the narrative that has shaped conservation policy for a century.', read: '12 min read', comingSoon: false },
     { tag: 'Policy', year: '2023', href: 'Article-Environmental-Governance.dc.html', img: 'assets/gallery/Darfatma.jpeg', title: 'Environmental Governance in Tunisia', desc: 'Challenges, opportunities, and key developments in protecting Tunisia\u2019s natural heritage.', read: '13 min read', comingSoon: false },
     { tag: 'Research', year: '2022', href: 'Article-NAWCN.dc.html', img: 'assets/gallery/Lactonga.jpeg', title: 'The North African Wildlife Conservation Network', desc: 'Building a network to foster conservation research across five North African countries.', read: '6 min read', comingSoon: false },
     { tag: 'Conservation', year: '2021', href: 'Article-Biodiversity-Community.dc.html', img: 'assets/gallery/AlgerianSwamps.jpeg', title: 'The Tunisian Biodiversity Community', desc: 'Small steps toward unity \u2014 putting years of scientific research into open, shared value.', read: '3 min read', featured: true, comingSoon: false },
