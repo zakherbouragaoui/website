@@ -12,7 +12,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235B6446'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23FBF9F4' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
@@ -22,133 +22,150 @@
     a { color:inherit; }
   </style>
 </helmet>
-<div style="background:#FBF9F4; color:#1B1A15; font-family:'Archivo',sans-serif; line-height:1.6; overflow-x:hidden;">
+<div style="background:#FBF9F4; color:#1B1A15; font-family:'Archivo',sans-serif; line-height:1.6;">
 
   <!-- HEADER -->
-  <header style="position:sticky; top:0; z-index:100; background:rgba(251,249,244,0.9); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid rgba(27,26,21,0.09);">
-    <div style="max-width:1240px; margin:0 auto; padding:9px clamp(20px,4vw,54px); min-height:74px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 16px;">
-      <a href="index.html" style="text-decoration:none;"><span style="font-family:'Newsreader',serif; font-weight:500; font-size:23px; letter-spacing:-0.01em; color:#1B1A15; white-space:nowrap;">Zakher Bouragaoui</span></a>
+  <header style="position:sticky; top:0; z-index:100; background:rgba(251,249,244,0.94); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid rgba(27,26,21,0.1);">
+    <div style="max-width:{{ contentMaxWidth }}px; margin:0 auto; padding:9px clamp(20px,4vw,54px); min-height:70px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 16px;">
+      <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
+        <span style="width:11px; height:11px; background:#5B6446; display:block; flex:none;"></span>
+        <span style="font-family:'Archivo',sans-serif; font-weight:800; font-size:16px; letter-spacing:-0.01em; color:#1B1A15; white-space:nowrap;">ZAKHER BOURAGAOUI</span>
+      </a>
       <nav style="display:flex; flex-wrap:nowrap; align-items:center; gap:clamp(12px,1.5vw,22px); overflow-x:auto; max-width:100%; scrollbar-width:none; -webkit-overflow-scrolling:touch; padding:4px 0;">
-        <a href="About.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">About</a>
-        <a href="Experience.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Experience</a>
-        <a href="Research.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Research</a>
-        <a href="Publications.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Publications</a>
-        <a href="Blog.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#1B1A15; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Blog</a>
-        <a href="Media.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Media</a>
-        <a href="Gallery.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Gallery</a>
-        <a href="Contact.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.11em; text-transform:uppercase; color:#FBF9F4; background:#1B1A15; padding:10px 18px; border-radius:999px; text-decoration:none; white-space:nowrap;" style-hover="background:#3A382E;">Contact</a>
+        <a href="About.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">About</a>
+        <a href="Experience.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Experience</a>
+        <a href="Research.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Research</a>
+        <a href="Publications.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Publications</a>
+        <a href="Blog.dc.html" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#1B1A15; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Blog</a>
+        <a href="Media.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Media</a>
+        <a href="Gallery.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Gallery</a>
+        <a href="Contact.dc.html" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FBF9F4; background:#1B1A15; padding:10px 18px; text-decoration:none; white-space:nowrap;" style-hover="background:#5B6446;">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- TITLE -->
-  <section style="max-width:1280px; margin:0 auto; padding:clamp(40px,6vw,84px) clamp(18px,4vw,48px) 0;">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(16px,3vw,56px); align-items:end; border-bottom:1.5px solid rgba(27,26,21,0.4);">
-      <div style="padding-bottom:clamp(36px,5vw,64px);">
-        <div style="display:flex; align-items:center; gap:14px; margin-bottom:22px;">
-          <span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; color:#5B6446;">Blog</span>
-        </div>
-        <h1 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(38px,6vw,74px); line-height:1.0; letter-spacing:-0.02em; color:#1B1A15; max-width:16ch; text-wrap:balance; margin-bottom:24px;">Notes from the field &amp; beyond.</h1>
-        <p style="font-family:'Newsreader',serif; font-weight:300; font-size:clamp(18px,2vw,22px); line-height:1.55; color:#4A473D; max-width:56ch;">Essays and field notes on conservation, biodiversity, environmental policy, and the science of monitoring ecosystems across North Africa.</p>
+  <section style="position:relative; background:#1B1A15; background-image:url('assets/patterns/topography-bone.svg'); background-size:900px;">
+  <div style="position:relative; z-index:1; max-width:{{ contentMaxWidth }}px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(18px,4vw,48px) clamp(48px,7vw,84px);">
+    <div style="max-width:70ch;">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:22px;">
+        <span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; color:#A9B18C;">Blog</span>
       </div>
-      <img src="assets/eco/jay.png" alt="" aria-hidden="true" style="width:min(100%,470px); height:auto; justify-self:center; align-self:center; margin-bottom:clamp(24px,4vw,56px); pointer-events:none;">
+      <h1 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(38px,6vw,74px); line-height:1.0; letter-spacing:-0.02em; color:#FBF9F4; max-width:16ch; text-wrap:balance; margin-bottom:24px;">Notes from the field &amp; beyond.</h1>
+      <p style="font-family:'Archivo',sans-serif; font-weight:300; font-size:clamp(18px,2vw,22px); line-height:1.55; color:rgba(251,249,244,0.75); max-width:56ch;">Essays and field notes on conservation, biodiversity, environmental policy, and the science of monitoring ecosystems across North Africa.</p>
     </div>
+  </div>
   </section>
 
   <!-- FEATURED LEAD -->
-  <section style="max-width:1280px; margin:0 auto; padding:0 clamp(18px,4vw,48px) clamp(40px,5vw,64px);">
-    <a href="Article-Desert-Speaks.dc.html" data-reveal="1" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:0; text-decoration:none; background:#1B1A15; color:#fff;">
-      <div style="position:relative; min-height:300px; overflow:hidden;"><img src="assets/desert/erg-oriental-dunes.jpg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
+  <section style="max-width:{{ contentMaxWidth }}px; margin:0 auto; padding:clamp(40px,6vw,72px) clamp(18px,4vw,48px) clamp(40px,5vw,64px);">
+    <a href="Article-Reforestation.dc.html" data-reveal="1" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:0; text-decoration:none; background:#1B1A15; color:#fff;">
+      <div style="position:relative; min-height:300px; overflow:hidden;"><img src="assets/gallery/Feija.jpeg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></div>
       <div style="padding:clamp(28px,4vw,52px); display:flex; flex-direction:column; justify-content:center;">
-        <div style="display:flex; align-items:center; gap:12px; margin-bottom:18px;"><span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#1B1A15; background:#5B6446; padding:5px 10px;">Featured</span><span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446;">Bioacoustics</span></div>
-        <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(26px,3.2vw,40px); line-height:1.1; color:#fff; margin-bottom:16px;">The Desert Speaks</h2>
-        <p style="font-family:'Newsreader',serif; font-size:17px; line-height:1.6; color:rgba(255,255,255,0.78); margin-bottom:22px; max-width:52ch;">An acoustic journey through 1,000 kilometres of southern Tunisia — 29 species and 1,210 detections in landscapes often dismissed as silent.</p>
-        <div style="display:flex; align-items:center; gap:14px;"><span style="font-family:'Archivo',sans-serif; font-size:13px; color:rgba(255,255,255,0.6);">Apr 2026</span><span style="width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,0.4);"></span><span style="font-family:'Archivo',sans-serif; font-size:13px; color:rgba(255,255,255,0.6);">14 min read</span><span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:24px; color:#5B6446; margin-left:auto;">→</span></div>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:18px;"><span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#A9B18C;">Featured · Conservation · Nov 2021</span></div>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:clamp(26px,3.2vw,40px); line-height:1.1; color:#fff; margin-bottom:16px;">Reforestation in Tunisia — A False Environmental Prophecy</h2>
+        <p style="font-family:'Archivo',sans-serif; font-size:17px; line-height:1.6; color:rgba(255,255,255,0.78); margin-bottom:22px; max-width:52ch;">There is a lot of hype around tree-planting. But reforestation is not always beneficial — environmentally, socially, or economically. Time to rethink our strategy.</p>
+        <div style="display:flex; align-items:center; gap:14px;"><span style="font-family:'Archivo',sans-serif; font-size:13px; color:rgba(255,255,255,0.6);">Nov 2021</span><span style="width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,0.4);"></span><span style="font-family:'Archivo',sans-serif; font-size:13px; color:rgba(255,255,255,0.6);">9 min read</span><span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:24px; color:#5B6446; margin-left:auto;">→</span></div>
       </div>
     </a>
   </section>
 
   <!-- ALL STORIES -->
-  <section style="max-width:1280px; margin:0 auto; padding:0 clamp(18px,4vw,48px) clamp(56px,8vw,100px);">
-    <div data-reveal="1" style="display:flex; align-items:center; gap:14px; margin-bottom:clamp(28px,4vw,42px);">
-      
-      <h2 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(20px,2.4vw,28px); letter-spacing:0.04em; text-transform:uppercase; color:#1B1A15;">All Stories</h2>
+  <section style="max-width:{{ contentMaxWidth }}px; margin:0 auto; padding:0 clamp(18px,4vw,48px) clamp(56px,8vw,100px);">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:clamp(24px,3vw,32px); border-bottom:3px solid #1B1A15; padding-bottom:20px;">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(24px,3vw,34px); letter-spacing:-0.01em; color:#1B1A15;">All Stories</h2>
+      <span style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:#9A9484;">{{ resultsLabel }}</span>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:clamp(28px,4vw,40px);">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="7">
+        <button onClick="{{ f.onClick }}" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; border:1.5px solid #1B1A15; padding:8px 14px; background:{{ f.bg }}; color:{{ f.color }};">{{ f.label }}</button>
+      </sc-for>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:24px;">
-
-      <a href="Article-Environmental-Governance.dc.html" data-reveal="1" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
-        <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/Darfatma.jpeg" alt="" style="width:100%; height:100%; object-fit:cover;"></div>
-        <div style="padding:22px 22px 28px;">
-          <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:11px;">Policy · 2023</p>
-          <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">Environmental Governance in Tunisia</h3>
-          <p style="font-family:'Newsreader',serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">Challenges, opportunities, and key developments in protecting Tunisia's natural heritage.</p>
-          <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">13 min read</span>
-        </div>
-      </a>
-
-      <a href="Article-Reforestation.dc.html" data-reveal="1" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
-        <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/Feija.jpeg" alt="" style="width:100%; height:100%; object-fit:cover;"></div>
-        <div style="padding:22px 22px 28px;">
-          <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:11px;">Conservation · 2021</p>
-          <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">Reforestation in Tunisia — A False Environmental Prophecy</h3>
-          <p style="font-family:'Newsreader',serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">There is a lot of hype around tree-planting. But reforestation is not always beneficial — environmentally, socially, or economically.</p>
-          <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">9 min read</span>
-        </div>
-      </a>
-
-      <a href="Article-NAWCN.dc.html" data-reveal="1" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
-        <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/Lactonga.jpeg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 40%;"></div>
-        <div style="padding:22px 22px 28px;">
-          <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:11px;">Research · 2022</p>
-          <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">The North African Wildlife Conservation Network</h3>
-          <p style="font-family:'Newsreader',serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">Building a network to foster conservation research across five North African countries.</p>
-          <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">6 min read</span>
-        </div>
-      </a>
-
-      <a href="Article-Biodiversity-Community.dc.html" data-reveal="1" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
-        <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/AlgerianSwamps.jpeg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 35%;"></div>
-        <div style="padding:22px 22px 28px;">
-          <div style="display:flex; gap:8px; margin-bottom:11px;"><span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#1B1A15; background:#5B6446; padding:3px 8px;">Featured</span><span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; padding-top:3px;">Conservation · 2021</span></div>
-          <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">The Tunisian Biodiversity Community</h3>
-          <p style="font-family:'Newsreader',serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">Small steps toward unity — putting years of scientific research into open, shared value.</p>
-          <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">3 min read</span>
-        </div>
-      </a>
-
-      <div data-reveal="1" style="display:block; background:#F1EEE6; border:1px dashed rgba(27,26,21,0.28);">
-        <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/AnzaBorr1.jpeg" alt="" style="width:100%; height:100%; object-fit:cover; filter:grayscale(0.5); opacity:0.7;"></div>
-        <div style="padding:22px 22px 28px;">
-          <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#9A9484; margin-bottom:11px;">Field Notes · 2024</p>
-          <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:20px; line-height:1.2; color:#726C5E; margin-bottom:9px;">Field Notes: Desert Biodiversity Monitoring</h3>
-          <p style="font-family:'Newsreader',serif; font-size:15px; line-height:1.6; color:#726C5E; margin-bottom:14px;">Lessons from ecological surveys in California's largest state park.</p>
-          <span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#5B6446;">Coming soon</span>
-        </div>
-      </div>
-
-      <div data-reveal="1" style="display:block; background:#F1EEE6; border:1px dashed rgba(27,26,21,0.28);">
-        <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/FreshwaterCrab.jpeg" alt="" style="width:100%; height:100%; object-fit:cover; filter:grayscale(0.5); opacity:0.7;"></div>
-        <div style="padding:22px 22px 28px;">
-          <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#9A9484; margin-bottom:11px;">Data Science · 2024</p>
-          <h3 style="font-family:'Newsreader',serif; font-weight:400; font-size:20px; line-height:1.2; color:#726C5E; margin-bottom:9px;">Wildlife Trade in North Africa</h3>
-          <p style="font-family:'Newsreader',serif; font-size:15px; line-height:1.6; color:#726C5E; margin-bottom:14px;">A CITES data analysis for North African countries, built in R.</p>
-          <span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#5B6446;">Coming soon</span>
-        </div>
-      </div>
-
+      <sc-if value="{{ card0Visible }}" hint-placeholder-val="{{ true }}">
+        <a href="Article-Desert-Speaks.dc.html" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
+          <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/desert/erg-oriental-dunes.jpg" alt="" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div style="padding:22px 22px 28px;">
+            <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:11px;">Bioacoustics · 2026</p>
+            <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">The Desert Speaks</h3>
+            <p style="font-family:'Archivo',sans-serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">1,000 kilometres of southern Tunisia — 29 species and 1,210 detections in landscapes often dismissed as silent.</p>
+            <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">14 min read</span>
+          </div>
+        </a>
+      </sc-if>
+      <sc-if value="{{ card1Visible }}" hint-placeholder-val="{{ true }}">
+        <a href="Article-Environmental-Governance.dc.html" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
+          <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/Darfatma.jpeg" alt="" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div style="padding:22px 22px 28px;">
+            <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:11px;">Policy · 2023</p>
+            <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">Environmental Governance in Tunisia</h3>
+            <p style="font-family:'Archivo',sans-serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">Challenges, opportunities, and key developments in protecting Tunisia's natural heritage.</p>
+            <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">13 min read</span>
+          </div>
+        </a>
+      </sc-if>
+      <sc-if value="{{ card2Visible }}" hint-placeholder-val="{{ true }}">
+        <a href="Article-NAWCN.dc.html" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
+          <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/Lactonga.jpeg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 40%;"></div>
+          <div style="padding:22px 22px 28px;">
+            <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:11px;">Research · 2022</p>
+            <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">The North African Wildlife Conservation Network</h3>
+            <p style="font-family:'Archivo',sans-serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">Building a network to foster conservation research across five North African countries.</p>
+            <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">6 min read</span>
+          </div>
+        </a>
+      </sc-if>
+      <sc-if value="{{ card3Visible }}" hint-placeholder-val="{{ true }}">
+        <a href="Article-Biodiversity-Community.dc.html" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
+          <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/AlgerianSwamps.jpeg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 35%;"></div>
+          <div style="padding:22px 22px 28px;">
+            <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:11px;">Featured · Conservation · 2021</p>
+            <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">The Tunisian Biodiversity Community</h3>
+            <p style="font-family:'Archivo',sans-serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">Small steps toward unity — putting years of scientific research into open, shared value.</p>
+            <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">3 min read</span>
+          </div>
+        </a>
+      </sc-if>
+      <sc-if value="{{ card4Visible }}" hint-placeholder-val="{{ true }}">
+        <a href="#" onClick="{{ preventNav }}" style="display:block; text-decoration:none; background:#F1EEE6; border:1px dashed rgba(27,26,21,0.28); cursor:default;">
+          <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/AnzaBorr1.jpeg" alt="" style="width:100%; height:100%; object-fit:cover; filter:grayscale(0.5); opacity:0.7;"></div>
+          <div style="padding:22px 22px 28px;">
+            <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#9A9484; margin-bottom:11px;">Field Notes · 2024</p>
+            <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; line-height:1.2; color:#726C5E; margin-bottom:9px;">Field Notes: Desert Biodiversity Monitoring</h3>
+            <p style="font-family:'Archivo',sans-serif; font-size:15px; line-height:1.6; color:#726C5E; margin-bottom:14px;">Lessons from ecological surveys in California's largest state park.</p>
+            <span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#5B6446;">Coming soon</span>
+          </div>
+        </a>
+      </sc-if>
+      <sc-if value="{{ card5Visible }}" hint-placeholder-val="{{ true }}">
+        <a href="Article-Wildlife-Trade.dc.html" style="display:block; text-decoration:none; background:#FBF9F4; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:box-shadow 200ms ease;" style-hover="box-shadow:0 8px 22px rgba(0,0,0,0.10);">
+          <div style="position:relative; aspect-ratio:16/10; overflow:hidden;"><img src="assets/gallery/wormlizards.jpeg" alt="" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div style="padding:22px 22px 28px;">
+            <p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:11px;">Data Science · 2024</p>
+            <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:20px; line-height:1.2; color:#1B1A15; margin-bottom:9px;">Wildlife Trade in North Africa: Reading the Data</h3>
+            <p style="font-family:'Archivo',sans-serif; font-size:15px; line-height:1.6; color:#4A473D; margin-bottom:14px;">Charts, an animated gauge, and a stat counter walk through how CITES trade data becomes a monitoring plan.</p>
+            <span style="font-family:'Archivo',sans-serif; font-size:12.5px; color:#9A9484;">9 min read</span>
+          </div>
+        </a>
+      </sc-if>
     </div>
+    <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:clamp(40px,6vw,64px) 0; text-align:center;">
+        <p style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#726C5E;">No stories in this category yet.</p>
+      </div>
+    </sc-if>
   </section>
 
   <!-- FOOTER -->
   <footer style="background:#1B1A15; background-image:url('assets/patterns/topography-bone.svg'); background-size:600px; color:#FBF9F4;">
-    <div style="max-width:1240px; margin:0 auto; padding:clamp(52px,7vw,88px) clamp(20px,4vw,54px) 40px;">
+    <div style="max-width:{{ contentMaxWidth }}px; margin:0 auto; padding:clamp(52px,7vw,88px) clamp(20px,4vw,54px) 40px; border-top:3px solid #5B6446;">
       <div style="padding-bottom:clamp(34px,5vw,54px); margin-bottom:clamp(34px,5vw,54px); border-bottom:1px solid rgba(251,249,244,0.16);">
         <p style="font-family:'Archivo',sans-serif; font-weight:600; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(251,249,244,0.5); margin-bottom:14px;">Start a conversation</p>
-        <a href="mailto:bouragaoui@wisc.edu" style="font-family:'Newsreader',serif; font-weight:300; font-size:clamp(26px,4.2vw,58px); letter-spacing:-0.02em; line-height:1.15; color:#FBF9F4; text-decoration:none; overflow-wrap:anywhere;" style-hover="color:#A9B18C;">bouragaoui@wisc.edu</a>
+        <a href="mailto:bouragaoui@wisc.edu" style="font-family:'Archivo',sans-serif; font-weight:300; font-size:clamp(26px,4.2vw,58px); letter-spacing:-0.02em; line-height:1.15; color:#FBF9F4; text-decoration:none; overflow-wrap:anywhere;" style-hover="color:#A9B18C;">bouragaoui@wisc.edu</a>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:clamp(32px,5vw,64px);">
         <div style="max-width:34ch;">
-          <p style="font-family:'Newsreader',serif; font-weight:400; font-size:24px; margin-bottom:8px;">Zakher Bouragaoui</p>
+          <p style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; margin-bottom:8px;">Zakher Bouragaoui</p>
           <p style="font-family:'Archivo',sans-serif; font-size:13px; letter-spacing:0.02em; color:rgba(251,249,244,0.55);">Conservation Biologist &amp; National Geographic Explorer</p>
         </div>
         <div>
@@ -178,8 +195,20 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;contentMaxWidth&quot;: {&quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 1280, &quot;min&quot;: 960, &quot;max&quot;: 1600, &quot;step&quot;: 10, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Layout&quot;}
+}">
 class Component extends DCLogic {
+  state = { filter: 'All' };
+  ARTICLES = [
+    { tag: 'Bioacoustics', year: '2026', href: 'Article-Desert-Speaks.dc.html', img: 'assets/desert/erg-oriental-dunes.jpg', title: 'The Desert Speaks', desc: '1,000 kilometres of southern Tunisia \u2014 29 species and 1,210 detections in landscapes often dismissed as silent.', read: '14 min read', comingSoon: false },
+    { tag: 'Policy', year: '2023', href: 'Article-Environmental-Governance.dc.html', img: 'assets/gallery/Darfatma.jpeg', title: 'Environmental Governance in Tunisia', desc: 'Challenges, opportunities, and key developments in protecting Tunisia\u2019s natural heritage.', read: '13 min read', comingSoon: false },
+    { tag: 'Research', year: '2022', href: 'Article-NAWCN.dc.html', img: 'assets/gallery/Lactonga.jpeg', title: 'The North African Wildlife Conservation Network', desc: 'Building a network to foster conservation research across five North African countries.', read: '6 min read', comingSoon: false },
+    { tag: 'Conservation', year: '2021', href: 'Article-Biodiversity-Community.dc.html', img: 'assets/gallery/AlgerianSwamps.jpeg', title: 'The Tunisian Biodiversity Community', desc: 'Small steps toward unity \u2014 putting years of scientific research into open, shared value.', read: '3 min read', featured: true, comingSoon: false },
+    { tag: 'Field Notes', year: '2024', href: '#', img: 'assets/gallery/AnzaBorr1.jpeg', title: 'Field Notes: Desert Biodiversity Monitoring', desc: 'Lessons from ecological surveys in California\u2019s largest state park.', read: 'Coming soon', comingSoon: true },
+    { tag: 'Data Science', year: '2024', href: 'Article-Wildlife-Trade.dc.html', img: 'assets/gallery/wormlizards.jpeg', title: 'Wildlife Trade in North Africa: Reading the Data', desc: 'Charts, an animated gauge, and a stat counter walk through how CITES trade data becomes a monitoring plan.', read: '9 min read', comingSoon: false },
+  ];
+  FILTER_LABELS = ['All', 'Bioacoustics', 'Conservation', 'Policy', 'Research', 'Field Notes', 'Data Science'];
   componentDidMount() {
     if (!('IntersectionObserver' in window)) return;
     const t = Array.from(document.querySelectorAll('[data-reveal]'));
@@ -196,7 +225,31 @@ class Component extends DCLogic {
     t.forEach(el => this._io.observe(el));
   }
   componentWillUnmount() { if (this._io) this._io.disconnect(); }
-  renderVals() { return {}; }
+  renderVals() {
+    const active = this.state.filter;
+    const matches = (tag) => active === 'All' || tag === active;
+    const visibility = this.ARTICLES.map(a => matches(a.tag));
+    const visibleCount = visibility.filter(Boolean).length;
+    const filters = this.FILTER_LABELS.map(label => ({
+      label,
+      onClick: () => this.setState({ filter: label }),
+      bg: label === active ? '#1B1A15' : '#FBF9F4',
+      color: label === active ? '#FBF9F4' : '#1B1A15',
+    }));
+    return {
+      contentMaxWidth: this.props.contentMaxWidth ?? 1280,
+      filters,
+      card0Visible: visibility[0],
+      card1Visible: visibility[1],
+      card2Visible: visibility[2],
+      card3Visible: visibility[3],
+      card4Visible: visibility[4],
+      card5Visible: visibility[5],
+      preventNav: (e) => e.preventDefault(),
+      resultsLabel: 'Showing ' + visibleCount + ' of ' + this.ARTICLES.length + ' stories',
+      noResults: visibleCount === 0,
+    };
+  }
 }
 </script>
 </body>

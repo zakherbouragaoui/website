@@ -12,7 +12,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235B6446'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23FBF9F4' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
@@ -22,46 +22,62 @@
     a { color:inherit; }
   </style>
 </helmet>
-<div style="background:#FBF9F4; color:#1B1A15; font-family:'Archivo',sans-serif; line-height:1.6; overflow-x:hidden;">
+<div style="background:#FBF9F4; color:#1B1A15; font-family:'Archivo',sans-serif; line-height:1.6;">
 
   <!-- HEADER -->
-  <header style="position:sticky; top:0; z-index:100; background:rgba(251,249,244,0.9); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid rgba(27,26,21,0.09);">
-    <div style="max-width:1240px; margin:0 auto; padding:9px clamp(20px,4vw,54px); min-height:74px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 16px;">
-      <a href="index.html" style="text-decoration:none;"><span style="font-family:'Newsreader',serif; font-weight:500; font-size:23px; letter-spacing:-0.01em; color:#1B1A15; white-space:nowrap;">Zakher Bouragaoui</span></a>
+  <header style="position:sticky; top:0; z-index:100; background:rgba(251,249,244,0.94); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid rgba(27,26,21,0.1);">
+    <div style="max-width:1280px; margin:0 auto; padding:9px clamp(20px,4vw,54px); min-height:70px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 16px;">
+      <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
+        <span style="width:11px; height:11px; background:#5B6446; display:block; flex:none;"></span>
+        <span style="font-family:'Archivo',sans-serif; font-weight:800; font-size:16px; letter-spacing:-0.01em; color:#1B1A15; white-space:nowrap;">ZAKHER BOURAGAOUI</span>
+      </a>
       <nav style="display:flex; flex-wrap:nowrap; align-items:center; gap:clamp(12px,1.5vw,22px); overflow-x:auto; max-width:100%; scrollbar-width:none; -webkit-overflow-scrolling:touch; padding:4px 0;">
-        <a href="About.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">About</a>
-        <a href="Experience.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Experience</a>
-        <a href="Research.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Research</a>
-        <a href="Publications.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Publications</a>
-        <a href="Blog.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Blog</a>
-        <a href="Media.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Media</a>
-        <a href="Gallery.dc.html" style="font-family:'Archivo',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.13em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Gallery</a>
-        <a href="Contact.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.11em; text-transform:uppercase; color:#FBF9F4; background:#3A382E; padding:10px 18px; border-radius:999px; text-decoration:none; white-space:nowrap;" style-hover="background:#3A382E;">Contact</a>
+        <a href="About.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">About</a>
+        <a href="Experience.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Experience</a>
+        <a href="Research.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Research</a>
+        <a href="Publications.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Publications</a>
+        <a href="Blog.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Blog</a>
+        <a href="Media.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Media</a>
+        <a href="Gallery.dc.html" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#726C5E; text-decoration:none; padding:10px 2px; white-space:nowrap;" style-hover="color:#1B1A15;">Gallery</a>
+        <a href="Contact.dc.html" style="font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#FBF9F4; background:#5B6446; padding:10px 18px; text-decoration:none; white-space:nowrap;" style-hover="background:#5B6446;">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- CONTACT -->
-  <section style="max-width:1280px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(18px,4vw,48px) clamp(56px,8vw,104px);">
+  <section style="position:relative; background:#1B1A15; background-image:url('assets/patterns/topography-bone.svg'); background-size:900px;">
+  <div style="position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(18px,4vw,48px) clamp(48px,7vw,84px);">
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom:22px;">
+      <span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; color:#A9B18C;">Contact</span>
+    </div>
+    <h1 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(38px,5.6vw,72px); line-height:0.98; letter-spacing:-0.02em; color:#FBF9F4; max-width:14ch; text-wrap:balance; margin-bottom:24px;">Let's protect what's still wild.</h1>
+    <p style="font-family:'Archivo',sans-serif; font-size:clamp(18px,2vw,21px); line-height:1.6; color:rgba(251,249,244,0.75); max-width:46ch; margin-bottom:0;">Open to collaboration on biodiversity monitoring, bioacoustics, and conservation programs — and available for talks and consulting across North Africa and beyond.</p>
+  </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="margin-top:clamp(36px,5vw,54px); background:#5B6446; border-top:3px solid #1B1A15; border-bottom:3px solid #1B1A15;">
+    <div style="max-width:1280px; margin:0 auto; padding:clamp(22px,3vw,30px) clamp(18px,4vw,48px); display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr));">
+      <div style="padding:0 clamp(10px,2vw,26px); border-left:1px solid rgba(251,249,244,0.28);"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(20px,2.4vw,28px); line-height:1; color:#FBF9F4;">&lt; 48h</div><p style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; color:rgba(251,249,244,0.78); margin-top:6px;">Typical response</p></div>
+      <div style="padding:0 clamp(10px,2vw,26px); border-left:1px solid rgba(251,249,244,0.28);"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(20px,2.4vw,28px); line-height:1; color:#FBF9F4;">Tunis</div><p style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; color:rgba(251,249,244,0.78); margin-top:6px;">Based in</p></div>
+      <div style="padding:0 clamp(10px,2vw,26px); border-left:1px solid rgba(251,249,244,0.28);"><div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(20px,2.4vw,28px); line-height:1; color:#FBF9F4;">EN · FR · AR</div><p style="font-family:'Archivo',sans-serif; font-weight:600; font-size:12px; color:rgba(251,249,244,0.78); margin-top:6px;">Languages</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT DETAILS -->
+  <section style="max-width:1280px; margin:0 auto; padding:clamp(48px,7vw,84px) clamp(18px,4vw,48px) clamp(56px,8vw,104px);">
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(36px,5vw,72px); align-items:start;">
       <div data-reveal="1">
-        <div style="display:flex; align-items:center; gap:14px; margin-bottom:22px;">
-          
-          <span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; color:#5B6446;">Contact</span>
-        </div>
-        <h1 style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(38px,5.6vw,72px); line-height:0.98; letter-spacing:-0.02em; color:#1B1A15; max-width:14ch; text-wrap:balance; margin-bottom:24px;">Let's protect what's still wild.</h1>
-        <p style="font-family:'Newsreader',serif; font-size:clamp(18px,2vw,21px); line-height:1.6; color:#4A473D; max-width:46ch; margin-bottom:38px;">Open to collaboration on biodiversity monitoring, bioacoustics, and conservation programs — and available for talks and consulting across North Africa and beyond.</p>
-
         <a href="mailto:bouragaoui@wisc.edu" data-reveal="1" style="display:flex; align-items:center; justify-content:space-between; gap:16px; text-decoration:none; border-top:1px solid rgba(27,26,21,0.14); padding:22px 0;" style-hover="">
-          <div><p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:6px; display:flex; align-items:center; gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg> Email</p><p style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(18px,2.2vw,24px); color:#1B1A15;">bouragaoui@wisc.edu</p></div>
+          <div><p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:6px; display:flex; align-items:center; gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg> Email</p><p style="font-family:'Archivo',sans-serif; font-weight:400; font-size:clamp(18px,2.2vw,24px); color:#1B1A15;">bouragaoui@wisc.edu</p></div>
           <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border:1.5px solid #5B6446; border-radius:50%; color:#5B6446; flex:none;"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
         </a>
         <a href="https://linkedin.com/in/zakher-bouragaoui" target="_blank" rel="noopener" data-reveal="1" style="display:flex; align-items:center; justify-content:space-between; gap:16px; text-decoration:none; border-top:1px solid rgba(27,26,21,0.14); padding:22px 0;">
-          <div><p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:6px; display:flex; align-items:center; gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg> LinkedIn</p><p style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(18px,2.2vw,24px); color:#1B1A15;">in/zakher-bouragaoui</p></div>
+          <div><p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:6px; display:flex; align-items:center; gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg> LinkedIn</p><p style="font-family:'Archivo',sans-serif; font-weight:400; font-size:clamp(18px,2.2vw,24px); color:#1B1A15;">in/zakher-bouragaoui</p></div>
           <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border:1.5px solid #5B6446; border-radius:50%; color:#5B6446; flex:none;"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
         </a>
         <div data-reveal="1" style="display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid rgba(27,26,21,0.14); border-bottom:1px solid rgba(27,26,21,0.14); padding:22px 0;">
-          <div><p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:6px; display:flex; align-items:center; gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg> Based in</p><p style="font-family:'Newsreader',serif; font-weight:400; font-size:clamp(18px,2.2vw,24px); color:#1B1A15;">Tunis, Tunisia</p></div>
+          <div><p style="font-family:'Archivo',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#5B6446; margin-bottom:6px; display:flex; align-items:center; gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg> Based in</p><p style="font-family:'Archivo',sans-serif; font-weight:400; font-size:clamp(18px,2.2vw,24px); color:#1B1A15;">Tunis, Tunisia</p></div>
         </div>
 
         <div data-reveal="1" style="margin-top:26px;">
@@ -87,14 +103,14 @@
 
   <!-- FOOTER -->
   <footer style="background:#1B1A15; background-image:url('assets/patterns/topography-bone.svg'); background-size:600px; color:#FBF9F4;">
-    <div style="max-width:1240px; margin:0 auto; padding:clamp(52px,7vw,88px) clamp(20px,4vw,54px) 40px;">
+    <div style="max-width:1240px; margin:0 auto; padding:clamp(52px,7vw,88px) clamp(20px,4vw,54px) 40px; border-top:3px solid #5B6446;">
       <div style="padding-bottom:clamp(34px,5vw,54px); margin-bottom:clamp(34px,5vw,54px); border-bottom:1px solid rgba(251,249,244,0.16);">
         <p style="font-family:'Archivo',sans-serif; font-weight:600; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(251,249,244,0.5); margin-bottom:14px;">Start a conversation</p>
-        <a href="mailto:bouragaoui@wisc.edu" style="font-family:'Newsreader',serif; font-weight:300; font-size:clamp(26px,4.2vw,58px); letter-spacing:-0.02em; line-height:1.15; color:#FBF9F4; text-decoration:none; overflow-wrap:anywhere;" style-hover="color:#A9B18C;">bouragaoui@wisc.edu</a>
+        <a href="mailto:bouragaoui@wisc.edu" style="font-family:'Archivo',sans-serif; font-weight:300; font-size:clamp(26px,4.2vw,58px); letter-spacing:-0.02em; line-height:1.15; color:#FBF9F4; text-decoration:none; overflow-wrap:anywhere;" style-hover="color:#A9B18C;">bouragaoui@wisc.edu</a>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:clamp(32px,5vw,64px);">
         <div style="max-width:34ch;">
-          <p style="font-family:'Newsreader',serif; font-weight:400; font-size:24px; margin-bottom:8px;">Zakher Bouragaoui</p>
+          <p style="font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; margin-bottom:8px;">Zakher Bouragaoui</p>
           <p style="font-family:'Archivo',sans-serif; font-size:13px; letter-spacing:0.02em; color:rgba(251,249,244,0.55);">Conservation Biologist &amp; National Geographic Explorer</p>
         </div>
         <div>
