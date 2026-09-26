@@ -412,12 +412,15 @@ function initMap() {
     zoomControl: true,
     scrollWheelZoom: false,
     dragging: true,
-    attributionControl: true
+    attributionControl: true,
+    maxZoom: 13
   }).setView([34.2, 9.5], 7);
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png", {
-    attribution: '&copy; OpenStreetMap · CARTO',
-    subdomains: 'abcd', maxZoom: 19
+  // Esri World Shaded Relief: label-free warm terrain, no API key required.
+  // (CARTO basemaps began requiring a key and serve an "API KEY REQUIRED" tile instead.)
+  L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}", {
+    attribution: 'Tiles &copy; Esri — Source: Esri, USGS',
+    maxZoom: 13
   }).addTo(map);
 
   // Route line: Tunis → Qsar Ghilen → Grand Erg
