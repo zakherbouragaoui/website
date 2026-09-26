@@ -1,3 +1,17 @@
 .DS_Store
 *.zip
 .thumbnail
+
+# dependencies
+node_modules
+
+# leftovers from the previous Astro site (deploy.yml publishes the repo root,
+# so these must never be committed)
+.astro/
+dist/
+public/
+.vscode/
+.idea/
+
+# Office temp/lock files
+~$*
